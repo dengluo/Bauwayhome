@@ -20,16 +20,17 @@ import com.bauwayhome.ec.MyApplication;
 import com.bauwayhome.ec.bean.User;
 import com.bauwayhome.ec.common.MyConstants2;
 import com.bauwayhome.ec.util.PreferencesUtils;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * Created by zhaotaotao on 2017/8/9.
+ * Created by danny on 2018/3/5.
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-    public MyApplication myApplication;
+    //    public MyApplication myApplication;
     public Context mContext;
     public Unbinder unbinder;
     public RxPermissions rxPermissions;
@@ -41,7 +42,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mContext = this;
         rxPermissions = new RxPermissions(this);
-        myApplication = MyApplication.getInstance();
+//        myApplication = MyApplication.getInstance();
         setContentView(getLayoutRes());
         unbinder = ButterKnife.bind(this);
         initSP();
@@ -50,7 +51,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         initData();
         initEvent();
         initComplete(savedInstanceState);
-        myApplication.addActivity(this);
+        MyApplication.addActivity(this);
     }
 
     private void initSP() {
@@ -79,7 +80,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        myApplication.removeActivity(this);
+        MyApplication.removeActivity(this);
         unbinder.unbind();
         if (mDialog != null) {
             mDialog.dismiss();

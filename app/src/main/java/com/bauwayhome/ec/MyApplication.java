@@ -14,9 +14,12 @@ import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.blankj.utilcode.util.Utils;
 import com.f2prateek.rx.preferences2.RxSharedPreferences;
+import com.tencent.bugly.crashreport.CrashReport;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.BmobConfig;
 
@@ -28,7 +31,7 @@ public class MyApplication extends MultiDexApplication {
 
     public static boolean LOG_SWITCH = true; //log和debug模式的开关
     private static MyApplication application;
-    private static List<Activity> activityList = new LinkedList<>();
+    private static List<Activity> activityList;
     public RxSharedPreferences userRxPreferences;
 
     @Override
@@ -40,6 +43,7 @@ public class MyApplication extends MultiDexApplication {
         initDebug();
         initUtils();
         initBmob();
+        initBugly();
 //        initBle();
     }
 
@@ -114,7 +118,8 @@ public class MyApplication extends MultiDexApplication {
     private void initBmob() {
         BmobConfig bmobConfig = new BmobConfig
                 .Builder(this)
-                .setApplicationId( "40297dc2548705d5cfc23b7deb30c745")
+                .setApplicationId("cb944948052b02a43fb1e2f7d905e8a3")
+//                .setApplicationId("cb944948052b02a43fb1e2f7d905e8a3")
 //                .setApplicationId("205b9c5c2836c849625dab18dc4316b6")
                 //请求超时时间（单位为秒）：默认15s
                 .setConnectTimeout(MyConstants2.HTTP_TIME_OUT)
@@ -126,6 +131,11 @@ public class MyApplication extends MultiDexApplication {
         Bmob.initialize(bmobConfig);
     }
 
+    private void initBugly() {
+        CrashReport.initCrashReport(getApplicationContext(), "c7802b564f", true);
+//        CrashReport.testJavaCrash();
+    }
+
 //    private void initBle(){
 //        SmaManager.getInstance().init(this).connect(true);
 //    }
@@ -135,11 +145,15 @@ public class MyApplication extends MultiDexApplication {
      *
      * @param activity activity
      */
-    public void addActivity(Activity activity) {
+    public static void addActivity(Activity activity) {
+        if (activityList == null) {
+            //如果集合为空  则初始化
+            activityList = new ArrayList<>();
+        }
         activityList.add(activity);
     }
 
-    public void removeActivity(Activity activity) {
+    public static void removeActivity(Activity activity) {
         activityList.remove(activity);
     }
 
