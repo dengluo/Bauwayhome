@@ -1,1 +1,1 @@
-include ':app', ':easeblelib', ':smablelib'
+include ':app', ':easeblelib', ':smablelib', ':library'

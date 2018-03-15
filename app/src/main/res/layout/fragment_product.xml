@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -5,175 +6,99 @@
     android:background="@color/gray_divider_line"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/blue_ice"
+        android:padding="10dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/product_show"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.7"
-        android:orientation="vertical"
-        android:background="@color/gray_divider_line">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/ll_frag_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingBottom="5dp"
-            android:paddingTop="5dp">
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tv_frag_wendu"
-                android:layout_width="0dp"
+            <ezy.ui.view.BannerView
+                android:id="@+id/banner1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text=""
-                android:textSize="12dp" />
-
-            <TextView
-                android:id="@+id/tv_frag_time"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text=""
-                android:textSize="12dp" />
-
-            <TextView
-                android:id="@+id/tv_frag_fengsu"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="高档"
-                android:textSize="12dp" />
-
+                android:background="@android:color/white"
+                app:bvAspectRatio="0.6666666"
+                app:bvIndicatorColor="#cccccc"
+                app:bvIndicatorColorSelected="@color/colorAccent"
+                app:bvIsLoop="false" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp10"
+            android:layout_marginRight="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp10"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RadioGroup
+                android:id="@+id/rg_tab_bar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginTop="10dp"
-                android:padding="2dp"
-                android:background="@drawable/shape_circle_edt_input"
-                android:gravity="center_vertical"
+                android:layout_height="36dp"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/shape_circle_huise"
                 android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/rb_pro1"
+                    style="@style/tab_menu_item1"
+                    android:text="@string/tab_menu_pro1" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/dp10"
-                        android:text="设备:"
-                        android:textColor="@color/text_color_2"
-                        android:textSize="14dp" />
+                <RadioButton
+                    android:id="@+id/rb_pro2"
+                    style="@style/tab_menu_item2"
+                    android:text="@string/tab_menu_pro2" />
 
-                    <TextView
-                        android:id="@+id/tv_frag_device_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:text="未连接"
-                        android:textColor="@color/text_color_2"
-                        android:textSize="14dp" />
+                <RadioButton
+                    android:id="@+id/rb_pro3"
+                    style="@style/tab_menu_item2"
+                    android:text="@string/tab_menu_pro3" />
 
-                </LinearLayout>
-            </LinearLayout>
+                <RadioButton
+                    android:id="@+id/rb_pro4"
+                    style="@style/tab_menu_item3"
+                    android:text="@string/tab_menu_pro4" />
 
-            <LinearLayout
+            </RadioGroup>
+
+            <!--<View-->
+            <!--android:id="@+id/div_tab_bar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="2px"-->
+            <!--android:layout_above="@id/rg_tab_bar"-->
+            <!--android:background="@color/div_white" />-->
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/vpager"
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:padding="2dp"
-                android:background="@drawable/shape_circle_edt_input"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/dp10"
-                        android:text="产品码:"
-                        android:textColor="@color/text_color_2"
-                        android:textSize="14dp" />
-
-                    <TextView
-                        android:id="@+id/tv_frag_device_ypcode"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:text=""
-                        android:textColor="@color/text_color_2"
-                        android:textSize="14dp" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:padding="2dp"
-                android:background="@drawable/shape_circle_edt_input"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/tv_account_name"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/dp10"
-                        android:text="红光"
-                        android:textColor="@color/text_color_2"
-                        android:textSize="14dp" />
-
-                </LinearLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="right">
-                    <CheckBox
-                        android:id="@+id/checkbox_dengguang"
-                        android:layout_width="45dp"
-                        android:layout_height="23dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginRight="@dimen/dp10"
-                        android:background="@drawable/selector_chekbox_follow"
-                        android:button="@null" />
-                </RelativeLayout>
-            </LinearLayout>
-
+                android:layout_height="match_parent"
+                android:layout_above="@+id/rg_tab_bar"
+                android:layout_marginBottom="@dimen/dp10"
+                android:background="@color/blue_ice" />
         </LinearLayout>
 
     </LinearLayout>
+
 </LinearLayout>

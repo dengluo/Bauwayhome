@@ -17,7 +17,6 @@ import com.f2prateek.rx.preferences2.RxSharedPreferences;
 import com.tencent.bugly.crashreport.CrashReport;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 import cn.bmob.v3.Bmob;
@@ -118,7 +117,7 @@ public class MyApplication extends MultiDexApplication {
     private void initBmob() {
         BmobConfig bmobConfig = new BmobConfig
                 .Builder(this)
-                .setApplicationId("cb944948052b02a43fb1e2f7d905e8a3")
+                .setApplicationId("40297dc2548705d5cfc23b7deb30c745")
 //                .setApplicationId("cb944948052b02a43fb1e2f7d905e8a3")
 //                .setApplicationId("205b9c5c2836c849625dab18dc4316b6")
                 //请求超时时间（单位为秒）：默认15s

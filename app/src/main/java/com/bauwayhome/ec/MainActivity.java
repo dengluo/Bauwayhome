@@ -85,12 +85,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         int count = sharedPreferences.getInt("count", 0);
         Log.d("print", String.valueOf(count));
         //判断程序是第几次运行，如果是第一次运行则跳转到引导页面
-        if (count == 0) {
-            Intent intent = new Intent();
-            intent.setClass(this, WelcomeActivity.class);
-            startActivity(intent);
-            this.finish();
-        }
+//        if (count == 0) {
+//            Intent intent = new Intent();
+//            intent.setClass(this, WelcomeActivity.class);
+//            startActivity(intent);
+//            this.finish();
+//        }
         SharedPreferences.Editor editor = sharedPreferences.edit();
         //存入数据
         editor.putInt("count", ++count);

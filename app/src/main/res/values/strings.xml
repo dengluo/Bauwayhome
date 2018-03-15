@@ -98,9 +98,10 @@
     <string name="yesterday">昨天%tR</string>
     <string name="mill" translatable="false">%tc</string>
 
-    <string name="tab_menu_wendu">温度</string>
-    <string name="tab_menu_shijian">时间</string>
-    <string name="tab_menu_fengsu">风速</string>
+    <string name="tab_menu_pro1">IQOS</string>
+    <string name="tab_menu_pro2">常规烤烟</string>
+    <string name="tab_menu_pro3">盒子</string>
+    <string name="tab_menu_pro4">小烟</string>
     <string name="toast_yzm_1">验证码为空,请重新填写验证码</string>
     <string name="toast_yzm_2">网络连接异常</string>
 
@@ -127,6 +128,7 @@
     <string name="set">设定</string>
     <string name="common_set">通用指数</string>
     <string name="product_select">产品选择</string>
+    <string name="product_show">产品展示</string>
     <string name="v" translatable="false">V</string>
     <string name="t" translatable="false">T</string>
     <string name="h" translatable="false">H</string>
@@ -216,6 +218,11 @@
     <string name="sure">确定</string>
     <string name="roger">知道了</string>
     <string name="fragme_personinfo">个人信息</string>
+    <string name="select_product">产品选择</string>
+    <string name="home_product_iqos">IQOS系列</string>
+    <string name="home_product_kaoyan">烤烟系列</string>
+    <string name="home_product_box">盒子系列</string>
+    <string name="home_product_small">小烟系列</string>
     <string name="tips_yonghuxieyi">
   一、特别提示  \n
 在此特别提醒您（用户）在注册成为幸孕儿-上门服务技师端用户之前，请认真阅读本《用户服务协议》（以下简称“协议”），确保您充分理解本协议中各条款。请您审慎阅读并选择接受或不接受本协议。除非您接受本协议所有条款，否则您无权注册、登录或使用本协议所涉服务。您的注册、登录、使用等行为将视为对本协议的接受，并同意接受本协议各项条款的约束。  本协议约定幸孕儿-上门服务技师端平台与用户之间关于“幸孕儿-上门服务技师端”服务（以下简称“服务”）的权利义务。“用户”是指注册、登录、使用本服务的个人。本协议可由幸孕儿-上门服务技师端随时更新，更新后的协议条款一旦公布即代替原来的协议条款，恕不再另行通知，用户可在本APP中查阅最新版协议条款。在修改协议条款后，如果用户不接受修改后的条款，请立即停止使用幸孕儿上门服务提供的服务，用户继续使用平台提供的服务将被视为接受修改后的协议。  \n
