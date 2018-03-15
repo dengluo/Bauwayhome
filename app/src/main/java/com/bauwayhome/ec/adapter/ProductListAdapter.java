@@ -1,16 +1,22 @@
 package com.bauwayhome.ec.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bauwayhome.ec.R;
 import com.bauwayhome.ec.bean.Product_IQOS;
+import com.bauwayhome.ec.util.ImageLoaderUtil;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.util.List;
 
@@ -69,6 +75,8 @@ public class ProductListAdapter extends BaseAdapter {
             viewHolder.model = (TextView) convertView.findViewById(R.id.tv_product_model);
             viewHolder.size = (TextView) convertView.findViewById(R.id.tv_product_size);
             viewHolder.battery = (TextView) convertView.findViewById(R.id.tv_product_battery);
+            viewHolder.image = (ImageView) convertView.findViewById(R.id.iv_product_image);
+            viewHolder.layout = (LinearLayout) convertView.findViewById(R.id.ll_product_layout);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
@@ -77,10 +85,25 @@ public class ProductListAdapter extends BaseAdapter {
         viewHolder.model.setText(product.getIqos_model());
         viewHolder.size.setText(product.getIqos_size());
         viewHolder.battery.setText(product.getIqos_battery());
+        Log.e("getIconUrl", product.getIconUrl());
+        ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(mContext));
+        ImageLoader.getInstance().displayImage(
+                product.getIconUrl(),
+                viewHolder.image,
+                ImageLoaderUtil.getDisplayImageOptions());
+        viewHolder.layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse(product.getIqos_url());
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                mContext.startActivity(intent);
+            }
+        });
         return convertView;
     }
 
     public class ViewHolder {
+        public LinearLayout layout;
         public TextView name;
         public TextView model;
         public TextView size;
