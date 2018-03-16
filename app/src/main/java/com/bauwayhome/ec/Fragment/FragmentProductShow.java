@@ -42,8 +42,7 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
 
     public static Integer[] urls = new Integer[]{//750x500
             R.mipmap.banner001,
-            R.mipmap.banner002,
-            R.mipmap.banner003
+            R.mipmap.banner002
     };
 
 

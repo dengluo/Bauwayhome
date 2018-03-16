@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bauwayhome.ec.R;
-import com.bauwayhome.ec.bean.Product_IQOS;
+import com.bauwayhome.ec.bean.Product_Routine;
 import com.bauwayhome.ec.util.ImageLoaderUtil;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -25,23 +25,23 @@ import java.util.List;
  * Created by danny on 2018/3/14.
  */
 
-public class ProductListAdapter extends BaseAdapter {
+public class ProductListAdapter2 extends BaseAdapter {
 
     private Context mContext;
-    private List<Product_IQOS> products;
+    private List<Product_Routine> products;
     ViewHolder viewHolder;
-    Product_IQOS product;
+    Product_Routine product;
 
     /**
      * 构造函数
      */
-    public ProductListAdapter(Context mContext, List<Product_IQOS> products) {
+    public ProductListAdapter2(Context mContext, List<Product_Routine> products) {
         super();
         this.mContext = mContext;
         this.products = products;
     }
 
-    public void setData(List<Product_IQOS> list) {
+    public void setData(List<Product_Routine> list) {
         notifyDataSetChanged();
     }
 
@@ -79,8 +79,7 @@ public class ProductListAdapter extends BaseAdapter {
             viewHolder.layout = (LinearLayout) convertView.findViewById(R.id.ll_product_layout);
             convertView.setTag(viewHolder);
         } else {
-//            viewHolder = (ViewHolder) convertView.getTag();
-//            viewHolder.layout = (LinearLayout) viewHolder.layout.getTag();
+            viewHolder = (ViewHolder) convertView.getTag();
         }
         viewHolder.name.setText(product.getIqos_name());
         viewHolder.model.setText(product.getIqos_model());
