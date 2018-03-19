@@ -17,6 +17,7 @@ import com.bauwayhome.ec.R;
 import com.bauwayhome.ec.activity.AboutUsActivity;
 import com.bauwayhome.ec.activity.HelpDocsActivity;
 import com.bauwayhome.ec.activity.LoginActivity;
+import com.bauwayhome.ec.activity.PersonInfoActivity;
 import com.bauwayhome.ec.interfaces.DialogCallback;
 import com.bauwayhome.ec.util.DialogUtil;
 import com.bauwayhome.ec.util.MyUtil;
@@ -182,8 +183,8 @@ public class FragmentMe extends Fragment implements View.OnClickListener {
     }
 
     public void jumpPersonInfo() {
-//        piintent = new Intent(context, PersonInfoActivity.class);
-//        startActivity(piintent);
+        piintent = new Intent(context, PersonInfoActivity.class);
+        startActivity(piintent);
     }
 
 }

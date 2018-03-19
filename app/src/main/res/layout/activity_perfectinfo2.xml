@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_divider_line"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/blue_ice"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/iv_return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shop_return2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/grregister"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp10"
+                    android:text="确保以下填写信息真实有效"
+                    android:textColor="@color/black_trans60"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="@dimen/dp10"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/person_name"
+                    android:textColor="@color/black_trans60"
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:id="@+id/et_perfectinfo_name"
+                    android:layout_weight="3.5"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:background="@drawable/shape_circle_edt_input"
+                    android:hint=""
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/black_trans60"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_divider_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="@dimen/dp10"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/person_sex"
+                    android:textColor="@color/black_trans60"
+                    android:textSize="16dp" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup1"
+                    android:layout_weight="3.5"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/radio0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="男"
+                        android:textColor="@color/text_color_3" />
+
+                    <RadioButton
+                        android:id="@+id/radio1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="女"
+                        android:textColor="@color/text_color_3" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_divider_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="@dimen/dp10"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/person_age"
+                    android:textColor="@color/black_trans60"
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:id="@+id/et_perfectinfo_age"
+                    android:layout_weight="3.5"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:background="@drawable/shape_circle_edt_input"
+                    android:hint=""
+                    android:digits="1234567890"
+                    android:inputType="phone|number"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:maxLength="3"
+                    android:lines="1"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/black_trans60"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_divider_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="@dimen/dp10"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/person_height"
+                    android:textColor="@color/black_trans60"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/tv_perfectinfo_height"
+                    android:layout_weight="3.5"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/shape_circle_edt_input"
+                    android:hint=""
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/black_trans60"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_divider_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:padding="@dimen/dp10"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:gravity="right|center_vertical"
+                    android:text="@string/person_weight"
+                    android:textColor="@color/black_trans60"
+                    android:textSize="16dp" />
+
+                <TextView
+                    android:id="@+id/tv_perfectinfo_weight"
+                    android:layout_weight="3.5"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:background="@drawable/shape_circle_edt_input"
+                    android:hint=""
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/black_trans60"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <!--按钮部分-->
+            <LinearLayout
+                style="@style/login_ll_two"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp">
+
+                <Button
+                    android:id="@+id/bt_perfectinfo_register"
+                    style="@style/bt_style"
+                    android:text="@string/register" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

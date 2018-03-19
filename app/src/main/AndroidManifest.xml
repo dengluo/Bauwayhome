@@ -56,6 +56,10 @@
         <activity android:name=".activity.AgreementActivity" />
         <activity android:name=".activity.HelpDocsActivity" />
         <activity android:name=".activity.AboutUsActivity" />
+        <activity android:name=".activity.PersonInfoActivity" />
+        <activity android:name=".activity.ChangePwdActivity" />
+        <activity android:name=".activity.PerfectInfoActivity" />
+        <activity android:name=".activity.PerfectInfoActivity2" />
     </application>
 
 </manifest>

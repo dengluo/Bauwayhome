@@ -202,7 +202,7 @@ public class RegisterActivity extends BaseActivity {
                     // ToastUtils.showShort(R.string.register_success_plz_check_email);
                     ToastUtils.showShort(R.string.register_success_plz_check_phone);
                     userRxPreferences.getString(Constants.LOGIN_PHONE).set(et_phone);
-                    startActivity(new Intent(mContext, LoginActivity.class));
+                    startActivity(new Intent(mContext, PerfectInfoActivity2.class));
                     RegisterActivity.this.finish();
                 } else {
                     Log.e(TAG, "done: " + e.getErrorCode() + ":" + e.getMessage());
@@ -258,9 +258,9 @@ public class RegisterActivity extends BaseActivity {
                 if (e == null) {
                     // ToastUtils.showShort(R.string.register_success_plz_check_email);
                     ToastUtils.showShort(R.string.register_success_plz_check_phone);
-//                    userRxPreferences.getString(Constants.LOGIN_PHONE).set(et_phone);
-//                    startActivity(new Intent(mContext, PerfectInfoActivity.class));
-//                    RegisterActivity2.this.finish();
+                    userRxPreferences.getString(Constants.LOGIN_PHONE).set(et_phone);
+                    startActivity(new Intent(mContext, PerfectInfoActivity.class));
+                    RegisterActivity.this.finish();
                 } else {
                     Log.e(TAG, "done: " + e.getErrorCode() + ":" + e.getMessage());
                     if (203 == e.getErrorCode()) {
