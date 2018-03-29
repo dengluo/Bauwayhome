@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.bauwayhome.ec">
+
+    <uses-sdk
+    android:minSdkVersion="15"
+    android:targetSdkVersion="22" />
 
     <!--允许联网 -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -60,6 +65,8 @@
         <activity android:name=".activity.ChangePwdActivity" />
         <activity android:name=".activity.PerfectInfoActivity" />
         <activity android:name=".activity.PerfectInfoActivity2" />
+        <activity android:name=".activity.IqosProductActivity" />
+        <activity android:name=".activity.BindDeviceActivity" />
     </application>
 
 </manifest>

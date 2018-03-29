@@ -38,7 +38,7 @@ public class MyFragment3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fg_content1, container, false);
         context = this.getActivity();
-        lv_product = view.findViewById(R.id.lv_product);
+        lv_product = (ListView) view.findViewById(R.id.lv_product);
         loadData();
         return view;
     }

@@ -49,57 +49,63 @@ public class SmaManager {
      */
     public static final String UUID_CHARACTER_READ = "0000fff1-0000-1000-8000-00805f9b34fb";
 
-    public static final String SP_DEVICE_NAME    = "sp_device_name";
+    public static final String SP_DEVICE_NAME = "sp_device_name";
     public static final String SP_DEVICE_ADDRESS = "sp_device_address";
 
     public static final byte DATA_ERROR = 0x07;
 
     public static final class SET {
-        public static final byte ENABLE_ALARM       = 0x01;
-        public static final byte DISABLE_ALARM      = 0x02;
-        public static final byte TIME               = 0x03;
-        public static final byte ALARM_OCLOCK       = 0x04;
-        public static final byte GOAL_VOICE_MODE    = 0x05;
-        public static final byte GOAL_SCORE_RATIO   = 0x06;
-        public static final byte ENABLE_GOAL_LIGHT  = 0x0B;
+        public static final byte ENABLE_ALARM = 0x01;
+        public static final byte DISABLE_ALARM = 0x02;
+        public static final byte TIME = 0x03;
+        public static final byte ALARM_OCLOCK = 0x04;
+        public static final byte GOAL_VOICE_MODE = 0x05;
+        public static final byte GOAL_SCORE_RATIO = 0x06;
+        public static final byte ENABLE_GOAL_LIGHT = 0x0B;
         public static final byte DISABLE_GOAL_LIGHT = 0x0C;
         public static final byte DISABLE_GOAL_VOICE = 0x0D;
-        public static final byte ENABLE_GOAL_VOICE  = 0x0E;
+        public static final byte ENABLE_GOAL_VOICE = 0x0E;
         //        public static final byte INCREASE_TEMPERATURE_BY_1 = 0x10;
 //        public static final byte DECREASE_TEMPERATURE_BY_1 = 0x15;
-        public static final byte TIME_PER_LOOP      = 0x17;
-        public static final byte PUFF_PER_LOOP      = 0x19;
-        public static final byte TEMPERATURE        = 0x1C;
+        public static final byte TIME_PER_LOOP = 0x17;
+        public static final byte PUFF_PER_LOOP = 0x19;
+        public static final byte TEMPERATURE = 0x1C;
         //public static final byte VIBRATION_SWITCH = 0x21;
         //public static final byte STOP = 0x25;
         public static final byte VIBRATION_DISABLED = 0x27;
-        public static final byte VIBRATION_ENABLED  = 0x28;
-        public static final byte INTO_OTA           = 0x5A;
-        public static final byte PLAY_WORKE           = 0x3B;
-        public static final byte PLAY_WORKE2           = 0x26;
+        public static final byte VIBRATION_ENABLED = 0x28;
+        public static final byte INTO_OTA = 0x5A;
+        public static final byte PLAY_WORKE = 0x3B;
+        public static final byte PLAY_WORKE2 = 0x26;
+        public static final byte GET_PRODUCT = 0x3C;
+        public static final byte EDIT_DEVICE_BLUETOOTH_NAME = 0x5C;
     }
 
     public static final class BACK {
-        public static final byte VOLTAGE       = 0x1F;
-        public static final byte PUFF          = 0x20;
-        public static final byte SMOKE_COUNT   = 0x23;
+        public static final byte TIME = 0x04;
+        public static final byte WENDU = 0x05;
+        public static final byte FENGSU = 0x06;
+        public static final byte PRODUCT = 0x3C;
+        public static final byte VOLTAGE = 0x1F;
+        public static final byte PUFF = 0x20;
+        public static final byte SMOKE_COUNT = 0x23;
         public static final byte BEING_DORMANT = 0x1A;
-        public static final byte CHARGING      = 0x1D;
-        public static final byte NTC           = 0x2B;
-        public static final byte TEMPERATURE   = 0x2D;
-        public static final byte CHARGE_COUNT  = 0x1B;
+        public static final byte CHARGING = 0x1D;
+        public static final byte NTC = 0x2B;
+        public static final byte TEMPERATURE = 0x2D;
+        public static final byte CHARGE_COUNT = 0x1B;
     }
 
-    private         Context mContext;
+    private Context mContext;
     public volatile boolean isConnected;
-    private List<SmaCallback> mSmaCallbacks     = new ArrayList<>();
-    private BluetoothAdapter  sBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-    private SharedPreferences        mPreferences;
+    private List<SmaCallback> mSmaCallbacks = new ArrayList<>();
+    private BluetoothAdapter sBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+    private SharedPreferences mPreferences;
     private SharedPreferences.Editor mEditor;
 
-    private SmaMessenger  mSmaMessenger;
-    public  EaseConnector mEaseConnector;
-    private boolean       isExit;
+    private SmaMessenger mSmaMessenger;
+    public EaseConnector mEaseConnector;
+    private boolean isExit;
 
     private BroadcastReceiver mReceiver = new BroadcastReceiver() {
 
@@ -308,17 +314,37 @@ public class SmaManager {
         for (byte b : valuePart) {
             sb.append((char) b);
         }
-        Log.e("sb.toString()==",sb.toString());
-        float value;
-        if (!sb.toString().isEmpty()){
-            value = Float.parseFloat(new String(sb.toString().getBytes("gbk"),"utf-8"));
-        }else{
-            value = Float.parseFloat("");
-        }
+        Log.e("sb.toString()==", sb.toString());
+//        float value;
+//        if (!sb.toString().isEmpty()){
+//            value = Float.parseFloat(new String(sb.toString().getBytes("gbk"),"utf-8"));
+//        }else{
+//            value = Float.parseFloat("");
+//        }
 //        new String(sb.toString().getBytes("gbk"),"utf-8");
-//        float value = Float.parseFloat(sb.toString());
+        float value = Float.parseFloat(sb.toString());
         L.d("parseData " + EaseUtils.byteArray2HexString(data) + " , valuePart = " + sb.toString());
         switch (cmd) {
+            case BACK.PRODUCT:
+                for (SmaCallback bc : mSmaCallbacks) {
+                    bc.onReadProduct((int) value);
+                }
+                break;
+            case BACK.FENGSU:
+                for (SmaCallback bc : mSmaCallbacks) {
+                    bc.onReadFengsu((int) value);
+                }
+                break;
+            case BACK.WENDU:
+                for (SmaCallback bc : mSmaCallbacks) {
+                    bc.onReadWendu((int) value);
+                }
+                break;
+            case BACK.TIME:
+                for (SmaCallback bc : mSmaCallbacks) {
+                    bc.onReadTime((int) value);
+                }
+                break;
             case BACK.BEING_DORMANT:
                 for (SmaCallback bc : mSmaCallbacks) {
                     bc.onBeingDormant();
@@ -357,21 +383,6 @@ public class SmaManager {
             case BACK.CHARGE_COUNT:
                 for (SmaCallback bc : mSmaCallbacks) {
                     bc.onReadChargeCount((int) value);
-                }
-                break;
-            case SET.GOAL_VOICE_MODE:
-                for (SmaCallback bc : mSmaCallbacks) {
-                    bc.onReadHopesWendu((int) value);
-                }
-                break;
-            case SET.ALARM_OCLOCK:
-                for (SmaCallback bc : mSmaCallbacks) {
-                    bc.onReadHopesTime((int) value);
-                }
-                break;
-            case SET.GOAL_SCORE_RATIO:
-                for (SmaCallback bc : mSmaCallbacks) {
-                    bc.onReadHopesFengsu((int) value);
                 }
                 break;
         }
@@ -477,6 +488,43 @@ public class SmaManager {
             }
         }
         data[8] = (byte) (sum & 0xff);
+
+        mSmaMessenger.addMessage(new SmaMessenger.SmaMessage(mEaseConnector.mGatt, mEaseConnector.getGattCharacteristic
+                (UUID_SERVICE, UUID_CHARACTER_WRITE), data, SmaMessenger.MessageType.WRITE));
+    }
+
+    /**
+     * 写入命令到设备
+     *
+     * @param cmd   命令
+     * @param value 值，长度为6
+     */
+    public void write1(byte cmd, byte[] value) {
+        if (!isConnected) {
+            for (SmaCallback callback : mSmaCallbacks) {
+                callback.notConnected();
+            }
+            return;
+        }
+
+//        if (value.length != 6) {
+//            throw new IllegalArgumentException("value的长度必须为6");
+//        }
+
+        byte[] data = new byte[11];
+        System.arraycopy(value, 0, data, 2, value.length);
+        data[0] = 0x02;
+        data[1] = cmd;
+        data[9] = 0x0D;
+        data[10] = 0x0A;
+
+//        int sum = 0;
+//        for (int i = 0; i < data.length; i++) {
+//            if (i != 18) {
+//                sum += (data[i] & 0xff);
+//            }
+//        }
+//        data[8] = (byte) (sum & 0xff);
 
         mSmaMessenger.addMessage(new SmaMessenger.SmaMessage(mEaseConnector.mGatt, mEaseConnector.getGattCharacteristic
                 (UUID_SERVICE, UUID_CHARACTER_WRITE), data, SmaMessenger.MessageType.WRITE));

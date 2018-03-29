@@ -44,6 +44,28 @@ public interface SmaCallback {
     void onBeingDormant();
 
     /**
+     * 产品区分
+     */
+    void onReadProduct(int count);
+
+    /**
+     * 风速
+     */
+    void onReadFengsu(int count);
+
+    /**
+     * 温度
+     */
+    void onReadWendu(int count);
+
+    /**
+     * 时间
+     */
+    void onReadTime(int count);
+
+
+
+    /**
      * 正在充电
      *
      * @param voltage 充电时的电压值
@@ -70,11 +92,4 @@ public interface SmaCallback {
 
     void onReadChargeCount(int count);
 
-    /**
-     * HOPE-S 相关参数
-     * @param wendu 温度
-     */
-    void onReadHopesWendu(int wendu);
-    void onReadHopesTime(int time);
-    void onReadHopesFengsu(int fengsu);
 }

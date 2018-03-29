@@ -13,24 +13,23 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
-import com.f2prateek.rx.preferences2.RxSharedPreferences;
-import com.tbruyelle.rxpermissions2.RxPermissions;
-
 import com.bauwayhome.ec.MyApplication;
 import com.bauwayhome.ec.bean.User;
 import com.bauwayhome.ec.common.MyConstants2;
 import com.bauwayhome.ec.util.PreferencesUtils;
+import com.f2prateek.rx.preferences2.RxSharedPreferences;
+import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * Created by danny on 2018/3/5.
+ * Created by danny on 2018/1/9.
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-    //    public MyApplication myApplication;
+    public MyApplication myApplication;
     public Context mContext;
     public Unbinder unbinder;
     public RxPermissions rxPermissions;
@@ -42,7 +41,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mContext = this;
         rxPermissions = new RxPermissions(this);
-//        myApplication = MyApplication.getInstance();
+        myApplication = MyApplication.getInstance();
         setContentView(getLayoutRes());
         unbinder = ButterKnife.bind(this);
         initSP();
@@ -51,7 +50,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         initData();
         initEvent();
         initComplete(savedInstanceState);
-        MyApplication.addActivity(this);
+        myApplication.addActivity(this);
     }
 
     private void initSP() {
@@ -80,7 +79,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        MyApplication.removeActivity(this);
+        myApplication.removeActivity(this);
         unbinder.unbind();
         if (mDialog != null) {
             mDialog.dismiss();

@@ -134,6 +134,10 @@
     <string name="toast_yzm_1">验证码为空,请重新填写验证码</string>
     <string name="toast_yzm_2">网络连接异常</string>
 
+    <string name="view_device_index">查看设备指数</string>
+    <string name="set_device_index">设定设备指数</string>
+    <string name="unbind_device">解绑设备</string>
+
     <string name="plz_input_pwd_again">请再次输入密码</string>
     <string name="pwd_input_diff">两次输入的密码不一致</string>
     <string name="no_set">未设置</string>
@@ -240,7 +244,6 @@
     <string name="email">邮箱</string>
     <string name="log_out">注销登录</string>
     <string name="confirm_log_out_app">确定退出当前登录账号？</string>
-    <string name="unbind_device">解绑设备</string>
     <string name="usd">美元</string>
     <string name="rmb">人民币</string>
     <string name="hk">港币</string>
@@ -260,6 +263,20 @@
     <string name="account_info">账号信息</string>
     <string name="fragme_data">数据</string>
     <string name="fragme_about">关于</string>
+    <string name="selected_device">选择设备</string>
+    <string name="device_save_success">保存成功</string>
+    <string name="device_save_fail">保存失败</string>
+    <string name="device_add_fail">设备添加失败</string>
+    <string name="please_enable_the_bluetooth">请打开蓝牙</string>
+    <string name="device_not_connected">请先连接设备</string>
+    <string name="code_not_scan">请扫描产品码</string>
+    <string name="product_code">产品码:</string>
+    <string name="already_bind">已经绑定了设备</string>
+    <string name="searching">正在搜索…</string>
+    <string name="search_again">重试</string>
+    <string name="confirm_unbind_device">确认解绑当前设备？</string>
+    <string name="connect_device">连接设备</string>
+    <string name="scan">扫描</string>
 
     <string name="company_web">www.bauway.com</string>
     <string name="company_phone">0755–29089555</string>

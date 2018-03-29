@@ -3,9 +3,9 @@ package com.bauwayhome.ec;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
@@ -15,7 +15,6 @@ import android.widget.TextView;
 import com.bauwayhome.ec.Fragment.FragmentHome;
 import com.bauwayhome.ec.Fragment.FragmentMe;
 import com.bauwayhome.ec.Fragment.FragmentProductShow;
-import com.bauwayhome.ec.activity.WelcomeActivity;
 import com.bauwayhome.ec.adapter.FragmentTabAdapter;
 import com.bauwayhome.ec.base.BaseActivity;
 import com.bestmafen.easeblelib.util.EaseUtils;
@@ -147,39 +146,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     @Override
                     public void run() {
 //                        mTvChargeCount.setText(String.valueOf(count));
-                    }
-                });
-            }
-
-            @Override
-            public void onReadHopesWendu(final int wendu) {
-                runOnUiThread(new Runnable() {
-
-                    @Override
-                    public void run() {
-                        Log.e("wendu==", String.valueOf(wendu));
-                    }
-                });
-            }
-
-            @Override
-            public void onReadHopesTime(final int time) {
-                runOnUiThread(new Runnable() {
-
-                    @Override
-                    public void run() {
-                        Log.e("time==", String.valueOf(time));
-                    }
-                });
-            }
-
-            @Override
-            public void onReadHopesFengsu(final int fengsu) {
-                runOnUiThread(new Runnable() {
-
-                    @Override
-                    public void run() {
-                        Log.e("fengsu==", String.valueOf(fengsu));
                     }
                 });
             }

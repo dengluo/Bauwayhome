@@ -37,6 +37,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/ll_home_iqos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -57,6 +58,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_home_kaoyan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -88,6 +90,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/ll_home_box"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -108,6 +111,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/ll_home_small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
