@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/gray_divider_line"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -102,9 +103,9 @@
                 android:id="@+id/ll_view_device_index_context"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="@dimen/dp10"
                 android:layout_marginBottom="@dimen/dp10"
+                android:layout_marginTop="@dimen/dp10"
+                android:orientation="vertical"
                 android:visibility="gone">
 
                 <LinearLayout
@@ -131,7 +132,7 @@
                             android:textSize="14dp" />
                     </LinearLayout>
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_30"
@@ -141,13 +142,24 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tv_loop_time"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:layout_margin="@dimen/dp10"
-                            android:text="300 S"
+                            android:text="300"
                             android:textColor="@color/white"
                             android:textSize="14dp" />
-                    </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="@dimen/dp10"
+                            android:text=" S"
+                            android:textColor="@color/white"
+                            android:textSize="14dp" />
+                    </RelativeLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -175,7 +187,7 @@
                             android:textSize="14dp" />
                     </LinearLayout>
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_30"
@@ -185,13 +197,24 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tv_dcv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:layout_margin="@dimen/dp10"
-                            android:text="4.12 V"
+                            android:text="4.12"
                             android:textColor="@color/white"
                             android:textSize="14dp" />
-                    </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="@dimen/dp10"
+                            android:text=" V"
+                            android:textColor="@color/white"
+                            android:textSize="14dp" />
+                    </RelativeLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -219,7 +242,7 @@
                             android:textSize="14dp" />
                     </LinearLayout>
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_30"
@@ -229,13 +252,24 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tv_charge_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:layout_margin="@dimen/dp10"
-                            android:text="0 T"
+                            android:text="0"
                             android:textColor="@color/white"
                             android:textSize="14dp" />
-                    </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="@dimen/dp10"
+                            android:text=" T"
+                            android:textColor="@color/white"
+                            android:textSize="14dp" />
+                    </RelativeLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -273,6 +307,7 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tv_charge_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/dp10"
@@ -307,7 +342,8 @@
                             android:textSize="14dp" />
                     </LinearLayout>
 
-                    <LinearLayout
+
+                    <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_30"
@@ -317,13 +353,24 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tv_temp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:layout_margin="@dimen/dp10"
-                            android:text="193 ℃"
+                            android:text="193"
                             android:textColor="@color/white"
                             android:textSize="14dp" />
-                    </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="@dimen/dp10"
+                            android:text=" ℃"
+                            android:textColor="@color/white"
+                            android:textSize="14dp" />
+                    </RelativeLayout>
                 </LinearLayout>
 
                 <LinearLayout
@@ -351,7 +398,7 @@
                             android:textSize="14dp" />
                     </LinearLayout>
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="@dimen/dp_30"
@@ -361,57 +408,24 @@
                         android:orientation="horizontal">
 
                         <TextView
+                            android:id="@+id/tv_use_num"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
                             android:layout_margin="@dimen/dp10"
-                            android:text="0 P"
+                            android:text="0"
                             android:textColor="@color/white"
                             android:textSize="14dp" />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/dp_20"
-                    android:layout_marginRight="@dimen/dp_20"
-                    android:layout_marginTop="@dimen/dp10"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/shape_circle_blue"
-                        android:gravity="center"
-                        android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
                             android:layout_margin="@dimen/dp10"
-                            android:text="@string/shake"
+                            android:text=" P"
                             android:textColor="@color/white"
                             android:textSize="14dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/dp_30"
-                        android:layout_weight="2"
-                        android:background="@drawable/shape_circle_blue"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/dp10"
-                            android:text="开关"
-                            android:textColor="@color/white"
-                            android:textSize="14dp" />
-                    </LinearLayout>
+                    </RelativeLayout>
                 </LinearLayout>
             </LinearLayout>
 
@@ -465,30 +479,25 @@
                 android:id="@+id/ll_set_device_index_context"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:visibility="gone"
                 android:orientation="vertical"
-                >
+                android:visibility="gone">
 
                 <LinearLayout
-                    android:layout_marginTop="@dimen/dp10"
-                    style="@style/set_ll">
+                    style="@style/set_ll"
+                    android:layout_marginTop="@dimen/dp10">
 
-                    <LinearLayout
-                        style="@style/set_ll_1">
+                    <LinearLayout style="@style/set_ll_1">
 
-                        <LinearLayout
-                            style="@style/set_ll_2">
+                        <LinearLayout style="@style/set_ll_2">
 
                             <TextView
                                 android:id="@+id/bt_off"
                                 style="@style/set_bt"
-                                android:text="@string/off"
-                                />
+                                android:text="@string/off" />
 
                             <RelativeLayout
                                 style="@style/set_base_center_view"
-                                android:layout_gravity="center"
-                                >
+                                android:layout_gravity="center">
 
                                 <android.support.v7.widget.SwitchCompat
                                     android:id="@+id/bt_switch_shake"
@@ -498,179 +507,153 @@
                                     android:padding="3dp"
                                     android:switchMinWidth="20dp"
                                     android:textOff=""
-                                    android:textOn=""
-                                    />
+                                    android:textOn="" />
                             </RelativeLayout>
 
                             <TextView
                                 android:id="@+id/bt_on"
                                 style="@style/set_bt"
-                                android:text="@string/on"
-                                />
+                                android:text="@string/on" />
                         </LinearLayout>
 
                         <TextView
                             style="@style/every_day_use_number"
-                            android:text="@string/vibration"
-                            />
+                            android:text="@string/vibration" />
                     </LinearLayout>
 
                     <LinearLayout
                         style="@style/set_ll_1"
                         android:visibility="gone">
 
-                        <LinearLayout
-                            style="@style/set_ll_2">
+                        <LinearLayout style="@style/set_ll_2">
 
                             <ImageButton
                                 android:id="@+id/bt_user_number_subtract"
                                 style="@style/set_bt"
-                                app:srcCompat="@drawable/vector_drawable_minus"/>
+                                app:srcCompat="@drawable/vector_drawable_minus" />
 
                             <EditText
                                 android:id="@+id/et_set_use_number"
                                 style="@style/set_et"
-                                android:text="300"/>
+                                android:text="300" />
 
                             <ImageButton
                                 android:id="@+id/bt_user_number_add"
                                 style="@style/set_bt"
-                                app:srcCompat="@drawable/vector_drawable_plus"
-                                />
+                                app:srcCompat="@drawable/vector_drawable_plus" />
                         </LinearLayout>
 
                         <TextView
                             android:id="@+id/textView4"
                             style="@style/every_day_use_number"
-                            android:text="@string/every_day_use_num_plan"/>
+                            android:text="@string/every_day_use_num_plan" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        style="@style/set_ll_3">
+                    <LinearLayout style="@style/set_ll_3">
 
-                        <LinearLayout
-                            style="@style/set_ll_2">
+                        <LinearLayout style="@style/set_ll_2">
 
                             <ImageButton
                                 android:id="@+id/bt_loop_number_subtract"
                                 style="@style/set_bt"
-                                app:srcCompat="@drawable/vector_drawable_minus"
-                                />
+                                app:srcCompat="@drawable/vector_drawable_minus" />
 
                             <EditText
                                 android:id="@+id/et_set_loop_number_plan"
                                 style="@style/set_et"
-                                android:text="15"/>
+                                android:text="15" />
 
                             <ImageButton
                                 android:id="@+id/bt_loop_number_add"
                                 style="@style/set_bt"
-                                app:srcCompat="@drawable/vector_drawable_plus"
-                                />
+                                app:srcCompat="@drawable/vector_drawable_plus" />
                         </LinearLayout>
 
                         <TextView
                             style="@style/every_day_use_number"
-                            android:text="@string/loop_use_num_plan"
-                            />
-                    </LinearLayout>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_marginTop="@dimen/dp10"
-                    android:layout_marginBottom="@dimen/dp5"
-                    style="@style/set_ll">
-
-                    <LinearLayout
-                        style="@style/set_ll_1">
-
-                        <LinearLayout
-                            style="@style/set_ll_2">
-
-                            <ImageButton
-                                android:id="@+id/bt_temp_subtract"
-                                style="@style/set_bt"
-                                app:srcCompat="@drawable/vector_drawable_minus"
-                                />
-
-                            <EditText
-                                android:id="@+id/et_temp"
-                                style="@style/set_et"
-                                android:text="225"/>
-
-                            <ImageButton
-                                android:id="@+id/bt_temp_add"
-                                style="@style/set_bt"
-                                app:srcCompat="@drawable/vector_drawable_plus"
-                                />
-                        </LinearLayout>
-
-                        <TextView
-                            style="@style/every_day_use_number"
-                            android:text="@string/temp_set"
-                            />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        style="@style/set_ll_3">
-
-                        <LinearLayout
-                            style="@style/set_ll_2">
-
-                            <ImageButton
-                                android:id="@+id/bt_time_subtract"
-                                style="@style/set_bt"
-                                app:srcCompat="@drawable/vector_drawable_minus"
-                                />
-
-                            <EditText
-                                android:id="@+id/et_time"
-                                style="@style/set_et"
-                                android:text="5"/>
-
-                            <ImageButton
-                                android:id="@+id/bt_time_add"
-                                style="@style/set_bt"
-                                app:srcCompat="@drawable/vector_drawable_plus"
-                                />
-                        </LinearLayout>
-
-                        <TextView
-                            style="@style/every_day_use_number"
-                            android:text="@string/work_time_set"
-                            />
+                            android:text="@string/loop_use_num_plan" />
                     </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout
                     style="@style/set_ll"
-                    android:visibility="gone"
-                    >
+                    android:layout_marginBottom="@dimen/dp5"
+                    android:layout_marginTop="@dimen/dp10">
 
-                    <LinearLayout
-                        style="@style/set_ll_1">
+                    <LinearLayout style="@style/set_ll_1">
 
-                        <LinearLayout
-                            style="@style/set_ll_2">
+                        <LinearLayout style="@style/set_ll_2">
+
+                            <ImageButton
+                                android:id="@+id/bt_temp_subtract"
+                                style="@style/set_bt"
+                                app:srcCompat="@drawable/vector_drawable_minus" />
+
+                            <EditText
+                                android:id="@+id/et_temp"
+                                style="@style/set_et"
+                                android:text="225" />
+
+                            <ImageButton
+                                android:id="@+id/bt_temp_add"
+                                style="@style/set_bt"
+                                app:srcCompat="@drawable/vector_drawable_plus" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/every_day_use_number"
+                            android:text="@string/temp_set" />
+                    </LinearLayout>
+
+                    <LinearLayout style="@style/set_ll_3">
+
+                        <LinearLayout style="@style/set_ll_2">
+
+                            <ImageButton
+                                android:id="@+id/bt_time_subtract"
+                                style="@style/set_bt"
+                                app:srcCompat="@drawable/vector_drawable_minus" />
+
+                            <EditText
+                                android:id="@+id/et_time"
+                                style="@style/set_et"
+                                android:text="5" />
+
+                            <ImageButton
+                                android:id="@+id/bt_time_add"
+                                style="@style/set_bt"
+                                app:srcCompat="@drawable/vector_drawable_plus" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/every_day_use_number"
+                            android:text="@string/work_time_set" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/set_ll"
+                    android:visibility="gone">
+
+                    <LinearLayout style="@style/set_ll_1">
+
+                        <LinearLayout style="@style/set_ll_2">
 
                             <EditText
                                 android:id="@+id/et_price"
                                 style="@style/set_et"
                                 android:layout_width="160dp"
-                                android:text="10"/>
+                                android:text="10" />
                         </LinearLayout>
 
                         <TextView
                             style="@style/every_day_use_number"
-                            android:text="@string/smoke_price"
-                            />
+                            android:text="@string/smoke_price" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        style="@style/set_ll_3">
+                    <LinearLayout style="@style/set_ll_3">
 
-                        <RelativeLayout
-                            style="@style/set_ll_2">
+                        <RelativeLayout style="@style/set_ll_2">
 
                             <Spinner
                                 android:id="@+id/spinner_money_select"
@@ -681,15 +664,12 @@
                                 android:backgroundTint="@color/white_1"
                                 android:dropDownHorizontalOffset="40dp"
                                 android:dropDownVerticalOffset="30dp"
-                                android:popupBackground="@color/blue_1"
-                                >
-                            </Spinner>
+                                android:popupBackground="@color/blue_1"></Spinner>
                         </RelativeLayout>
 
                         <TextView
                             style="@style/every_day_use_number"
-                            android:text="@string/money_type"
-                            />
+                            android:text="@string/money_type" />
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -700,8 +680,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/dp10"
                 android:layout_marginRight="@dimen/dp10"
-                android:background="@drawable/shape_circle_heise"
                 android:layout_marginTop="5dp"
+                android:background="@drawable/shape_circle_heise"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:padding="@dimen/dp_10">
@@ -718,6 +698,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tv_device_state"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/unbind_device"
