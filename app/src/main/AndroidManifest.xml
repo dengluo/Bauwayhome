@@ -64,9 +64,10 @@
         <activity android:name=".activity.PersonInfoActivity" />
         <activity android:name=".activity.ChangePwdActivity" />
         <activity android:name=".activity.PerfectInfoActivity" />
-        <activity android:name=".activity.PerfectInfoActivity2" />
         <activity android:name=".activity.IqosProductActivity" />
         <activity android:name=".activity.BindDeviceActivity" />
+        <activity android:name=".activity.EditInfoActivity" />
+        <activity android:name=".activity.ValidateActivity" />
     </application>
 
 </manifest>

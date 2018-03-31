@@ -1,6 +1,6 @@
 package com.bauwayhome.ec.activity;
 
-import android.content.Intent;
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -24,28 +24,34 @@ import com.bauwayhome.ec.bean.JsonBean;
 import com.bauwayhome.ec.bean.User;
 import com.bauwayhome.ec.util.DialogUtil;
 import com.bauwayhome.ec.util.GetJsonDataUtil;
+import com.bauwayhome.ec.util.NetworkUtil;
+import com.bauwayhome.ec.util.ToastUtil;
 import com.bigkoo.pickerview.OptionsPickerView;
 import com.blankj.utilcode.util.ToastUtils;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import cn.bmob.sms.BmobSMS;
+import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.QueryListener;
 import cn.bmob.v3.listener.UpdateListener;
 
 /**
- * 完善机构注册信息
+ * 编辑注册信息
  * danny
  */
-public class PerfectInfoActivity extends BaseActivity implements WheelNumDialog.OnDialogBackListener{
+public class EditInfoActivity extends BaseActivity implements WheelNumDialog.OnDialogBackListener{
 
-    private static final String TAG = "PerfectInfoActivity";
+    private static final String TAG = "EditInfoActivity";
 
     @BindView(R.id.et_perfectinfo_name)
     EditText et_perfectinfo_name;
@@ -90,6 +96,7 @@ public class PerfectInfoActivity extends BaseActivity implements WheelNumDialog.
     private int currentButton = 0;
     private String currentTall = "155cm";
     private String currentWeight = "57.3kg";
+    private Context ctx;
 
     private void showNumDialog(int value) {
         WheelNumDialog numDialog = new WheelNumDialog(this, R.style.dialog,
@@ -123,7 +130,7 @@ public class PerfectInfoActivity extends BaseActivity implements WheelNumDialog.
                     break;
 
                 case MSG_LOAD_FAILED:
-                    Toast.makeText(PerfectInfoActivity.this, "Parse Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditInfoActivity.this, "Parse Failed", Toast.LENGTH_SHORT).show();
                     break;
                 case MSG_LOAD_ADDRESS:
                     tv_perfectinfo_address.setText(msg.obj.toString());
@@ -242,7 +249,7 @@ public class PerfectInfoActivity extends BaseActivity implements WheelNumDialog.
 
     @Override
     protected int getLayoutRes() {
-        return R.layout.activity_perfectinfo;
+        return R.layout.activity_editinfo;
     }
 
     @Override
@@ -275,11 +282,63 @@ public class PerfectInfoActivity extends BaseActivity implements WheelNumDialog.
                         selectText = radioButton.getText().toString();
                     }
                 });
+        queryData();
+    }
+
+    /*
+        Bmob查询数据
+         */
+    public void queryData(){
+        if (!NetworkUtil.isNetworkAvailable(this)){
+            ToastUtil.showShortToast(ctx,"网络连接异常!");
+            return;
+        }
+        String phone = userRxPreferences.getString(Constants.LOGIN_EMAIL).get();
+        BmobQuery query =new BmobQuery("_User");
+        query.addWhereEqualTo("username", phone);
+        query.setLimit(2);
+        query.order("createdAt");
+        //v3.5.0版本提供`findObjectsByTable`方法查询自定义表名的数据
+        query.findObjectsByTable(new QueryListener<JSONArray>() {
+            @Override
+            public void done(JSONArray ary, BmobException e) {
+                if(e==null){
+                    Log.i("bmob","查询成功："+ary.toString());
+                    try {
+                        JSONObject object = (JSONObject) ary.get(0);
+                        if (object.has("info")){
+                            et_perfectinfo_name.setText(object.optJSONArray("info").getString(0));
+                            if (object.optJSONArray("info").getString(1).equals("男")){
+                                radio0.setChecked(true);
+                                radio0.isChecked();
+                            }else {
+                                radio1.setChecked(true);
+                                radio1.isChecked();
+                            }
+//                            tv_personinfo_sex.setText(object.optJSONArray("info").getString(1));
+                            et_perfectinfo_age.setText(object.optJSONArray("info").getString(2));
+                            tv_perfectinfo_height.setText(object.optJSONArray("info").getString(3));
+                            tv_perfectinfo_weight.setText(object.optJSONArray("info").getString(4));
+                            et_perfectinfo_organization_name.setText(object.optJSONArray("info").getString(5));
+                            et_perfectinfo_legal_representative.setText(object.optJSONArray("info").getString(6));
+                            et_perfectinfo_personinfo_head.setText(object.optJSONArray("info").getString(7));
+                            et_perfectinfo_registration_mark.setText(object.optJSONArray("info").getString(8));
+                            tv_perfectinfo_address.setText(object.optJSONArray("info").getString(9));
+                        }
+                    } catch (JSONException e1) {
+                        e1.printStackTrace();
+                    }
+                }else{
+                    Log.i("bmob","失败："+e.getMessage()+","+e.getErrorCode());
+                }
+            }
+        });
     }
 
     @Override
     protected void init(Bundle savedInstanceState) {
         mHandler.sendEmptyMessage(MSG_LOAD_DATA);
+        ctx = EditInfoActivity.this;
     }
 
 
@@ -298,7 +357,7 @@ public class PerfectInfoActivity extends BaseActivity implements WheelNumDialog.
                 if (isLoaded) {
                     ShowPickerView();
                 } else {
-                    Toast.makeText(PerfectInfoActivity.this, "Please waiting until the data is parsed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditInfoActivity.this, "Please waiting until the data is parsed", Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.iv_return:
@@ -340,19 +399,19 @@ public class PerfectInfoActivity extends BaseActivity implements WheelNumDialog.
         }
         String[] arr = {pname, sex, age, height, weight,name, representative, head, mark, address};
 
-        DialogUtil.progressDialog(PerfectInfoActivity.this, getString(R.string.register_now), false);
+        DialogUtil.progressDialog(EditInfoActivity.this, getString(R.string.change_now), false);
         String objectId = BmobUser.getCurrentUser().getObjectId();
         final String phoneNumber = BmobUser.getCurrentUser().getMobilePhoneNumber();
         final User user = new User();
         user.setInfo(arr);
+        user.setSessionToken(userRxPreferences.getString(Constants.SessionToken).get());
         user.update(objectId, new UpdateListener() {
             @Override
             public void done(BmobException e) {
                 if (e == null) {
                     Log.i("bmob", "更新成功" + phoneNumber);
                     userRxPreferences.getString(Constants.LOGIN_PHONE).set(phoneNumber);
-                    startActivity(new Intent(PerfectInfoActivity.this, LoginActivity.class));
-                    PerfectInfoActivity.this.finish();
+                    finish();
                 } else {
                     Log.i("bmob", "更新失败：" + e.getMessage() + "," + e.getErrorCode());
                 }
@@ -381,5 +440,11 @@ public class PerfectInfoActivity extends BaseActivity implements WheelNumDialog.
             tv_perfectinfo_weight.setTextColor(getResources().getColor(
                     R.color.black));
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        queryData();
     }
 }

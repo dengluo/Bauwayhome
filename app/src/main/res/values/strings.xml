@@ -256,10 +256,24 @@
     <string name="home_product_box">盒子系列</string>
     <string name="home_product_small">小烟系列</string>
     <string name="fragme_exit">退出登陆</string>
+    <string name="plz_phone_format">请输入有效的手机号码</string>
+    <string name="code_error">验证码错误</string>
+    <string name="text_agreement_myz_tips">我要开启30天免验证</string>
+    <string name="account_validate">账号验证</string>
+    <string name="person_name1">姓名</string>
+    <string name="person_sex1">性别</string>
+    <string name="person_age1">年龄</string>
+    <string name="person_height1">身高</string>
+    <string name="person_weight1">体重</string>
+    <string name="edit">编辑</string>
+    <string name="confirm_validate">30日免验证期限已到,请立即前往验证</string>
+    <string name="tip_validate">账号信息需要验证,通过以后方可使用该功能</string>
+    <string name="validate">验证</string>
 
     <string name="help_docs">帮助文档</string>
     <string name="version_num">版本</string>
     <string name="about_us">关于我们</string>
+    <string name="me">我</string>
     <string name="account_info">账号信息</string>
     <string name="fragme_data">数据</string>
     <string name="fragme_about">关于</string>
@@ -277,6 +291,7 @@
     <string name="confirm_unbind_device">确认解绑当前设备？</string>
     <string name="connect_device">连接设备</string>
     <string name="scan">扫描</string>
+    <string name="change_now">正在修改…</string>
 
     <string name="company_web">www.bauway.com</string>
     <string name="company_phone">0755–29089555</string>

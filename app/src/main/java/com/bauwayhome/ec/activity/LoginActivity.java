@@ -141,6 +141,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
 //                    Log.e(TAG, userRxPreferences.getString(Constants.LOGIN_EMAIL).get()+"//"+userRxPreferences.getString(Constants.LOGIN_PHONE).get());
                     userRxPreferences.getString(Constants.LOGIN_EMAIL).set(email);
                     userRxPreferences.getString(Constants.LOGIN_PWD).set(pwd);
+                    userRxPreferences.getString(Constants.SessionToken).set(user.getSessionToken());
                     PreferencesUtils.putEntity(LoginActivity.this, user);
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     LoginActivity.this.finish();

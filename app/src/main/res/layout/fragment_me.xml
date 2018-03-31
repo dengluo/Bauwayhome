@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="@string/fragme_personinfo"
+            android:text="@string/me"
             android:textColor="@color/white"
             android:textSize="18sp" />
     </RelativeLayout>
@@ -172,8 +172,8 @@
                 android:id="@+id/tv_version_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="v1.1"
                 android:layout_margin="5dp"
+                android:text="v1.1"
                 android:textColor="@color/blue_ice"
                 android:textSize="14dp" />
         </RelativeLayout>

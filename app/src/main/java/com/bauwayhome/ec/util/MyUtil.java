@@ -1,19 +1,3 @@
-/*
- * Copyright (c) 2016 咖枯 <kaku201313@163.com | 3772304@qq.com>
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- *
- */
 package com.bauwayhome.ec.util;
 
 import android.app.Activity;
@@ -35,8 +19,13 @@ import android.os.Environment;
 import android.os.SystemClock;
 import android.os.Vibrator;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+
+import com.bauwayhome.ec.App.Constants;
+import com.bauwayhome.ec.R;
+import com.bestmafen.easeblelib.util.L;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -46,14 +35,11 @@ import java.text.DecimalFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.bauwayhome.ec.App.Constants;
-import com.bauwayhome.ec.R;
-
 /**
  * 工具类
  *
- * @author Danny
- * @version 1.0 2018/02
+ * @author danny
+ * @version 1.0 2018/03
  */
 public class MyUtil {
 
@@ -61,7 +47,6 @@ public class MyUtil {
      * Log tag ：MyUtil
      */
     private static final String LOG_TAG = "MyUtil";
-
 
 
     public static void setStatusBarTranslucent(ViewGroup vg, Activity activity) {
@@ -116,7 +101,7 @@ public class MyUtil {
             resId = field.getInt(field.getName());
         } catch (Exception e) {
             resId = R.mipmap.ic_launcher;
-            LogUtil.e(LOG_TAG, "setWallPaper(Context context): " + e.toString());
+            L.e(LOG_TAG, "setWallPaper(Context context): " + e.toString());
         }
         return resId;
     }
@@ -162,7 +147,7 @@ public class MyUtil {
                         null, options);
                 bitmap = fastBlur(context, 0, value, bitmap, 20);
             } catch (FileNotFoundException e) {
-                LogUtil.e(LOG_TAG, "getWallPaperBlurDrawable(Context context): " + e.toString());
+                L.e(LOG_TAG, "getWallPaperBlurDrawable(Context context): " + e.toString());
                 bitmap = setWallpaperBlur(context, options, share);
             }
         } else {
@@ -401,7 +386,7 @@ public class MyUtil {
             bitmap.setPixels(pix, 0, w, 0, 0, w, h);
             return (bitmap);
         } catch (Exception e) {
-            LogUtil.e("MyUtil", e.toString());
+            L.e("MyUtil", e.toString());
 /*            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN) {
                 return blurBitmap(context, sentBitmap, radius);
             } else {*/
@@ -429,7 +414,6 @@ public class MyUtil {
         output.copyTo(bitmap);
         return bitmap;
     }*/
-
 
 
     /**
@@ -852,9 +836,25 @@ public class MyUtil {
             PackageInfo packInfo = packageManager.getPackageInfo(context.getPackageName(), 0);
             version = packInfo.versionName;
         } catch (PackageManager.NameNotFoundException e) {
-            LogUtil.e(LOG_TAG, "assignViews: " + e.toString());
+            L.e(LOG_TAG, "assignViews: " + e.toString());
             version = context.getString(R.string.version);
         }
         return version;
+    }
+
+    /**
+     * 验证手机格式
+     */
+    public static boolean isMobileNO(String mobiles) {
+    /*
+     * 移动：134、135、136、137、138、139、150、151、157(TD)、158、159、187、188
+     * 联通：130、131、132、152、155、156、185、186 电信：133、153、180、189、（1349卫通）
+     * 总结起来就是第一位必定为1，第二位必定为3或5或8，其他位置的可以为0-9
+     */
+        String telRegex = "[1][3456789]\\d{9}";// "[1]"代表第1位为数字1，"[358]"代表第二位可以为3、5、8中的一个，"\\d{9}"代表后面是可以是0～9的数字，有9位。
+        if (TextUtils.isEmpty(mobiles))
+            return false;
+        else
+            return mobiles.matches(telRegex);
     }
 }

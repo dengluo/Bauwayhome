@@ -3,7 +3,7 @@ package com.bauwayhome.ec.bean;
 import cn.bmob.v3.BmobUser;
 
 /**
- * Created by danny on 2018/2/28.
+ * Created by danny on 2018/3/10.
  */
 
 public class User extends BmobUser {
@@ -11,6 +11,7 @@ public class User extends BmobUser {
     private String app_msg;
     private String app_name;
     private Boolean isPerson;
+    private Boolean SMSBOOL;
     private String [] info;
 
     public String getApp_msg() {
@@ -29,12 +30,12 @@ public class User extends BmobUser {
         this.app_name = app_name;
     }
 
-    public Boolean getPerson() {
+    public Boolean getIsPerson() {
         return isPerson;
     }
 
-    public void setPerson(Boolean person) {
-        isPerson = person;
+    public void setIsPerson(Boolean isPerson) {
+        this.isPerson = isPerson;
     }
 
     public String [] getInfo() {
@@ -43,5 +44,13 @@ public class User extends BmobUser {
 
     public void setInfo(String[] info) {
         this.info = info;
+    }
+
+    public Boolean getSMSBOOL() {
+        return SMSBOOL;
+    }
+
+    public void setSMSBOOL(Boolean SMSBOOL) {
+        this.SMSBOOL = SMSBOOL;
     }
 }

@@ -5,6 +5,6 @@
     <!-- 默认时的图片 -->
     <item android:color="@color/sayes_txt_gray" android:state_checked="false"/>
     <!-- 选择时的图片 -->
-    <item android:color="@color/bg_main" android:state_checked="true"/>
+    <item android:color="@color/blue_ice" android:state_checked="true"/>
 
 </selector>
