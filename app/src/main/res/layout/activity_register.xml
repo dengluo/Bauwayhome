@@ -157,17 +157,6 @@
 
 
                 <!--按钮部分-->
-                <LinearLayout
-                    style="@style/login_ll_two"
-                    android:visibility="gone"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp">
-
-                    <Button
-                        android:id="@+id/bt_register"
-                        style="@style/bt_style"
-                        android:text="@string/grregister" />
-                </LinearLayout>
 
                 <LinearLayout
                     style="@style/register_ll_height"
@@ -175,7 +164,7 @@
                     android:paddingRight="10dp">
 
                     <Button
-                        android:id="@+id/bt_register2"
+                        android:id="@+id/bt_register"
                         style="@style/bt_style"
                         android:text="@string/jgregister" />
                 </LinearLayout>

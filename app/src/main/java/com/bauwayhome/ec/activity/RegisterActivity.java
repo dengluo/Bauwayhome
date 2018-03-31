@@ -33,7 +33,7 @@ import cn.bmob.v3.listener.SaveListener;
 
 public class RegisterActivity extends BaseActivity {
 
-    private static final String TAG = "RegisterActivity2";
+    private static final String TAG = "RegisterActivity";
 
     @BindView(R.id.et_register_email)
     EditText et_phone_code;
@@ -43,8 +43,6 @@ public class RegisterActivity extends BaseActivity {
     EditText mEtRegisterPwdAgain;
     @BindView(R.id.bt_register)
     Button mBtRegister;
-    @BindView(R.id.bt_register2)
-    Button mBtRegister2;
     @BindView(R.id.iv_return)
     ImageView mIvReturn;
     @BindView(R.id.txt_agreement)
@@ -74,7 +72,7 @@ public class RegisterActivity extends BaseActivity {
 
     @Override
     protected void initEvent() {
-        setOnListener(new ForgetPasswordActivity.UpdateUIVericationCode() {
+        setOnListener(new UpdateUIVericationCode() {
             @Override
             public void setupdateUIVericationCode() {
                 upDatePhoneVerificationCodeUI();
@@ -128,17 +126,14 @@ public class RegisterActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.iv_return, R.id.bt_register, R.id.bt_register2, R.id.verification_code, R.id.txt_agreement})
+    @OnClick({R.id.iv_return, R.id.bt_register, R.id.verification_code, R.id.txt_agreement})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_return:
                 this.finish();
                 break;
-            case R.id.bt_register://注册
+            case R.id.bt_register://机构注册
                 register();
-                break;
-            case R.id.bt_register2://机构注册
-                register2();
                 break;
             case R.id.verification_code://验证码
                 hideKeyboard();
@@ -183,79 +178,7 @@ public class RegisterActivity extends BaseActivity {
 
     }
 
-
     private void register() {
-        final String et_phone = et_phone_code.getText().toString().trim();
-        if (TextUtils.isEmpty(et_phone)) {
-            ToastUtils.showShort(R.string.plz_input_phone);
-            return;
-        }
-        if (!MyUtil.isMobileNO(et_phone)) {
-            ToastUtils.showShort(R.string.plz_phone_format);
-            return;
-        }
-        String register_code = et_register_code.getText().toString().trim();
-        if (TextUtils.isEmpty(register_code) && !chekbox_agreement_myz.isChecked()) {
-            ToastUtils.showShort(R.string.plz_input_yzm);
-            return;
-        }
-        String pwd = mEtRegisterPwd.getText().toString().trim();
-        if (TextUtils.isEmpty(pwd)) {
-            ToastUtils.showShort(R.string.plz_input_pwd);
-            return;
-        }
-        String pwdAgain = mEtRegisterPwdAgain.getText().toString().trim();
-        if (TextUtils.isEmpty(pwdAgain)) {
-            ToastUtils.showShort(R.string.plz_input_pwd_again);
-            return;
-        }
-        if (!pwd.equals(pwdAgain)) {
-            ToastUtils.showShort(R.string.pwd_input_diff);
-            return;
-        }
-        if (!chekbox_agreement.isChecked()) {
-            ToastUtils.showShort("请勾选服务条款");
-            return;
-        }
-        DialogUtil.progressDialog(mContext, getString(R.string.register_now), false);
-        mUser.setUsername(et_phone_code.getText().toString().trim());
-        mUser.setMobilePhoneNumber(et_phone_code.getText().toString().trim());
-        mUser.setPassword(mEtRegisterPwd.getText().toString().trim());
-        mUser.setMobilePhoneNumberVerified(true);
-        mUser.setApp_name(AppUtils.getAppName());
-        mUser.setIsPerson(true);
-        if (chekbox_agreement_myz.isChecked()) {
-            mUser.setSMSBOOL(false);
-        } else {
-            mUser.setSMSBOOL(true);
-        }
-
-        mUser.signOrLogin(register_code, new SaveListener<User>() {
-            @Override
-            public void done(User user, BmobException e) {
-                if (e == null) {
-                    // ToastUtils.showShort(R.string.register_success_plz_check_email);
-                    ToastUtils.showShort(R.string.register_success_plz_check_phone);
-                    userRxPreferences.getString(Constants.LOGIN_PHONE).set(et_phone_code.getText().toString().trim());
-                    startActivity(new Intent(mContext, PerfectInfoActivity.class));
-                    RegisterActivity.this.finish();
-                } else {
-                    Log.e(TAG, "done: " + e.getErrorCode() + ":" + e.getMessage());
-                    if (203 == e.getErrorCode()) {
-                        ToastUtils.showShort(R.string.phone_already_register);
-                    } else if (207 == e.getErrorCode()) {
-                        ToastUtils.showShort(R.string.code_error);
-                    } else {
-                        ToastUtils.showShort(R.string.register_failure);
-                    }
-                }
-                DialogUtil.hide();
-            }
-        });
-
-    }
-
-    private void register2() {
         final String et_phone = et_phone_code.getText().toString().trim();
         if (TextUtils.isEmpty(et_phone)) {
             ToastUtils.showShort(R.string.plz_input_phone);
@@ -300,9 +223,8 @@ public class RegisterActivity extends BaseActivity {
         } else {
             mUser.setSMSBOOL(true);
         }
-
-        if (chekbox_agreement_myz.isChecked()) {
-            mUser.signUp(new SaveListener<User>() {
+        if (chekbox_agreement_myz.isChecked()){
+            mUser.signUp( new SaveListener<User>() {
                 @Override
                 public void done(User user, BmobException e) {
                     if (e == null) {
@@ -315,7 +237,7 @@ public class RegisterActivity extends BaseActivity {
                         Log.e(TAG, "done: " + e.getErrorCode() + ":" + e.getMessage());
                         if (203 == e.getErrorCode()) {
                             ToastUtils.showShort(R.string.phone_already_register);
-                        } else if (207 == e.getErrorCode()) {
+                        } else if(207 == e.getErrorCode()) {
                             ToastUtils.showShort(R.string.code_error);
                         } else {
                             ToastUtils.showShort(R.string.register_failure);
@@ -324,7 +246,8 @@ public class RegisterActivity extends BaseActivity {
                     DialogUtil.hide();
                 }
             });
-        } else {
+        }else{
+            Log.e("register_code",register_code);
             mUser.signOrLogin(register_code, new SaveListener<User>() {
                 @Override
                 public void done(User user, BmobException e) {
@@ -338,7 +261,7 @@ public class RegisterActivity extends BaseActivity {
                         Log.e(TAG, "done: " + e.getErrorCode() + ":" + e.getMessage());
                         if (203 == e.getErrorCode()) {
                             ToastUtils.showShort(R.string.phone_already_register);
-                        } else if (207 == e.getErrorCode()) {
+                        } else if(207 == e.getErrorCode()) {
                             ToastUtils.showShort(R.string.code_error);
                         } else {
                             ToastUtils.showShort(R.string.register_failure);
@@ -348,18 +271,16 @@ public class RegisterActivity extends BaseActivity {
                 }
             });
         }
-
-
     }
 
     public interface UpdateUIVericationCode {
         public void setupdateUIVericationCode();
     }
 
-    private ForgetPasswordActivity.UpdateUIVericationCode myListener;
+    private UpdateUIVericationCode myListener;
 
     //回调方法
-    public void setOnListener(ForgetPasswordActivity.UpdateUIVericationCode myListener) {
+    public void setOnListener(UpdateUIVericationCode myListener) {
         this.myListener = myListener;
     }
 }
