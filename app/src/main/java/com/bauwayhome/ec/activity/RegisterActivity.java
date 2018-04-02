@@ -22,13 +22,14 @@ import com.bauwayhome.ec.util.DialogUtil;
 import com.bauwayhome.ec.util.MyUtil;
 import com.bauwayhome.ec.util.NetworkUtil;
 import com.blankj.utilcode.util.AppUtils;
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import cn.bmob.sms.BmobSMS;
-import cn.bmob.sms.listener.RequestSMSCodeListener;
 import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.QueryListener;
 import cn.bmob.v3.listener.SaveListener;
 
 public class RegisterActivity extends BaseActivity {
@@ -162,20 +163,20 @@ public class RegisterActivity extends BaseActivity {
             ToastUtils.showShort(R.string.plz_phone_format);
             return;
         }
-        BmobSMS.requestSMSCode(this, phone, "register", new RequestSMSCodeListener() {
+        cn.bmob.v3.BmobSMS.requestSMSCode(phone, "register", new QueryListener<Integer>() {
             @Override
-            public void done(Integer smsId, cn.bmob.sms.exception.BmobException ex) {
-                Log.e("bmob", ex + "短信id11：" + smsId);//用于查询本次短信发送详情
-                if (ex == null) {//验证码发送成功
-                    Log.e("bmob", "短信id：" + smsId);//用于查询本次短信发送详情
-                    //erificationCode.setText("已发送");
+            public void done(Integer integer, BmobException e) {
+                if (e == null) {
+                    LogUtils.d("短信发送成功，短信ID：" + integer);
+                    ToastUtils.showShort(R.string.code_is_send_plz_check);
                     myListener.setupdateUIVericationCode();
                 } else {
-                    ToastUtils.showShort(R.string.plz_phone_format);
+                    LogUtils.d("短信验证码请求失败：" + e.toString());
+                    ToastUtils.showShort(R.string.code_is_send_error_plz_try);
                 }
+                DialogUtil.hide();
             }
         });
-
     }
 
     private void register() {
@@ -239,6 +240,8 @@ public class RegisterActivity extends BaseActivity {
                             ToastUtils.showShort(R.string.phone_already_register);
                         } else if(207 == e.getErrorCode()) {
                             ToastUtils.showShort(R.string.code_error);
+                        } else if(202 == e.getErrorCode()) {
+                            ToastUtils.showShort(R.string.phone_already_register);
                         } else {
                             ToastUtils.showShort(R.string.register_failure);
                         }
@@ -263,6 +266,8 @@ public class RegisterActivity extends BaseActivity {
                             ToastUtils.showShort(R.string.phone_already_register);
                         } else if(207 == e.getErrorCode()) {
                             ToastUtils.showShort(R.string.code_error);
+                        } else if(202 == e.getErrorCode()) {
+                            ToastUtils.showShort(R.string.phone_already_register);
                         } else {
                             ToastUtils.showShort(R.string.register_failure);
                         }

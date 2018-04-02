@@ -37,6 +37,10 @@
     <string name="error_bluetooth_not_supported">error_bluetooth_not_supported</string>
     <string name="unknown_device">未知设备</string>
 
+    <string name="code_is_send_error_plz_try">验证码请求失败，请重试</string>
+    <string name="second">秒</string>
+    <string name="code_is_send_plz_check">验证码已发送，请注意查收</string>
+
     <string name="organization_name1">单位名称</string>
     <string name="legal_representative1">法人代表</string>
     <string name="personinfo_head1">负责人</string>
