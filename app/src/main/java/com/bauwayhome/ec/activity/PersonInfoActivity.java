@@ -22,7 +22,6 @@ import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import cn.bmob.sms.BmobSMS;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.QueryListener;
@@ -79,7 +78,6 @@ public class PersonInfoActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        BmobSMS.initialize(this, Constants.BMOB_ID);
         mUser = getUserEntity();
         Log.e("getObjectId======",mUser.getObjectId());
     }

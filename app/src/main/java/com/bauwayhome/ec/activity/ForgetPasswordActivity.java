@@ -22,10 +22,10 @@ import com.blankj.utilcode.util.ToastUtils;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import cn.bmob.sms.BmobSMS;
-import cn.bmob.sms.listener.RequestSMSCodeListener;
+import cn.bmob.v3.BmobSMS;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
+import cn.bmob.v3.listener.QueryListener;
 import cn.bmob.v3.listener.UpdateListener;
 
 /**
@@ -140,21 +140,18 @@ public class ForgetPasswordActivity extends BaseActivity {
             ToastUtil.showShortToast(mContext, "手机号码不能为空,请重新输入!");
             return;
         }
-        BmobSMS.requestSMSCode(this, phone, "register", new RequestSMSCodeListener() {
+        BmobSMS.requestSMSCode(phone, "注册模板",new QueryListener<Integer>() {
+
             @Override
-            public void done(Integer smsId, cn.bmob.sms.exception.BmobException ex) {
-                if (ex == null) {//验证码发送成功
-                    Log.e("bmob", "短信id：" + smsId);//用于查询本次短信发送详情
+            public void done(Integer smsId, BmobException ex) {
+                if(ex==null){//验证码发送成功
                     msmid = smsId + "";
                     myListener.setupdateUIVericationCode();
-                } else {
-                    Log.e(TAG, "done: -------------------------" + ex.getErrorCode() + "," + ex.getMessage() + "," + smsId);
+                }else{
+                    Log.e(TAG,"errorCode = "+ex.getErrorCode()+",errorMsg = "+ex.getLocalizedMessage());
                 }
             }
-
-
         });
-
 
     }
 

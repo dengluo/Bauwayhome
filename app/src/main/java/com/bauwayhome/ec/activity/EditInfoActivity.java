@@ -38,7 +38,6 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import cn.bmob.sms.BmobSMS;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
@@ -264,7 +263,7 @@ public class EditInfoActivity extends BaseActivity implements WheelNumDialog.OnD
 
     @Override
     protected void initData() {
-        BmobSMS.initialize(this, Constants.BMOB_ID);
+//        BmobSMS.initialize(this, Constants.BMOB_ID);
     }
 
     @Override

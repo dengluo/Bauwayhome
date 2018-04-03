@@ -4,13 +4,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.bauwayhome.ec.App.Constants;
 import com.bauwayhome.ec.R;
 import com.bauwayhome.ec.base.BaseActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import cn.bmob.sms.BmobSMS;
 
 public class AgreementActivity extends BaseActivity {
 
@@ -40,7 +38,6 @@ public class AgreementActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        BmobSMS.initialize(this, Constants.BMOB_ID);
     }
 
     @Override
