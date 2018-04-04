@@ -31,17 +31,17 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import cn.bmob.v3.BmobQuery;
 import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
-import cn.bmob.v3.listener.QueryListener;
+import cn.bmob.v3.listener.FindListener;
 import cn.bmob.v3.listener.UpdateListener;
 
 /**
@@ -93,8 +93,8 @@ public class EditInfoActivity extends BaseActivity implements WheelNumDialog.OnD
     private RadioButton radioButton;
     private String selectText = "男";
     private int currentButton = 0;
-    private String currentTall = "155cm";
-    private String currentWeight = "57.3kg";
+    private String currentTall = "155";
+    private String currentWeight = "57.3";
     private Context ctx;
 
     private void showNumDialog(int value) {
@@ -293,42 +293,48 @@ public class EditInfoActivity extends BaseActivity implements WheelNumDialog.OnD
             return;
         }
         String phone = userRxPreferences.getString(Constants.LOGIN_EMAIL).get();
-        BmobQuery query =new BmobQuery("_User");
-        query.addWhereEqualTo("username", phone);
-        query.setLimit(2);
-        query.order("createdAt");
-        //v3.5.0版本提供`findObjectsByTable`方法查询自定义表名的数据
-        query.findObjectsByTable(new QueryListener<JSONArray>() {
+        queryPersonInfo(phone);
+    }
+
+    public void queryPersonInfo(String phone) {
+        final BmobQuery<User> bmobQuery = new BmobQuery<User>();
+        bmobQuery.addWhereEqualTo("username", phone);
+        bmobQuery.setLimit(2);
+        bmobQuery.order("createdAt");
+        //先判断是否有缓存
+//        boolean isCache = bmobQuery.hasCachedResult(User.class);
+//        if (isCache) {
+//            bmobQuery.setCachePolicy(BmobQuery.CachePolicy.CACHE_ELSE_NETWORK);    // 先从缓存取数据，如果没有的话，再从网络取。
+//        } else {
+//            bmobQuery.setCachePolicy(BmobQuery.CachePolicy.NETWORK_ELSE_CACHE);    // 如果没有缓存的话，则先从网络中取
+//        }
+//		observable形式
+        bmobQuery.findObjects(new FindListener<User>() {
             @Override
-            public void done(JSONArray ary, BmobException e) {
-                if(e==null){
-                    Log.i("bmob","查询成功："+ary.toString());
-                    try {
-                        JSONObject object = (JSONObject) ary.get(0);
-                        if (object.has("info")){
-                            et_perfectinfo_name.setText(object.optJSONArray("info").getString(0));
-                            if (object.optJSONArray("info").getString(1).equals("男")){
-                                radio0.setChecked(true);
-                                radio0.isChecked();
-                            }else {
-                                radio1.setChecked(true);
-                                radio1.isChecked();
-                            }
-//                            tv_personinfo_sex.setText(object.optJSONArray("info").getString(1));
-                            et_perfectinfo_age.setText(object.optJSONArray("info").getString(2));
-                            tv_perfectinfo_height.setText(object.optJSONArray("info").getString(3));
-                            tv_perfectinfo_weight.setText(object.optJSONArray("info").getString(4));
-                            et_perfectinfo_organization_name.setText(object.optJSONArray("info").getString(5));
-                            et_perfectinfo_legal_representative.setText(object.optJSONArray("info").getString(6));
-                            et_perfectinfo_personinfo_head.setText(object.optJSONArray("info").getString(7));
-                            et_perfectinfo_registration_mark.setText(object.optJSONArray("info").getString(8));
-                            tv_perfectinfo_address.setText(object.optJSONArray("info").getString(9));
+            public void done(List<User> list, BmobException e) {
+                if (e == null) {
+                    for (User user : list) {
+                        String str = Arrays.asList(user.getInfo()).get(0);
+                        et_perfectinfo_name.setText(Arrays.asList(user.getInfo()).get(0));
+                        if (Arrays.asList(user.getInfo()).get(1).equals("男")) {
+                            radio0.setChecked(true);
+                            radio0.isChecked();
+                        } else {
+                            radio1.setChecked(true);
+                            radio1.isChecked();
                         }
-                    } catch (JSONException e1) {
-                        e1.printStackTrace();
+//                            tv_personinfo_sex.setText(object.optJSONArray("info").getString(1));
+                        et_perfectinfo_age.setText(Arrays.asList(user.getInfo()).get(2));
+                        tv_perfectinfo_height.setText(Arrays.asList(user.getInfo()).get(3));
+                        tv_perfectinfo_weight.setText(Arrays.asList(user.getInfo()).get(4));
+                        et_perfectinfo_organization_name.setText(Arrays.asList(user.getInfo()).get(5));
+                        et_perfectinfo_legal_representative.setText(Arrays.asList(user.getInfo()).get(6));
+                        et_perfectinfo_personinfo_head.setText(Arrays.asList(user.getInfo()).get(7));
+                        et_perfectinfo_registration_mark.setText(Arrays.asList(user.getInfo()).get(8));
+                        tv_perfectinfo_address.setText(Arrays.asList(user.getInfo()).get(9));
                     }
-                }else{
-                    Log.i("bmob","失败："+e.getMessage()+","+e.getErrorCode());
+                } else {
+                    Log.i("bmob", "失败：" + e.getMessage() + "," + e.getErrorCode());
                 }
             }
         });
@@ -430,12 +436,12 @@ public class EditInfoActivity extends BaseActivity implements WheelNumDialog.OnD
     public void back(String text) {
         if (currentButton == 0) {
             currentTall = text;
-            tv_perfectinfo_height.setText(text + "cm");
+            tv_perfectinfo_height.setText(text + "");
             tv_perfectinfo_height.setTextColor(getResources().getColor(R.color.black));
         }
         if (currentButton == 2) {
             currentWeight = text;
-            tv_perfectinfo_weight.setText(text + "kg");
+            tv_perfectinfo_weight.setText(text + "");
             tv_perfectinfo_weight.setTextColor(getResources().getColor(
                     R.color.black));
         }

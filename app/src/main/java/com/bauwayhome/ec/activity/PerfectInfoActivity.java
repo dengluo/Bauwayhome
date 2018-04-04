@@ -87,8 +87,8 @@ public class PerfectInfoActivity extends BaseActivity implements WheelNumDialog.
     private RadioButton radioButton;
     private String selectText = "男";
     private int currentButton = 0;
-    private String currentTall = "155cm";
-    private String currentWeight = "57.3kg";
+    private String currentTall = "155";
+    private String currentWeight = "57.3";
 
     private void showNumDialog(int value) {
         WheelNumDialog numDialog = new WheelNumDialog(this, R.style.dialog,
@@ -104,7 +104,7 @@ public class PerfectInfoActivity extends BaseActivity implements WheelNumDialog.
                 case MSG_LOAD_DATA:
                     if (thread == null) {//如果已创建就不再重新创建子线程了
 
-//                        Toast.makeText(PerfectInfoActivity.this, "Begin Parse Data", Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(PerfectInfoActivity.this, "Begin Pafrse Data", Toast.LENGTH_SHORT).show();
                         thread = new Thread(new Runnable() {
                             @Override
                             public void run() {
@@ -370,12 +370,12 @@ public class PerfectInfoActivity extends BaseActivity implements WheelNumDialog.
     public void back(String text) {
         if (currentButton == 0) {
             currentTall = text;
-            tv_perfectinfo_height.setText(text + "cm");
+            tv_perfectinfo_height.setText(text + "");
             tv_perfectinfo_height.setTextColor(getResources().getColor(R.color.black));
         }
         if (currentButton == 2) {
             currentWeight = text;
-            tv_perfectinfo_weight.setText(text + "kg");
+            tv_perfectinfo_weight.setText(text + "");
             tv_perfectinfo_weight.setTextColor(getResources().getColor(
                     R.color.black));
         }
