@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bauwayhome.ec.R;
+import com.bauwayhome.ec.activity.ProductDetailsActivity;
 import com.bauwayhome.ec.bean.Product_Routine;
 import com.bauwayhome.ec.util.ImageLoaderUtil;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -95,9 +96,10 @@ public class ProductListAdapter4 extends BaseAdapter {
         viewHolder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int position = (int)view.getTag();
+                int position = (int) view.getTag();
                 Uri uri = Uri.parse(products.get(position).getIqos_url());
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                Intent intent = new Intent(mContext, ProductDetailsActivity.class);
+                intent.putExtra("uri", uri + "");
                 mContext.startActivity(intent);
             }
         });

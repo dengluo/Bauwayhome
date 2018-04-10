@@ -68,6 +68,7 @@
         <activity android:name=".activity.BindDeviceActivity" />
         <activity android:name=".activity.EditInfoActivity" />
         <activity android:name=".activity.ValidateActivity" />
+        <activity android:name=".activity.ProductDetailsActivity" />
     </application>
 
 </manifest>
