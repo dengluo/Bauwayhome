@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ImageButton
+<ImageButton xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bt_return"
     style="@style/bt_return"
     app:srcCompat="@drawable/vector_drawable_return"
-    tools:showIn="@layout/forget_password_activity"/>
+    tools:showIn="@layout/forget_password_activity" />

@@ -166,6 +166,7 @@
     <string name="common_set">通用指数</string>
     <string name="product_select">产品选择</string>
     <string name="product_show">产品展示</string>
+    <string name="news">新闻</string>
     <string name="v" translatable="false">V</string>
     <string name="t" translatable="false">T</string>
     <string name="h" translatable="false">H</string>

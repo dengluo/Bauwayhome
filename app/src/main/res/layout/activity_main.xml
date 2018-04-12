@@ -62,7 +62,7 @@
             android:button="@null"
             android:drawableTop="@drawable/selector_radio_main_nearby"
             android:gravity="center"
-            android:text="葆威道"
+            android:text="首页"
             android:textColor="@drawable/selector_radio_txt_nearby"
             android:textSize="10sp" />
 
@@ -75,7 +75,20 @@
             android:button="@null"
             android:drawableTop="@drawable/selector_radio_ordertake_nearby"
             android:gravity="center"
-            android:text="产品展示"
+            android:text="产品"
+            android:textColor="@drawable/selector_radio_txt_nearby"
+            android:textSize="10sp" />
+
+        <RadioButton
+            android:id="@+id/radio_order_news"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_radio_news"
+            android:gravity="center"
+            android:text="新闻"
             android:textColor="@drawable/selector_radio_txt_nearby"
             android:textSize="10sp" />
 
@@ -101,7 +114,7 @@
             android:button="@null"
             android:drawableTop="@drawable/selector_radio_me_nearby"
             android:gravity="center"
-            android:text="我"
+            android:text="我的"
             android:textColor="@drawable/selector_radio_txt_nearby"
             android:textSize="10sp" />
     </RadioGroup>

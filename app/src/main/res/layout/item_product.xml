@@ -3,35 +3,37 @@
     android:id="@+id/ll_product_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_margin="5dp"
     android:background="@color/white"
     android:gravity="center"
-    android:layout_margin="5dp"
-    android:orientation="horizontal" >
+    android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1">
+
         <ImageView
             android:id="@+id/iv_product_image"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:background="@mipmap/ic_launcher"/>
+            android:background="@mipmap/ic_launcher" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp10"
-        android:orientation="vertical"
-        android:layout_weight="5">
+        android:layout_weight="5"
+        android:orientation="vertical">
+
         <TextView
             android:id="@+id/tv_product_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="T107高档触摸电子烟套装"
             android:textColor="@color/black_2"
-            android:textSize="16dp"/>
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/tv_product_model"
@@ -39,7 +41,7 @@
             android:layout_height="wrap_content"
             android:text="T107"
             android:textColor="@color/black_3"
-            android:textSize="14dp"/>
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/tv_product_size"
@@ -47,7 +49,7 @@
             android:layout_height="wrap_content"
             android:text="14mm*154mm"
             android:textColor="@color/black_3"
-            android:textSize="14dp"/>
+            android:textSize="14dp" />
 
         <TextView
             android:id="@+id/tv_product_battery"
@@ -55,7 +57,7 @@
             android:layout_height="wrap_content"
             android:text="650mAh"
             android:textColor="@color/black_3"
-            android:textSize="14dp"/>
+            android:textSize="14dp" />
 
     </LinearLayout>
 

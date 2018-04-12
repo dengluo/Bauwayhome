@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray_divider_line"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -11,21 +13,11 @@
         android:background="@color/blue_ice"
         android:padding="10dp">
 
-        <ImageView
-            android:id="@+id/iv_return"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentLeft="true"
-            android:background="@drawable/selector_radio_return"
-            android:gravity="left|center_vertical"
-            android:padding="@dimen/dp5" />
-
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:text="@string/product_detail"
+            android:text="@string/news"
             android:textColor="@color/white"
             android:textSize="18sp" />
     </RelativeLayout>
@@ -33,13 +25,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
         android:orientation="vertical">
-
-        <WebView
-            android:id="@+id/mywebview"
+        <ListView
+            android:id="@+id/news_lv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:dividerHeight="7dp"
+            android:divider="#dcdcdc">
+        </ListView>
 
     </LinearLayout>
 

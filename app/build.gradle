@@ -79,4 +79,5 @@ dependencies {
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     //省市区联动
     compile 'com.contrarywind:Android-PickerView:3.2.6'
+    compile files('libs/jsoup-1.11.2.jar')
 }

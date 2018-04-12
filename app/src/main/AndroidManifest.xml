@@ -69,6 +69,7 @@
         <activity android:name=".activity.EditInfoActivity" />
         <activity android:name=".activity.ValidateActivity" />
         <activity android:name=".activity.ProductDetailsActivity" />
+        <activity android:name=".activity.NewsDisplayActvivity" />
     </application>
 
 </manifest>
