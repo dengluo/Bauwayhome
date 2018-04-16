@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="@string/select_product"
+            android:text="@string/home"
             android:textColor="@color/white"
             android:textSize="18sp" />
     </RelativeLayout>
@@ -25,111 +25,184 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.6"
             android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/ll_home_iqos"
+                android:id="@+id/ll_home_news"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
+                android:layout_height="128dp"
+                android:background="@drawable/home_bg_1"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="144dp"
-                    android:layout_height="144dp"
-                    android:background="@drawable/iqos" />
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/home_icon_1" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dp_10"
-                    android:text="@string/home_product_iqos"
-                    android:textColor="@color/black_2"
-                    android:textSize="14dp" />
+                    android:layout_margin="@dimen/dp5"
+                    android:text="@string/news"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_home_kaoyan"
+                android:id="@+id/ll_home_product_list"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dp_20"
-                android:gravity="center_horizontal"
+                android:layout_height="125dp"
+                android:background="@drawable/home_bg_2"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="144dp"
-                    android:layout_height="144dp"
-                    android:background="@drawable/kaoyan" />
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/home_icon_2" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dp_10"
-                    android:text="@string/home_product_kaoyan"
-                    android:textColor="@color/black_2"
-                    android:textSize="14dp" />
+                    android:layout_margin="@dimen/dp5"
+                    android:text="@string/product_list"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_home_bbs"
+                android:layout_width="wrap_content"
+                android:layout_height="125dp"
+                android:background="@drawable/home_bg_3"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/home_icon_3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp5"
+                    android:text="@string/bbs"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_home_function"
+                android:layout_width="wrap_content"
+                android:layout_height="125dp"
+                android:background="@drawable/home_bg_4"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/home_icon_4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp5"
+                    android:text="@string/function"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="0.4"
             android:gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/ll_home_box"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
+                android:id="@+id/ll_home_scan"
+                android:layout_width="133dp"
+                android:layout_height="131dp"
+                android:background="@drawable/home_bg_5"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="144dp"
-                    android:layout_height="144dp"
-                    android:background="@drawable/box" />
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/home_icon_5" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dp_10"
-                    android:text="@string/home_product_box"
-                    android:textColor="@color/black_2"
-                    android:textSize="14dp" />
+                    android:layout_margin="@dimen/dp5"
+                    android:text="@string/Scan"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_home_small"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/dp_20"
-                android:gravity="center_horizontal"
+                android:id="@+id/ll_home_video"
+                android:layout_width="133dp"
+                android:layout_height="239dp"
+                android:background="@drawable/home_bg_6"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="144dp"
-                    android:layout_height="144dp"
-                    android:background="@drawable/small" />
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/home_icon_6" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/dp_10"
-                    android:text="@string/home_product_small"
-                    android:textColor="@color/black_2"
-                    android:textSize="14dp" />
+                    android:layout_margin="@dimen/dp5"
+                    android:text="@string/video"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_home_about_us"
+                android:layout_width="133dp"
+                android:layout_height="131dp"
+                android:background="@drawable/home_bg_7"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/home_icon_7" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp5"
+                    android:text="@string/about_us"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
             </LinearLayout>
         </LinearLayout>
 

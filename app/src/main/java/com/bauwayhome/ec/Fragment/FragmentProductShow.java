@@ -12,9 +12,6 @@ import android.widget.RadioGroup;
 
 import com.bauwayhome.ec.R;
 import com.bauwayhome.ec.adapter.MyFragmentPagerAdapter;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,8 +57,8 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
         @Override
         public View create(BannerItem item, int position, ViewGroup container) {
             ImageView iv = new ImageView(container.getContext());
-            RequestOptions options = new RequestOptions().diskCacheStrategy(DiskCacheStrategy.DATA);
-            Glide.with(container.getContext().getApplicationContext()).load(item.image).apply(options).into(iv);
+//            RequestOptions options = new RequestOptions().diskCacheStrategy(DiskCacheStrategy.DATA);
+//            Glide.with(container.getContext().getApplicationContext()).load(item.image).apply(options).into(iv);
             return iv;
         }
     }

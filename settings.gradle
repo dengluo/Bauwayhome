@@ -1,1 +1,1 @@
-include ':app', ':easeblelib', ':smablelib', ':library'
+include ':app', ':easeblelib', ':smablelib', ':library', ':jcvideoplayer-lib'

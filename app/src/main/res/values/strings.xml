@@ -167,6 +167,12 @@
     <string name="product_select">产品选择</string>
     <string name="product_show">产品展示</string>
     <string name="news">新闻</string>
+    <string name="product_list">产品列表</string>
+    <string name="bbs">论坛</string>
+    <string name="function">功能</string>
+    <string name="Scan">扫一扫</string>
+    <string name="video">视频</string>
+    <string name="video_manager">视频管理</string>
     <string name="v" translatable="false">V</string>
     <string name="t" translatable="false">T</string>
     <string name="h" translatable="false">H</string>
@@ -255,6 +261,7 @@
     <string name="sure">确定</string>
     <string name="roger">知道了</string>
     <string name="fragme_personinfo">个人信息</string>
+    <string name="home">首页</string>
     <string name="select_product">产品选择</string>
     <string name="home_product_iqos">IQOS系列</string>
     <string name="home_product_kaoyan">烤烟系列</string>
@@ -289,6 +296,7 @@
     <string name="device_add_fail">设备添加失败</string>
     <string name="please_enable_the_bluetooth">请打开蓝牙</string>
     <string name="device_not_connected">请先连接设备</string>
+    <string name="unopened">论坛暂未开通</string>
     <string name="code_not_scan">请扫描产品码</string>
     <string name="product_code">产品码:</string>
     <string name="already_bind">已经绑定了设备</string>

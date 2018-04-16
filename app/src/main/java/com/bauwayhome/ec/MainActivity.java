@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -41,6 +42,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 //    RadioButton radio_studio;
     @BindView(R.id.radio_order_take)
     RadioButton radio_order_take;
+    @BindView(R.id.radio_order_news)
+    RadioButton radio_order_news;
     //    @BindView(R.id.radio_find)
 //    RadioButton radio_find;
     @BindView(R.id.radio_me)
@@ -167,14 +170,22 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private List<Fragment> getFragments() {
         List<Fragment> list_fm = new ArrayList<Fragment>();
         FragmentHome fg_home = new FragmentHome();
-//        fg_home.setDoGo(new DoGoJieDan() {
-//
-//            @Override
-//            public void doGo() {
-//                // TODO Auto-generated method stub
-//                radio_order_take.setChecked(true);
-//            }
-//        });
+        fg_home.setDoGoNews(new FragmentHome.DoGoNews() {
+
+            @Override
+            public void doGoNews() {
+                // TODO Auto-generated method stub
+                radio_order_news.setChecked(true);
+            }
+        });
+        fg_home.setDoGoProduct(new FragmentHome.DoGoProduct() {
+
+            @Override
+            public void doGoProduct() {
+                // TODO Auto-generated method stub
+                radio_order_take.setChecked(true);
+            }
+        });
         list_fm.add(fg_home);// 首页电子烟
         list_fm.add(new FragmentProductShow());// 产品
         list_fm.add(new FragmentNews());//新闻
@@ -253,5 +264,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     protected void onDestroy() {
         mSmaManager.removeSmaCallback(mSmaCallback);
         super.onDestroy();
+    }
+
+    /**
+     * 重写返回键
+     */
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            myApplication.exit();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
