@@ -164,7 +164,7 @@ public final class CaptureActivity extends BaseActivity implements SurfaceHolder
     private FloatingActionButton mLightBtn;
 
     private void initButton() {
-        ImageView backBtn = (ImageView) findViewById(R.id.action_back);
+        ImageView backBtn = (ImageView) findViewById(R.id.iv_return);
         TextView albumBtn = (TextView) findViewById(R.id.action_album);
         mLightBtn = (FloatingActionButton) findViewById(R.id.action_light);
 
@@ -491,7 +491,7 @@ public final class CaptureActivity extends BaseActivity implements SurfaceHolder
                 validateCode(code);//验证产品码
                 break;
             // 返回按钮
-            case R.id.action_back:
+            case R.id.iv_return:
                 finish();
                 break;
             // 开关灯按钮

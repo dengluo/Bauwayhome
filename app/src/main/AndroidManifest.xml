@@ -71,13 +71,9 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".zxing.activity.CaptureActivity" />
         <activity
-            android:name=".activity.LocalAlbumActivity"
-            android:launchMode="singleTop"
-            android:theme="@style/Transparent.Light" />
+            android:name=".activity.LocalAlbumActivity"/>
         <activity
-            android:name=".activity.LocalAlbumDetailActivity"
-            android:launchMode="singleTop"
-            android:theme="@style/Transparent.Light" />
+            android:name=".activity.LocalAlbumDetailActivity"/>
     </application>
 
 </manifest>

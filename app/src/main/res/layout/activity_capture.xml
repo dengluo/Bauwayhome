@@ -41,9 +41,9 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="@dimen/dp10"
                         android:layout_marginTop="5dp"
-                        android:text="@string/scan_code_open"
+                        android:text=""
                         android:textColor="@color/black_2"
-                        android:textSize="14sp" />
+                        android:textSize="18sp" />
                 </FrameLayout>
 
                 <LinearLayout
@@ -90,7 +90,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/dp10"
-                        android:text="@string/manual_input_code"
+                        android:text="@string/Alignment_code"
                         android:textColor="@color/black_2"
                         android:textSize="14sp" />
 
@@ -104,6 +104,7 @@
                         android:background="@drawable/shape_circle_edt_input"
                         android:drawablePadding="@dimen/dp_10"
                         android:hint=""
+                        android:visibility="gone"
                         android:inputType="number"
                         android:paddingLeft="20dp"
                         android:paddingRight="20dp"
@@ -115,6 +116,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp10"
+                        android:visibility="gone"
                         android:gravity="center_horizontal"
                         android:orientation="vertical">
 
@@ -135,26 +137,60 @@
         </LinearLayout>
 
         <RelativeLayout
-            style="@style/action_llyt"
-            android:background="@color/blue_ice">
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@color/blue_ice"
+            android:padding="10dp">
 
             <ImageView
-                android:id="@+id/action_back"
-                style="@style/action_icon"
+                android:id="@+id/iv_return"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_alignParentLeft="true"
-                android:src="@drawable/ic_action_previous_item" />
+                android:background="@drawable/selector_radio_return"
+                android:gravity="left|center_vertical"
+                android:padding="@dimen/dp5" />
 
             <TextView
-                style="@style/action_title"
-                android:text="@string/scan_code" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/Scan"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/action_album"
                 style="@style/action_tv"
                 android:layout_alignParentRight="true"
                 android:text="@string/album" />
-
         </RelativeLayout>
+
+        <!--<RelativeLayout-->
+            <!--style="@style/action_llyt"-->
+            <!--android:layout_height="51dp"-->
+            <!--android:visibility="gone"-->
+            <!--android:background="@color/blue_ice">-->
+
+            <!--<ImageView-->
+                <!--android:id="@+id/action_back"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="52dp"-->
+                <!--android:layout_alignParentLeft="true"-->
+                <!--android:src="@drawable/selector_radio_return" />-->
+
+            <!--<TextView-->
+                <!--style="@style/action_title"-->
+                <!--android:text="@string/Scan" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/action_album"-->
+                <!--style="@style/action_tv"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:text="@string/album" />-->
+
+        <!--</RelativeLayout>-->
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/action_light"
