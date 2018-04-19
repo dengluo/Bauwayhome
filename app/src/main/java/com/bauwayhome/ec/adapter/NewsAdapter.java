@@ -60,7 +60,7 @@ public class NewsAdapter extends BaseAdapter {
         }
         viewHolder.newsTitle.setText(newsList.get(position).getNewsTitle());
         viewHolder.newsDesc.setText(newsList.get(position).getDesc());
-        viewHolder.newsTime.setText("来自 : "+newsList.get(position).getNewsTime());
+        viewHolder.newsTime.setText("发表日期 : "+newsList.get(position).getNewsTime());
         return view;
     }
 

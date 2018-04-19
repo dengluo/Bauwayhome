@@ -33,15 +33,19 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ezy.ui.view.BannerView
-                android:id="@+id/banner1"
+            <!--<ezy.ui.view.BannerView-->
+                <!--android:id="@+id/banner1"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@android:color/white"-->
+                <!--app:bvAspectRatio="0.6666666"-->
+                <!--app:bvIndicatorColor="#cccccc"-->
+                <!--app:bvIndicatorColorSelected="@color/colorAccent"-->
+                <!--app:bvIsLoop="false" />-->
+            <krelve.view.Kanner
+                android:id="@+id/kanner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@android:color/white"
-                app:bvAspectRatio="0.6666666"
-                app:bvIndicatorColor="#cccccc"
-                app:bvIndicatorColorSelected="@color/colorAccent"
-                app:bvIsLoop="false" />
+                android:layout_height="250dp" />
         </LinearLayout>
 
         <LinearLayout

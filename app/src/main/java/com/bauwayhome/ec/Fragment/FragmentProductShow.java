@@ -13,10 +13,8 @@ import android.widget.RadioGroup;
 import com.bauwayhome.ec.R;
 import com.bauwayhome.ec.adapter.MyFragmentPagerAdapter;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import ezy.ui.view.BannerView;
+import krelve.view.Kanner;
 
 /**
  * Created by danny on 2017/12/28.
@@ -30,6 +28,7 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
     private RadioButton rb_pro1,rb_pro2,rb_pro3,rb_pro4;
     private ViewPager vpager;
     private MyFragmentPagerAdapter mAdapter;
+    private Kanner kanner;
 
     //几个代表页面的常量
     public static final int PAGE_ONE = 0;
@@ -37,7 +36,7 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
     public static final int PAGE_THREE = 2;
     public static final int PAGE_FOUR= 3;
 
-    public static Integer[] urls = new Integer[]{//750x500
+    public static int[] urls = new int[]{//750x500
             R.mipmap.banner001,
             R.mipmap.banner002
     };
@@ -81,6 +80,8 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
         rb_pro2 = (RadioButton) view_main.findViewById(R.id.rb_pro2);
         rb_pro3 = (RadioButton) view_main.findViewById(R.id.rb_pro3);
         rb_pro4 = (RadioButton) view_main.findViewById(R.id.rb_pro4);
+        kanner = (Kanner) view_main.findViewById(R.id.kanner);
+        kanner.setImagesRes(urls);
 
         rg_tab_bar.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -138,18 +139,24 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
             }
         });
 
-        List<BannerItem> list = new ArrayList<>();
-        for (int i = 0; i < urls.length; i++) {
-            BannerItem item = new BannerItem();
-            item.image = urls[i];
-//            item.title = titles[i];
-            list.add(item);
-        }
+//        List<BannerItem> list = new ArrayList<>();
+//        for (int i = 0; i < urls.length; i++) {
+//            BannerItem item = new BannerItem();
+//            item.image = urls[i];
+////            item.title = titles[i];
+//            list.add(item);
+//        }
+//
+//        final BannerView banner1 = (BannerView) view_main.findViewById(R.id.banner1);
+//        banner1.setViewFactory(new BannerViewFactory());
+//        banner1.setDataList(list);
+//        banner1.start();
+    }
 
-        final BannerView banner1 = (BannerView) view_main.findViewById(R.id.banner1);
-        banner1.setViewFactory(new BannerViewFactory());
-        banner1.setDataList(list);
-        banner1.start();
+    @Override
+    public void onDestroy() {
+        kanner.removeCallbacksAndMessages();
+        super.onDestroy();
     }
 
     @Override

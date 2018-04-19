@@ -38,6 +38,7 @@ public class FragmentNews extends Fragment implements View.OnClickListener {
     private NewsAdapter adapter;
     private Handler handler;
     private ListView lv;
+    private String newsUrl = "http://m.bauway.cn";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -66,7 +67,8 @@ public class FragmentNews extends Fragment implements View.OnClickListener {
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             News news = newsList.get(position);
                             Intent intent = new Intent(context, NewsDisplayActvivity.class);
-                            intent.putExtra("news_url", news.getNewsUrl());
+                            Log.e("getNewsUrl","__"+ news.getNewsUrl());
+                            intent.putExtra("news_url", newsUrl+news.getNewsUrl());
                             startActivity(intent);
                         }
                     });
@@ -82,28 +84,36 @@ public class FragmentNews extends Fragment implements View.OnClickListener {
             public void run() {
                 try {
                     //获取虎扑新闻20页的数据，网址格式为：https://voice.hupu.com/nba/第几页
-                    for (int i = 1; i <= 5; i++) {
-
-                        Document doc = Jsoup.connect("http://www.bauway.cn/ic47137.html").get();
-                        Elements titleLinks = doc.select("a.data_article-column-links");    //解析来获取每条新闻的标题与链接地址
-                        Elements descLinks = doc.select("p.articlelist-column-p");//解析来获取每条新闻的简介
-                        Elements timeLinks = doc.select("p.articlelist-column-p");   //解析来获取每条新闻的时间与来源
+//                    for (int i = 1; i <= 4; i++) {
+                        Document doc = Jsoup.connect("http://m.bauway.cn/news/").get();
+                    Elements titleLinks = doc.getElementsByClass("list_cont").select("li");//解析来获取每条新闻的标题与链接地址
+//                        Elements descLinks = doc.select("p.articlelist-datebtnsolid-summary.mt5");//解析来获取每条新闻的简介
+//                        Elements timeLinksMonth = doc.select("div.articlelist-datebtnsolid-date");   //解析来获取每条新闻的时间月份
+//                        Elements timeLinksDay = doc.select("span.article-column-time-days-data");   //解析来获取每条新闻的时间日期
                         Log.e("title", Integer.toString(titleLinks.size()));
+//                        Log.e("titleLinks", titleLinks.toString());
+//                        Log.e("descLinks", descLinks.toString());
                         News news;
                         for (int j = 0; j < titleLinks.size(); j++) {
                             String title = titleLinks.get(j).select("a").text();
+                            String title2 = title.substring(0,title.length()-4);
                             String uri = titleLinks.get(j).select("a").attr("href");
-                            String desc = descLinks.get(j).select("p").text();
-                            if (desc.length()>50){
-                                news = new News(title, uri, "  "+desc.substring(0,50), null);
-                            }else {
-                                news = new News(title, uri, "  "+desc.substring(0,desc.length()), null);
+                            String desc = titleLinks.get(j).select("p").text();
+                            String date = titleLinks.get(j).select("span").text();
+                            String date1 = date.substring(0,date.length()-2);
+                            String date2 = date.substring(date.length()-2,date.length());
+//                            String img = titleLinks.get(j).select("img").text();
+//                            String day = timeLinksDay.get(j).select("span").text();
+                            if (desc.length() > 50) {
+                                news = new News(title2, uri, "  " + desc.substring(0, 50), date1+"-"+date2);
+                            } else {
+                                news = new News(title2, uri, "  " + desc.substring(0, desc.length()), date1+"-"+date2);
                             }
 
 //                            String time = timeLinks.get(j).select("span.other-left").select("a").text();
                             newsList.add(news);
                         }
-                    }
+//                    }
                     Message msg = new Message();
                     msg.what = 1;
                     handler.sendMessage(msg);
