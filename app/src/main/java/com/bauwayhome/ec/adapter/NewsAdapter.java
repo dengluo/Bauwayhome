@@ -1,6 +1,7 @@
 package com.bauwayhome.ec.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,8 +66,13 @@ public class NewsAdapter extends BaseAdapter {
         viewHolder.newsTitle.setText(newsList.get(position).getNewsTitle());
         viewHolder.newsDesc.setText("  "+newsList.get(position).getDesc());
         viewHolder.newsTime.setText("发表日期 : "+newsList.get(position).getNewsTime());
-//        Log.e("getNewsImg",""+newsList.get(position).getNewsImg());
-        Glide.with(mContext).load(newsList.get(position).getNewsImg()).priority( Priority.HIGH).into( viewHolder.newsImg);
+        Log.e("getNewsImg",""+newsList.get(position).getNewsImg());
+        if (newsList.get(position).getNewsImg().trim().equals("http://m.bauway.cn")){
+            Glide.with(mContext).load(newsList.get(position).getNewsImg()).placeholder(R.mipmap.ic_launcher).into(viewHolder.newsImg);
+        }else {
+            Glide.with(mContext).load(newsList.get(position).getNewsImg()).priority( Priority.HIGH).into( viewHolder.newsImg);
+        }
+
         return view;
     }
 
