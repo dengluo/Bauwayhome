@@ -5,10 +5,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bauwayhome.ec.R;
 import com.bauwayhome.ec.bean.News;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.Priority;
 
 import java.util.List;
 
@@ -53,6 +56,7 @@ public class NewsAdapter extends BaseAdapter {
                     .findViewById(R.id.news_title);
             viewHolder.newsDesc = (TextView)view.findViewById(R.id.news_desc);
             viewHolder.newsTime = (TextView)view.findViewById(R.id.news_time);
+            viewHolder.newsImg = (ImageView) view.findViewById(R.id.news_img);
             view.setTag(viewHolder);
         } else {
             view = convertView;
@@ -61,6 +65,8 @@ public class NewsAdapter extends BaseAdapter {
         viewHolder.newsTitle.setText(newsList.get(position).getNewsTitle());
         viewHolder.newsDesc.setText("  "+newsList.get(position).getDesc());
         viewHolder.newsTime.setText("发表日期 : "+newsList.get(position).getNewsTime());
+//        Log.e("getNewsImg",""+newsList.get(position).getNewsImg());
+        Glide.with(mContext).load(newsList.get(position).getNewsImg()).priority( Priority.HIGH).into( viewHolder.newsImg);
         return view;
     }
 
@@ -68,6 +74,7 @@ public class NewsAdapter extends BaseAdapter {
         TextView newsTitle;
         TextView newsDesc;
         TextView newsTime;
+        ImageView newsImg;
     }
 
 }

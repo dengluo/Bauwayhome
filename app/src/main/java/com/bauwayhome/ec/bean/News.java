@@ -10,12 +10,14 @@ public class News {
     private String newsUrl;     //新闻链接地址
     private String desc;        //新闻概要
     private String newsTime;    //新闻时间与来源
+    private String newsImg;    //新闻图片url
 
-    public News(String newsTitle, String newsUrl, String desc, String newsTime) {
+    public News(String newsTitle, String newsUrl, String desc, String newsTime, String newsImg) {
         this.newsTitle = newsTitle;
         this.newsUrl = newsUrl;
         this.desc = desc;
         this.newsTime = newsTime;
+        this.newsImg = newsImg;
     }
 
     public String getDesc() {
@@ -48,5 +50,13 @@ public class News {
 
     public void setNewsUrl(String newsUrl) {
         this.newsUrl = newsUrl;
+    }
+
+    public String getNewsImg() {
+        return newsImg;
+    }
+
+    public void setNewsImg(String newsImg) {
+        this.newsImg = newsImg;
     }
 }

@@ -131,6 +131,9 @@
     <string name="yesterday">昨天%tR</string>
     <string name="mill" translatable="false">%tc</string>
 
+    <string name="company_news">公司新闻</string>
+    <string name="industry_dynamics">行业动态</string>
+
     <string name="tab_menu_pro1">IQOS</string>
     <string name="tab_menu_pro2">常规烤烟</string>
     <string name="tab_menu_pro3">盒子</string>

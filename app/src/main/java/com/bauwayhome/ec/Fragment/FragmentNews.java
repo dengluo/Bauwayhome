@@ -1,29 +1,17 @@
 package com.bauwayhome.ec.Fragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v4.app.Fragment;
-import android.util.Log;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import com.bauwayhome.ec.R;
-import com.bauwayhome.ec.activity.NewsDisplayActvivity;
-import com.bauwayhome.ec.adapter.NewsAdapter;
-import com.bauwayhome.ec.bean.News;
-
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.bauwayhome.ec.adapter.NewsFragmentPagerAdapter;
 
 /**
  * Created by danny on 2018/4/11.
@@ -34,11 +22,13 @@ public class FragmentNews extends Fragment implements View.OnClickListener {
 
     private View view_main;
     private Context context;
-    private List<News> newsList;
-    private NewsAdapter adapter;
-    private Handler handler;
-    private ListView lv;
-    private String newsUrl = "http://m.bauway.cn";
+    private RadioGroup rg_tab_bar;
+    private RadioButton rb_pro1,rb_pro2;
+    private ViewPager vpager;
+    private NewsFragmentPagerAdapter mAdapter;
+    //几个代表页面的常量
+    public static final int PAGE_ONE = 0;
+    public static final int PAGE_TWO = 1;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,77 +42,55 @@ public class FragmentNews extends Fragment implements View.OnClickListener {
     private void inintView() {
         view_main = LayoutInflater.from(getActivity()).inflate(
                 R.layout.fragment_news, null);
+        mAdapter = new NewsFragmentPagerAdapter(this.getFragmentManager());
+        rg_tab_bar = (RadioGroup) view_main.findViewById(R.id.rg_tab_bar);
+        rb_pro1 = (RadioButton) view_main.findViewById(R.id.rb_pro1);
+        rb_pro2 = (RadioButton) view_main.findViewById(R.id.rb_pro2);
+        rb_pro1.setChecked(true);
 
-        newsList = new ArrayList<>();
-        lv = (ListView) view_main.findViewById(R.id.news_lv);
-        getNews();
-        handler = new Handler() {
+        rg_tab_bar.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void handleMessage(Message msg) {
-                if (msg.what == 1) {
-                    adapter = new NewsAdapter(context, newsList);
-                    lv.setAdapter(adapter);
-                    lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                        @Override
-                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                            News news = newsList.get(position);
-                            Intent intent = new Intent(context, NewsDisplayActvivity.class);
-                            Log.e("getNewsUrl","__"+ news.getNewsUrl());
-                            intent.putExtra("news_url", newsUrl+news.getNewsUrl());
-                            startActivity(intent);
-                        }
-                    });
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.rb_pro1:
+                        vpager.setCurrentItem(PAGE_ONE);
+                        break;
+                    case R.id.rb_pro2:
+                        vpager.setCurrentItem(PAGE_TWO);
+                        break;
                 }
             }
-        };
-    }
+        });
 
-    private void getNews() {
-
-        new Thread(new Runnable() {
+        vpager = (ViewPager) view_main.findViewById(R.id.newsPager);
+        vpager.setAdapter(mAdapter);
+        vpager.setCurrentItem(0);
+        vpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void run() {
-                try {
-                    //获取虎扑新闻20页的数据，网址格式为：https://voice.hupu.com/nba/第几页
-//                    for (int i = 1; i <= 4; i++) {
-                        Document doc = Jsoup.connect("http://m.bauway.cn/news/").get();
-                    Elements titleLinks = doc.getElementsByClass("list_cont").select("li");//解析来获取每条新闻的标题与链接地址
-//                        Elements descLinks = doc.select("p.articlelist-datebtnsolid-summary.mt5");//解析来获取每条新闻的简介
-//                        Elements timeLinksMonth = doc.select("div.articlelist-datebtnsolid-date");   //解析来获取每条新闻的时间月份
-//                        Elements timeLinksDay = doc.select("span.article-column-time-days-data");   //解析来获取每条新闻的时间日期
-                        Log.e("title", Integer.toString(titleLinks.size()));
-//                        Log.e("titleLinks", titleLinks.toString());
-//                        Log.e("descLinks", descLinks.toString());
-                        News news;
-                        for (int j = 0; j < titleLinks.size(); j++) {
-                            String title = titleLinks.get(j).select("a").text();
-                            String title2 = title.substring(0,title.length()-4);
-                            String uri = titleLinks.get(j).select("a").attr("href");
-                            String desc = titleLinks.get(j).select("p").text();
-                            String date = titleLinks.get(j).select("span").text();
-                            String date1 = date.substring(0,date.length()-2);
-                            String date2 = date.substring(date.length()-2,date.length());
-//                            String img = titleLinks.get(j).select("img").text();
-//                            String day = timeLinksDay.get(j).select("span").text();
-                            if (desc.length() > 50) {
-                                news = new News(title2, uri, "  " + desc.substring(0, 50), date1+"-"+date2);
-                            } else {
-                                news = new News(title2, uri, "  " + desc.substring(0, desc.length()), date1+"-"+date2);
-                            }
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-//                            String time = timeLinks.get(j).select("span.other-left").select("a").text();
-                            newsList.add(news);
-                        }
-//                    }
-                    Message msg = new Message();
-                    msg.what = 1;
-                    handler.sendMessage(msg);
+            }
 
-                } catch (Exception e) {
-                    e.printStackTrace();
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                //state的状态有三个，0表示什么都没做，1正在滑动，2滑动完毕
+                if (state == 2) {
+                    switch (vpager.getCurrentItem()) {
+                        case PAGE_ONE:
+                            rb_pro1.setChecked(true);
+                            break;
+                        case PAGE_TWO:
+                            rb_pro2.setChecked(true);
+                            break;
+                    }
                 }
             }
-        }).start();
+        });
     }
 
     @Override
