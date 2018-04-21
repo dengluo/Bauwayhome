@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray_divider_line"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -52,42 +53,69 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
+            android:layout_marginTop="30dp"
+            android:gravity="left"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
                 android:gravity="center"
                 android:text="@string/company_name"
                 android:textColor="@color/black_2"
-                android:textSize="20sp" />
-
+                android:textSize="24sp" />
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:autoLink="web"
-                android:gravity="center"
-                android:text="@string/company_web"
+                android:text="中文网址: www.bauway.cn"
                 android:textColor="@color/black_2" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:autoLink="web"
+                android:text="英文网址: www.bauway.com"
+                android:textColor="@color/black_2" />
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:autoLink="phone"
-                android:gravity="center"
-                android:text="@string/company_phone"
+                android:text="电话： 0755-29089555"
                 android:textColor="@color/black_2" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="传真： 0755-33115078"
+                android:textColor="@color/black_2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:autoLink="phone"
+                android:text="邮箱： tmall@bauway.com"
+                android:textColor="@color/black_2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:autoLink="phone"
+                android:text="微信号： BAU_WAY"
+                android:textColor="@color/black_2" />
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:autoLink="all"
-                android:gravity="center"
                 android:text="@string/company_address"
                 android:textColor="@color/black_2"
                 android:textSize="14sp" />
