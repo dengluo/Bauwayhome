@@ -1,5 +1,6 @@
 package com.bauwayhome.ec.Fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -12,6 +13,8 @@ import android.widget.RadioGroup;
 
 import com.bauwayhome.ec.R;
 import com.bauwayhome.ec.adapter.MyFragmentPagerAdapter;
+import com.bauwayhome.ec.util.NetworkUtil;
+import com.bauwayhome.ec.util.ToastUtil;
 
 import ezy.ui.view.BannerView;
 import krelve.view.Kanner;
@@ -29,6 +32,7 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
     private ViewPager vpager;
     private MyFragmentPagerAdapter mAdapter;
     private Kanner kanner;
+    private Context context;
 
     //几个代表页面的常量
     public static final int PAGE_ONE = 0;
@@ -66,6 +70,10 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
+        context = this.getActivity();
+        if (!NetworkUtil.isNetworkAvailable(context)){
+            ToastUtil.showShortToast(context, "网络连接异常!");
+        }
         inintView();
         rb_pro1.setChecked(true);
         return view_main;
@@ -157,6 +165,22 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
     public void onDestroy() {
         kanner.removeCallbacksAndMessages();
         super.onDestroy();
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.setUserVisibleHint(hidden);
+        if (hidden) {
+            //可见时执行的操作
+//            Log.e("isVisibleToUser11",hidden+"");
+        } else {
+            //不可见时执行的操作
+//            Log.e("isVisibleToUser22",hidden+"");
+            if (!NetworkUtil.isNetworkAvailable(context)){
+                ToastUtil.showShortToast(context, "网络连接异常!");
+                return;
+            }
+        }
     }
 
     @Override

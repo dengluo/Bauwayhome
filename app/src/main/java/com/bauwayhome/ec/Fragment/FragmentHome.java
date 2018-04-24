@@ -16,7 +16,7 @@ import com.bauwayhome.ec.BuildConfig;
 import com.bauwayhome.ec.R;
 import com.bauwayhome.ec.activity.AboutUsActivity;
 import com.bauwayhome.ec.activity.FunctionActivity;
-import com.bauwayhome.ec.activity.VideoManagerActivity;
+import com.bauwayhome.ec.activity.VideoManagerActivity2;
 import com.bauwayhome.ec.zxing.activity.CaptureActivity;
 import com.bestmafen.smablelib.component.SimpleSmaCallback;
 import com.bestmafen.smablelib.component.SmaManager;
@@ -100,7 +100,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
 //                startActivity(new Intent(context, IqosProductActivity.class));
 //                break;
             case R.id.ll_home_video:
-                startActivity(new Intent(context, VideoManagerActivity.class));
+                startActivity(new Intent(context, VideoManagerActivity2.class));
                 break;
             case R.id.ll_home_function:
                 startActivity(new Intent(context, FunctionActivity.class));

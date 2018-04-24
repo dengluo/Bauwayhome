@@ -12,6 +12,8 @@ import android.widget.RadioGroup;
 
 import com.bauwayhome.ec.R;
 import com.bauwayhome.ec.adapter.NewsFragmentPagerAdapter;
+import com.bauwayhome.ec.util.NetworkUtil;
+import com.bauwayhome.ec.util.ToastUtil;
 
 /**
  * Created by danny on 2018/4/11.
@@ -35,6 +37,9 @@ public class FragmentNews extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         context = this.getActivity();
+        if (!NetworkUtil.isNetworkAvailable(context)){
+            ToastUtil.showShortToast(context, "网络连接异常!");
+        }
         inintView();
         return view_main;
     }
@@ -91,6 +96,22 @@ public class FragmentNews extends Fragment implements View.OnClickListener {
                 }
             }
         });
+    }
+
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.setUserVisibleHint(hidden);
+        if (hidden) {
+            //可见时执行的操作
+//            Log.e("isVisibleToUser11",hidden+"");
+        } else {
+            //不可见时执行的操作
+//            Log.e("isVisibleToUser22",hidden+"");
+            if (!NetworkUtil.isNetworkAvailable(context)){
+                ToastUtil.showShortToast(context, "网络连接异常!");
+                return;
+            }
+        }
     }
 
     @Override
