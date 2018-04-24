@@ -67,9 +67,6 @@
         <activity android:name=".activity.NewsDisplayActvivity" />
         <activity android:name=".activity.VideoDisplayActvivity" />
         <activity android:name=".activity.FunctionActivity" />
-        <activity android:name=".activity.VideoManagerActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait"/>
         <activity android:name=".activity.VideoManagerActivity2"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait"/>

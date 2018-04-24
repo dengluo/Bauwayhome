@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/Bauwayhome.iml" filepath="$PROJECT_DIR$/Bauwayhome.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/easeblelib/easeblelib.iml" filepath="$PROJECT_DIR$/easeblelib/easeblelib.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jcvideoplayer-lib/jcvideoplayer-lib.iml" filepath="$PROJECT_DIR$/jcvideoplayer-lib/jcvideoplayer-lib.iml" />
       <module fileurl="file://$PROJECT_DIR$/kanner/kanner.iml" filepath="$PROJECT_DIR$/kanner/kanner.iml" />
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/smablelib/smablelib.iml" filepath="$PROJECT_DIR$/smablelib/smablelib.iml" />
