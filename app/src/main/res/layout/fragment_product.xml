@@ -23,6 +23,11 @@
             android:textSize="18sp" />
     </RelativeLayout>
 
+    <com.bauwayhome.ec.View.PicsView
+        android:id="@+id/picsviewpager"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" >
+    </com.bauwayhome.ec.View.PicsView>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -30,30 +35,10 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!--<ezy.ui.view.BannerView-->
-                <!--android:id="@+id/banner1"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:background="@android:color/white"-->
-                <!--app:bvAspectRatio="0.6666666"-->
-                <!--app:bvIndicatorColor="#cccccc"-->
-                <!--app:bvIndicatorColorSelected="@color/colorAccent"-->
-                <!--app:bvIsLoop="false" />-->
-            <krelve.view.Kanner
-                android:id="@+id/kanner"
-                android:layout_width="match_parent"
-                android:layout_height="250dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/dp10"
             android:layout_marginRight="@dimen/dp10"
-            android:layout_marginTop="@dimen/dp10"
+            android:layout_marginTop="@dimen/dp5"
             android:orientation="vertical">
 
             <RadioGroup

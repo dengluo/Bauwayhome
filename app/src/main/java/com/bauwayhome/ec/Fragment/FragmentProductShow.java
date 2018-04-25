@@ -12,12 +12,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.bauwayhome.ec.R;
+import com.bauwayhome.ec.View.PicsView;
+import com.bauwayhome.ec.View.PicsView.OnClickListener;
 import com.bauwayhome.ec.adapter.MyFragmentPagerAdapter;
 import com.bauwayhome.ec.util.NetworkUtil;
 import com.bauwayhome.ec.util.ToastUtil;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ezy.ui.view.BannerView;
-import krelve.view.Kanner;
 
 /**
  * Created by danny on 2017/12/28.
@@ -30,8 +34,9 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
     private RadioGroup rg_tab_bar;
     private RadioButton rb_pro1,rb_pro2,rb_pro3,rb_pro4;
     private ViewPager vpager;
+    private PicsView mPicsViewpager;
     private MyFragmentPagerAdapter mAdapter;
-    private Kanner kanner;
+//    private Kanner kanner;
     private Context context;
 
     //几个代表页面的常量
@@ -40,10 +45,13 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
     public static final int PAGE_THREE = 2;
     public static final int PAGE_FOUR= 3;
 
-    public static int[] urls = new int[]{//750x500
+    public static int[] urls = {//750x500
             R.mipmap.banner001,
-            R.mipmap.banner002
+            R.mipmap.banner002,
+            R.mipmap.banner003,
+            R.mipmap.banner004
     };
+    private String[] titles = { "", "", "", "", "", "" };
 
 
     public static class BannerItem {
@@ -88,8 +96,28 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
         rb_pro2 = (RadioButton) view_main.findViewById(R.id.rb_pro2);
         rb_pro3 = (RadioButton) view_main.findViewById(R.id.rb_pro3);
         rb_pro4 = (RadioButton) view_main.findViewById(R.id.rb_pro4);
-        kanner = (Kanner) view_main.findViewById(R.id.kanner);
-        kanner.setImagesRes(urls);
+        mPicsViewpager = (PicsView) view_main.findViewById(R.id.picsviewpager);
+        List<ImageView> imgList = new ArrayList<>();
+        for(int i = 0; i < urls.length; i++){
+            ImageView iv = new ImageView(context);
+            iv.setScaleType(ImageView.ScaleType.FIT_XY);
+            iv.setImageResource(urls[i]);
+            imgList.add(iv);
+        }
+        // 初始化数据
+        mPicsViewpager.addTitlesAndImages(titles, imgList);
+        //mPicsViewpager.addImages(imgList);
+        // 设置点击事件
+        mPicsViewpager.setClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(int position) {
+                System.out.println("点击有效");
+//                Toast.makeText(context, "点击有效，位置为：" + position, Toast.LENGTH_SHORT).show();
+            }
+        });
+//        kanner = (Kanner) view_main.findViewById(R.id.kanner);
+//        kanner.setImagesRes(urls);
 
         rg_tab_bar.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -163,7 +191,7 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
 
     @Override
     public void onDestroy() {
-        kanner.removeCallbacksAndMessages();
+//        kanner.removeCallbacksAndMessages();
         super.onDestroy();
     }
 
