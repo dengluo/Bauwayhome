@@ -10,17 +10,19 @@ import com.bauwayhome.ec.Fragment.MyFragment1;
 import com.bauwayhome.ec.Fragment.MyFragment2;
 import com.bauwayhome.ec.Fragment.MyFragment3;
 import com.bauwayhome.ec.Fragment.MyFragment4;
+import com.bauwayhome.ec.Fragment.MyFragment5;
 
 /**
  * Created by Danny on 2018/3/14
  */
 public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
-    private final int PAGER_COUNT = 4;
+    private final int PAGER_COUNT = 5;
     private MyFragment1 myFragment1 = null;
     private MyFragment2 myFragment2 = null;
     private MyFragment3 myFragment3 = null;
     private MyFragment4 myFragment4 = null;
+    private MyFragment5 myFragment5 = null;
 
 
     public MyFragmentPagerAdapter(FragmentManager fm) {
@@ -29,6 +31,7 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
         myFragment2 = new MyFragment2();
         myFragment3 = new MyFragment3();
         myFragment4 = new MyFragment4();
+        myFragment5 = new MyFragment5();
     }
 
 
@@ -63,6 +66,9 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
                 break;
             case FragmentProductShow.PAGE_FOUR:
                 fragment = myFragment4;
+                break;
+            case FragmentProductShow.PAGE_FIVE:
+                fragment = myFragment5;
                 break;
         }
         return fragment;

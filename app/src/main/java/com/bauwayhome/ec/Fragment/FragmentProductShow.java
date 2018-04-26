@@ -32,7 +32,7 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
 
     private View view_main;
     private RadioGroup rg_tab_bar;
-    private RadioButton rb_pro1,rb_pro2,rb_pro3,rb_pro4;
+    private RadioButton rb_pro1,rb_pro2,rb_pro3,rb_pro4,rb_pro5;
     private ViewPager vpager;
     private PicsView mPicsViewpager;
     private MyFragmentPagerAdapter mAdapter;
@@ -44,6 +44,7 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
     public static final int PAGE_TWO = 1;
     public static final int PAGE_THREE = 2;
     public static final int PAGE_FOUR= 3;
+    public static final int PAGE_FIVE= 4;
 
     public static int[] urls = {//750x500
             R.mipmap.banner001,
@@ -96,6 +97,7 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
         rb_pro2 = (RadioButton) view_main.findViewById(R.id.rb_pro2);
         rb_pro3 = (RadioButton) view_main.findViewById(R.id.rb_pro3);
         rb_pro4 = (RadioButton) view_main.findViewById(R.id.rb_pro4);
+        rb_pro5 = (RadioButton) view_main.findViewById(R.id.rb_pro5);
         mPicsViewpager = (PicsView) view_main.findViewById(R.id.picsviewpager);
         List<ImageView> imgList = new ArrayList<>();
         for(int i = 0; i < urls.length; i++){
@@ -135,6 +137,9 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
                     case R.id.rb_pro4:
                         vpager.setCurrentItem(PAGE_FOUR);
                         break;
+                    case R.id.rb_pro5:
+                        vpager.setCurrentItem(PAGE_FIVE);
+                        break;
                 }
             }
         });
@@ -169,6 +174,9 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
                             break;
                         case PAGE_FOUR:
                             rb_pro4.setChecked(true);
+                            break;
+                        case PAGE_FIVE:
+                            rb_pro5.setChecked(true);
                             break;
                     }
                 }

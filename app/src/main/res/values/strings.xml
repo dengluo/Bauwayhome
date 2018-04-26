@@ -135,9 +135,10 @@
     <string name="industry_dynamics">行业动态</string>
 
     <string name="tab_menu_pro1">IQOS</string>
-    <string name="tab_menu_pro2">常规烤烟</string>
+    <string name="tab_menu_pro2">烤烟</string>
     <string name="tab_menu_pro3">盒子</string>
     <string name="tab_menu_pro4">小烟</string>
+    <string name="tab_menu_pro5">烟油配件</string>
     <string name="toast_yzm_1">验证码为空,请重新填写验证码</string>
     <string name="toast_yzm_2">网络连接异常</string>
 
@@ -313,6 +314,8 @@
     <string name="change_now">正在修改…</string>
     <string name="product_model">型号：</string>
     <string name="product_size">尺寸：</string>
+    <string name="product_flavor">口味：</string>
+    <string name="product_capacity">容量：</string>
     <string name="product_batter">电池容量：</string>
 
     <string name="company_web">www.bauway.com</string>

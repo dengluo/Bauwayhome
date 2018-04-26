@@ -66,8 +66,13 @@
 
                 <RadioButton
                     android:id="@+id/rb_pro4"
-                    style="@style/tab_menu_item3"
+                    style="@style/tab_menu_item2"
                     android:text="@string/tab_menu_pro4" />
+
+                <RadioButton
+                    android:id="@+id/rb_pro5"
+                    style="@style/tab_menu_item3"
+                    android:text="@string/tab_menu_pro5" />
 
             </RadioGroup>
 
