@@ -311,6 +311,9 @@
     <string name="connect_device">连接设备</string>
     <string name="scan">扫描</string>
     <string name="change_now">正在修改…</string>
+    <string name="product_model">型号：</string>
+    <string name="product_size">尺寸：</string>
+    <string name="product_batter">电池容量：</string>
 
     <string name="company_web">www.bauway.com</string>
     <string name="company_phone">0755–29089555</string>

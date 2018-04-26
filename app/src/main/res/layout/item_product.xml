@@ -32,32 +32,75 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="T107高档触摸电子烟套装"
+            android:maxLines="1"
+            android:maxEms="20"
+            android:ellipsize="end"
             android:textColor="@color/black_2"
             android:textSize="16dp" />
 
-        <TextView
-            android:id="@+id/tv_product_model"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="T107"
-            android:textColor="@color/black_3"
-            android:textSize="14dp" />
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tv_product_size"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="14mm*154mm"
-            android:textColor="@color/black_3"
-            android:textSize="14dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/product_model"
+                android:textColor="@color/black_3"
+                android:textSize="14dp" />
 
-        <TextView
-            android:id="@+id/tv_product_battery"
+            <TextView
+                android:id="@+id/tv_product_model"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="T107"
+                android:textColor="@color/black_3"
+                android:textSize="14dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="650mAh"
-            android:textColor="@color/black_3"
-            android:textSize="14dp" />
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/product_size"
+                android:textColor="@color/black_3"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/tv_product_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14mm*154mm"
+                android:textColor="@color/black_3"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/product_batter"
+                android:textColor="@color/black_3"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/tv_product_battery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="650mAh"
+                android:textColor="@color/black_3"
+                android:textSize="14dp" />
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bauwayhome.ec.BuildConfig;
 import com.bauwayhome.ec.R;
@@ -69,7 +68,7 @@ public class FunctionActivity extends BaseActivity implements View.OnClickListen
     @Override
     protected void initData() {
         List<Integer> list = new ArrayList<>();
-        list.add(R.drawable.function_bg);
+        list.add(R.drawable.function_fyhit_box);
         list.add(R.drawable.function_bg);
         list.add(R.drawable.function_bg);
         list.add(R.drawable.function_bg);
