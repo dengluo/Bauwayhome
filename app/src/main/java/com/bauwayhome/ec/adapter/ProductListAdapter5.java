@@ -3,7 +3,6 @@ package com.bauwayhome.ec.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -93,7 +92,7 @@ public class ProductListAdapter5 extends BaseAdapter {
         viewHolder.model.setText(product.getModel());
         viewHolder.size.setText(product.getFlavor());
         viewHolder.battery.setText(product.getCapacity());
-        Log.e("getIconUrl", product.getIconUrl());
+//        Log.e("getIconUrl", product.getIconUrl());
         ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(mContext));
         ImageLoader.getInstance().displayImage(
                 product.getIconUrl(),
