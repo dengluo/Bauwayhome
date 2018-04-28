@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
       <module fileurl="file://$PROJECT_DIR$/ngallerylibrary/ngallerylibrary.iml" filepath="$PROJECT_DIR$/ngallerylibrary/ngallerylibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/smablelib/smablelib.iml" filepath="$PROJECT_DIR$/smablelib/smablelib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/toprightmenu/toprightmenu.iml" filepath="$PROJECT_DIR$/toprightmenu/toprightmenu.iml" />
     </modules>
   </component>
 </project>

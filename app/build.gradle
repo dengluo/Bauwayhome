@@ -14,6 +14,15 @@ android {
         aaptOptions.useNewCruncher = false
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+
+        release {
+            storeFile file('bauwayhome.jks')
+            storePassword '123456'
+            keyAlias 'bauwayhome'
+            keyPassword '123456'
+        }
+    }
     buildTypes {
         debug {
             buildConfigField "boolean", "LOG_DEBUG", "true"
@@ -85,4 +94,6 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.0.1'
     compile project(path: ':kanner')
     compile project(path: ':ngallerylibrary')
+    //弹出菜单
+    compile 'com.zaaach:toprightmenu:1.1.2'
 }

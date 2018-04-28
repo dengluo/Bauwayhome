@@ -32,7 +32,7 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
 
     private View view_main;
     private RadioGroup rg_tab_bar;
-    private RadioButton rb_pro1,rb_pro2,rb_pro3,rb_pro4,rb_pro5;
+    private RadioButton rb_pro0,rb_pro1,rb_pro2,rb_pro3,rb_pro4,rb_pro5;
     private ViewPager vpager;
     private PicsView mPicsViewpager;
     private MyFragmentPagerAdapter mAdapter;
@@ -45,6 +45,7 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
     public static final int PAGE_THREE = 2;
     public static final int PAGE_FOUR= 3;
     public static final int PAGE_FIVE= 4;
+    public static final int PAGE_SIX= 5;
 
     public static int[] urls = {//750x500
             R.mipmap.banner001,
@@ -84,7 +85,7 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
             ToastUtil.showShortToast(context, "网络连接异常!");
         }
         inintView();
-        rb_pro1.setChecked(true);
+        rb_pro0.setChecked(true);
         return view_main;
     }
 
@@ -93,6 +94,7 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
                 R.layout.fragment_product, null);
         mAdapter = new MyFragmentPagerAdapter(this.getFragmentManager());
         rg_tab_bar = (RadioGroup) view_main.findViewById(R.id.rg_tab_bar);
+        rb_pro0 = (RadioButton) view_main.findViewById(R.id.rb_pro0);
         rb_pro1 = (RadioButton) view_main.findViewById(R.id.rb_pro1);
         rb_pro2 = (RadioButton) view_main.findViewById(R.id.rb_pro2);
         rb_pro3 = (RadioButton) view_main.findViewById(R.id.rb_pro3);
@@ -125,20 +127,23 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
-                    case R.id.rb_pro1:
+                    case R.id.rb_pro0:
                         vpager.setCurrentItem(PAGE_ONE);
                         break;
-                    case R.id.rb_pro2:
+                    case R.id.rb_pro1:
                         vpager.setCurrentItem(PAGE_TWO);
                         break;
-                    case R.id.rb_pro3:
+                    case R.id.rb_pro2:
                         vpager.setCurrentItem(PAGE_THREE);
                         break;
-                    case R.id.rb_pro4:
+                    case R.id.rb_pro3:
                         vpager.setCurrentItem(PAGE_FOUR);
                         break;
-                    case R.id.rb_pro5:
+                    case R.id.rb_pro4:
                         vpager.setCurrentItem(PAGE_FIVE);
+                        break;
+                    case R.id.rb_pro5:
+                        vpager.setCurrentItem(PAGE_SIX);
                         break;
                 }
             }
@@ -164,18 +169,21 @@ public class FragmentProductShow extends Fragment implements View.OnClickListene
                 if (state == 2) {
                     switch (vpager.getCurrentItem()) {
                         case PAGE_ONE:
-                            rb_pro1.setChecked(true);
+                            rb_pro0.setChecked(true);
                             break;
                         case PAGE_TWO:
-                            rb_pro2.setChecked(true);
+                            rb_pro1.setChecked(true);
                             break;
                         case PAGE_THREE:
-                            rb_pro3.setChecked(true);
+                            rb_pro2.setChecked(true);
                             break;
                         case PAGE_FOUR:
-                            rb_pro4.setChecked(true);
+                            rb_pro3.setChecked(true);
                             break;
                         case PAGE_FIVE:
+                            rb_pro4.setChecked(true);
+                            break;
+                        case PAGE_SIX:
                             rb_pro5.setChecked(true);
                             break;
                     }

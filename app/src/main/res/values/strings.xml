@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Bauwayhome</string>
+    <string name="app_name">CIGGO</string>
     <string name="menu_scan">Scan</string>
     <string name="menu_stop">Stop</string>
     <string name="menu_connect">Connect</string>
@@ -134,7 +134,8 @@
     <string name="company_news">公司新闻</string>
     <string name="industry_dynamics">行业动态</string>
 
-    <string name="tab_menu_pro1">IQOS</string>
+    <string name="tab_menu_pro0">低温烟</string>
+    <string name="tab_menu_pro1">EGO</string>
     <string name="tab_menu_pro2">烤烟</string>
     <string name="tab_menu_pro3">盒子</string>
     <string name="tab_menu_pro4">小烟</string>
@@ -258,7 +259,6 @@
     <string name="vapor_meet">vapor meet</string>
     <string name="vape_world">vape world</string>
     <string name="use_product_name">使用产品名称</string>
-    <string name="email">邮箱</string>
     <string name="log_out">注销登录</string>
     <string name="confirm_log_out_app">确定退出当前登录账号？</string>
     <string name="usd">美元</string>
@@ -267,7 +267,8 @@
     <string name="sure">确定</string>
     <string name="roger">知道了</string>
     <string name="fragme_personinfo">个人信息</string>
-    <string name="home">首页</string>
+    <string name="home">index</string>
+    <string name="switch_language">切换语言</string>
     <string name="select_product">产品选择</string>
     <string name="home_product_iqos">IQOS系列</string>
     <string name="home_product_kaoyan">烤烟系列</string>
@@ -288,11 +289,11 @@
     <string name="tip_validate">账号信息需要验证,通过以后方可使用该功能</string>
     <string name="validate">验证</string>
 
-    <string name="help_docs">帮助文档</string>
-    <string name="version_num">版本</string>
-    <string name="about_us">关于我们</string>
+    <string name="help_docs">help docs</string>
+    <string name="version_num">version</string>
+    <string name="about_us">about us</string>
     <string name="product_detail">产品详情</string>
-    <string name="me">我</string>
+    <string name="me">Me</string>
     <string name="account_info">账号信息</string>
     <string name="fragme_data">数据</string>
     <string name="fragme_about">关于</string>
@@ -373,4 +374,18 @@
 3、用户通过使用幸孕儿-上门服务技师端的过程中所制作、上载、复制、发布、传播的任何内容，包括但不限于账号头像、名称、用户说明等注册信息及认证资料，或文字、语音、图片、视频、图文等发送、回复和相关链接页面，以及其他使用账号或本服务所产生的内容，不得违反国家相关法律制度，包含但不限于如下原则：  （1）反对宪法所确定的基本原则的；  （2）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的； （3）损害国家荣誉和利益的；  （4）煽动民族仇恨、民族歧视，破坏民族团结的； （5）破坏国家宗教政策，宣扬邪教和封建迷信的； （6）散布谣言，扰乱社会秩序，破坏社会稳定的；  （7）散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的； （8）侮辱或者诽谤他人，侵害他人合法权益的； （9）含有法律、行政法规禁止的其他内容的。  \n
 4、用户不得利用“幸孕儿-上门服务技师端”账号或本服务制作、上载、复制、发布、传播下干扰“幸孕儿-上门服务技师端”正常运营，以及侵犯其他用户或第三方合法权益的内容：  （1）含有任何性或性暗示的； （2）含有辱骂、恐吓、威胁内容的；  （3）含有骚扰、垃圾广告、恶意信息、诱骗信息的。\n</string>
 
+    <string name="weixin">官方微信</string>
+    <string name="cn_web">中文网站</string>
+    <string name="en_web">英文网站</string>
+    <string name="phone">电话</string>
+    <string name="fax">传真</string>
+    <string name="email">邮箱</string>
+    <string name="bauway">葆威</string>
+
+    <string name="weixin_value">BAU_WAY</string>
+    <string name="cn_web_value">www.bauway.cn</string>
+    <string name="en_web_value">www.bauway.com</string>
+    <string name="phone_value">0755-39089555</string>
+    <string name="fax_value">0755-33115078</string>
+    <string name="email_value">tmall@bauway.com</string>
 </resources>

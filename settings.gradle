@@ -1,1 +1,1 @@
-include ':app', ':easeblelib', ':smablelib', ':library', ':kanner', ':ngallerylibrary'
+include ':app', ':easeblelib', ':smablelib', ':library', ':kanner', ':ngallerylibrary', ':toprightmenu'

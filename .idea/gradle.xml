@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/ngallerylibrary" />
             <option value="$PROJECT_DIR$/smablelib" />
+            <option value="$PROJECT_DIR$/toprightmenu" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

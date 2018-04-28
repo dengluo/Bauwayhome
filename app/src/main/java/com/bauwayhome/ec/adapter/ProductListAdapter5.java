@@ -65,7 +65,7 @@ public class ProductListAdapter5 extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup arg2) {
+    public View getView(final int position, View convertView, ViewGroup arg2) {
         product = products.get(position);
         if (convertView == null) {
             viewHolder = new ViewHolder();
@@ -81,18 +81,10 @@ public class ProductListAdapter5 extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-//        viewHolder.image.setTag(position);
-//        viewHolder.name.setTag(position);
-//        viewHolder.model.setTag(position);
-//        viewHolder.size.setTag(position);
-//        viewHolder.battery.setTag(position);
-//        viewHolder.layout.setTag(position);
-
         viewHolder.name.setText(product.getParts_name());
         viewHolder.model.setText(product.getModel());
         viewHolder.size.setText(product.getFlavor());
         viewHolder.battery.setText(product.getCapacity());
-//        Log.e("getIconUrl", product.getIconUrl());
         ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(mContext));
         ImageLoader.getInstance().displayImage(
                 product.getIconUrl(),
@@ -101,7 +93,6 @@ public class ProductListAdapter5 extends BaseAdapter {
         viewHolder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int position = (int) view.getTag();
                 Uri uri = Uri.parse(products.get(position).getParts_url());
                 Intent intent = new Intent(mContext, ProductDetailsActivity.class);
                 intent.putExtra("uri", uri + "");

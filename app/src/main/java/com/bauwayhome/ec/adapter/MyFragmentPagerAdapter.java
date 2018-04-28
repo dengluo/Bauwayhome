@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.view.ViewGroup;
 
 import com.bauwayhome.ec.Fragment.FragmentProductShow;
+import com.bauwayhome.ec.Fragment.MyFragment0;
 import com.bauwayhome.ec.Fragment.MyFragment1;
 import com.bauwayhome.ec.Fragment.MyFragment2;
 import com.bauwayhome.ec.Fragment.MyFragment3;
@@ -17,7 +18,8 @@ import com.bauwayhome.ec.Fragment.MyFragment5;
  */
 public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
-    private final int PAGER_COUNT = 5;
+    private final int PAGER_COUNT = 6;
+    private MyFragment0 myFragment0 = null;
     private MyFragment1 myFragment1 = null;
     private MyFragment2 myFragment2 = null;
     private MyFragment3 myFragment3 = null;
@@ -27,6 +29,7 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
 
     public MyFragmentPagerAdapter(FragmentManager fm) {
         super(fm);
+        myFragment0 = new MyFragment0();
         myFragment1 = new MyFragment1();
         myFragment2 = new MyFragment2();
         myFragment3 = new MyFragment3();
@@ -56,7 +59,7 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
         switch (position) {
             case FragmentProductShow.PAGE_ONE:
-                fragment = myFragment1;
+                fragment = myFragment0;
                 break;
             case FragmentProductShow.PAGE_TWO:
                 fragment = myFragment2;
@@ -68,6 +71,9 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
                 fragment = myFragment4;
                 break;
             case FragmentProductShow.PAGE_FIVE:
+                fragment = myFragment1;
+                break;
+            case FragmentProductShow.PAGE_SIX:
                 fragment = myFragment5;
                 break;
         }

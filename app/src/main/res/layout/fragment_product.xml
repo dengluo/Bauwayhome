@@ -36,8 +36,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/dp10"
-            android:layout_marginRight="@dimen/dp10"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_marginRight="@dimen/dp5"
             android:layout_marginTop="@dimen/dp5"
             android:orientation="vertical">
 
@@ -50,24 +50,29 @@
                 android:orientation="horizontal">
 
                 <RadioButton
-                    android:id="@+id/rb_pro1"
+                    android:id="@+id/rb_pro0"
                     style="@style/tab_menu_item1"
-                    android:text="@string/tab_menu_pro1" />
+                    android:text="@string/tab_menu_pro0" />
 
                 <RadioButton
-                    android:id="@+id/rb_pro2"
+                    android:id="@+id/rb_pro1"
                     style="@style/tab_menu_item2"
                     android:text="@string/tab_menu_pro2" />
 
                 <RadioButton
-                    android:id="@+id/rb_pro3"
+                    android:id="@+id/rb_pro2"
                     style="@style/tab_menu_item2"
                     android:text="@string/tab_menu_pro3" />
 
                 <RadioButton
-                    android:id="@+id/rb_pro4"
+                    android:id="@+id/rb_pro3"
                     style="@style/tab_menu_item2"
                     android:text="@string/tab_menu_pro4" />
+
+                <RadioButton
+                    android:id="@+id/rb_pro4"
+                    style="@style/tab_menu_item2"
+                    android:text="@string/tab_menu_pro1" />
 
                 <RadioButton
                     android:id="@+id/rb_pro5"

@@ -3,7 +3,6 @@ package com.bauwayhome.ec.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,11 +65,11 @@ public class ProductListAdapter2 extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup arg2) {
+    public View getView(final int position, View convertView, ViewGroup arg2) {
         product = products.get(position);
-        if (convertView == null && products.size() != 0) {
+        if (convertView == null) {
             viewHolder = new ViewHolder();
-            LayoutInflater inflater = LayoutInflater.from(mContext);
+            LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.item_product, null);
             viewHolder.name = (TextView) convertView.findViewById(R.id.tv_product_name);
             viewHolder.model = (TextView) convertView.findViewById(R.id.tv_product_model);
@@ -86,17 +85,14 @@ public class ProductListAdapter2 extends BaseAdapter {
         viewHolder.model.setText(product.getIqos_model());
         viewHolder.size.setText(product.getIqos_size());
         viewHolder.battery.setText(product.getIqos_battery());
-        Log.e("getIconUrl", product.getIconUrl());
         ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(mContext));
         ImageLoader.getInstance().displayImage(
                 product.getIconUrl(),
                 viewHolder.image,
                 ImageLoaderUtil.getDisplayImageOptions());
-        viewHolder.layout.setTag(position);
         viewHolder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int position = (int)view.getTag();
                 Uri uri = Uri.parse(products.get(position).getIqos_url());
                 Intent intent = new Intent(mContext,ProductDetailsActivity.class);
                 intent.putExtra("uri",uri+"");
