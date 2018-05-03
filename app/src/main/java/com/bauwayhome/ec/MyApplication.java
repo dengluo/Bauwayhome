@@ -29,6 +29,7 @@ import cn.bmob.v3.BmobConfig;
 public class MyApplication extends MultiDexApplication {
 
     public static boolean LOG_SWITCH = true; //log和debug模式的开关
+    public static boolean IS_LOGIN = false; //是否登录
     private static MyApplication application;
     private static List<Activity> activityList;
     public RxSharedPreferences userRxPreferences;

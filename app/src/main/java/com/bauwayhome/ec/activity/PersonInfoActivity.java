@@ -78,7 +78,7 @@ public class PersonInfoActivity extends BaseActivity {
     @Override
     protected void initData() {
         mUser = getUserEntity();
-        Log.e("getObjectId======",mUser.getObjectId());
+//        Log.e("getObjectId======",mUser.getObjectId());
     }
 
     @Override

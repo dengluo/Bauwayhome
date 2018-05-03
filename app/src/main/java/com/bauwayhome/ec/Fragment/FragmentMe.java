@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bauwayhome.ec.App.Constants;
+import com.bauwayhome.ec.MyApplication;
 import com.bauwayhome.ec.R;
 import com.bauwayhome.ec.activity.AboutUsActivity;
 import com.bauwayhome.ec.activity.HelpDocsActivity;
@@ -50,12 +53,33 @@ public class FragmentMe extends Fragment implements View.OnClickListener {
     private TextView tv_account_name,tv_account_nick,tv_version_num;
     public RxSharedPreferences userRxPreferences;
     private Intent csintent,piintent;
+    public static Handler mHandler;//接受登录时发送过来的消息
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         context = this.getActivity();
+        mHandler = new Handler() {
+            public void handleMessage(Message msg) {
+                switch (msg.what) {
+                    case 19:
+                        if (!NetworkUtil.isNetworkAvailable(context)){
+                            ToastUtil.showShortToast(context, "网络连接异常!");
+                            return;
+                        }
+
+                        if (MyApplication.IS_LOGIN){
+                            tv_account_name.setText(userRxPreferences.getString(Constants.LOGIN_EMAIL).get());
+                            ll_fragme_exit.setVisibility(View.VISIBLE);
+                        }else {
+                            tv_account_name.setText(getText(R.string.now_login));
+                            ll_fragme_exit.setVisibility(View.GONE);
+                        }
+                        break;
+                }
+            }
+        };
         initView();
         initDate();
         return view_main;
@@ -73,6 +97,14 @@ public class FragmentMe extends Fragment implements View.OnClickListener {
             if (!NetworkUtil.isNetworkAvailable(context)){
                 ToastUtil.showShortToast(context, "网络连接异常!");
                 return;
+            }
+
+            if (MyApplication.IS_LOGIN){
+                tv_account_name.setText(userRxPreferences.getString(Constants.LOGIN_EMAIL).get());
+                ll_fragme_exit.setVisibility(View.VISIBLE);
+            }else {
+                tv_account_name.setText(getText(R.string.now_login));
+                ll_fragme_exit.setVisibility(View.GONE);
             }
         }
     }
@@ -135,7 +167,14 @@ public class FragmentMe extends Fragment implements View.OnClickListener {
         String accountname = userRxPreferences.getString(Constants.LOGIN_EMAIL).get();
         String pwd = userRxPreferences.getString(Constants.LOGIN_PWD).get();
         Log.e(TAG, accountname+"//"+pwd);
-        tv_account_name.setText(accountname);
+        if (MyApplication.IS_LOGIN){
+            tv_account_name.setText(accountname);
+            ll_fragme_exit.setVisibility(View.VISIBLE);
+        }else {
+            tv_account_name.setText(getText(R.string.now_login));
+            ll_fragme_exit.setVisibility(View.GONE);
+        }
+
         queryData();
     }
 
@@ -146,7 +185,12 @@ public class FragmentMe extends Fragment implements View.OnClickListener {
                 jumpLogin();
                 break;
             case R.id.ll_fragme_accountinfo:
-                jumpPersonInfo();
+                if (MyApplication.IS_LOGIN){
+                    jumpPersonInfo();
+                }else {
+                    exitApp();
+                }
+
                 break;
             case R.id.ll_fragme_help_docs:
                 startActivity(new Intent(context, HelpDocsActivity.class));
@@ -166,6 +210,7 @@ public class FragmentMe extends Fragment implements View.OnClickListener {
                     @Override
                     public void execute(Object dialog, Object content) {
                         //确认退出
+                        MyApplication.IS_LOGIN = false;
                         exitApp();
                     }
                 });
@@ -176,9 +221,9 @@ public class FragmentMe extends Fragment implements View.OnClickListener {
         PreferencesUtils.clearEntity(context);
         ToastUtils.cancel();
 //        myApplication.exit();
-        csintent = new Intent(context, LoginActivity.class)
-                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK
-                        | Intent.FLAG_ACTIVITY_NEW_TASK);
+        csintent = new Intent(context, LoginActivity.class);
+//                .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK
+//                        | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(csintent);
     }
 

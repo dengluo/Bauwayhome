@@ -4,6 +4,7 @@ package com.bauwayhome.ec.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
@@ -17,7 +18,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bauwayhome.ec.App.Constants;
+import com.bauwayhome.ec.Fragment.FragmentMe;
 import com.bauwayhome.ec.MainActivity;
+import com.bauwayhome.ec.MyApplication;
 import com.bauwayhome.ec.R;
 import com.bauwayhome.ec.base.BaseActivity;
 import com.bauwayhome.ec.bean.User;
@@ -46,6 +49,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     Button register;
     @BindView(R.id.image_pwd)
     ImageView imagePwd;
+    @BindView(R.id.iv_return)
+    ImageView iv_return;
     private boolean isopen = true;//用来标记密码是否可见
 
     @Override
@@ -66,6 +71,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
         et_pwd.setOnKeyListener(this);
         imagePwd.setOnClickListener(this);
         forgetPwd.setOnClickListener(this);
+        iv_return.setOnClickListener(this);
     }
 
     @Override
@@ -89,6 +95,12 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.iv_return:
+                Message message = new Message();
+                message.what = 19;
+                FragmentMe.mHandler.sendMessage(message);
+                finish();
+                break;
             case R.id.login:
                 login();
                 break;
@@ -143,7 +155,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener,
                     userRxPreferences.getString(Constants.LOGIN_PWD).set(pwd);
                     userRxPreferences.getString(Constants.SessionToken).set(user.getSessionToken());
                     PreferencesUtils.putEntity(LoginActivity.this, user);
+                    Message message = new Message();
+                    message.what = 19;
+                    FragmentMe.mHandler.sendMessage(message);
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    MyApplication.IS_LOGIN = true;
                     LoginActivity.this.finish();
                 } else {
                     Log.e(TAG, "done: " + e.getErrorCode() + ":" + e.getMessage());

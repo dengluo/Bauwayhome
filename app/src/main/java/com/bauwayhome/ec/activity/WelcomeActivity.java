@@ -3,7 +3,6 @@ package com.bauwayhome.ec.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.TextUtils;
 
 import com.bauwayhome.ec.MainActivity;
 import com.bauwayhome.ec.R;
@@ -32,13 +31,14 @@ public class WelcomeActivity extends BaseActivity {
     private void startActivity() {
         User user = getUserEntity();
         L.e("user="+user+"getEmail="+user.getEmail()+"getUsername="+user.getUsername());
-        if (user != null
-                && !TextUtils.isEmpty(user.getUsername())
-                ) {
-            startActivity(new Intent(this, MainActivity.class));
-        } else {
-            startActivity(new Intent(this, LoginActivity.class));
-        }
+//        if (user != null
+//                && !TextUtils.isEmpty(user.getUsername())
+//                ) {
+//            startActivity(new Intent(this, MainActivity.class));
+//        } else {
+//            startActivity(new Intent(this, LoginActivity.class));
+//        }
+        startActivity(new Intent(this, MainActivity.class));
         this.finish();
     }
 

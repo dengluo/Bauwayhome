@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CIGGO</string>
+    <string name="app_name">Bauwayhome</string>
     <string name="menu_scan">Scan</string>
     <string name="menu_stop">Stop</string>
     <string name="menu_connect">Connect</string>
@@ -366,5 +366,6 @@
     <string name="phone_value">0755-39089555</string>
     <string name="fax_value">0755-33115078</string>
     <string name="email_value">tmall@bauway.com</string>
-    <string name="bauway">葆威</string>
+    <string name="bauway">Bauway</string>
+    <string name="now_login">立即登录</string>
 </resources>

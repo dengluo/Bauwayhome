@@ -65,7 +65,7 @@
                 android:id="@+id/tv_account_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:text="@string/now_login"
                 android:textColor="@color/text_color_2"
                 android:textSize="14dp" />
 
@@ -227,6 +227,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_20"
         android:background="@color/white"
+        android:visibility="gone"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="10dp">
