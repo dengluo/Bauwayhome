@@ -68,10 +68,10 @@ public class FunctionActivity extends BaseActivity implements View.OnClickListen
     @Override
     protected void initData() {
         List<Integer> list = new ArrayList<>();
-        list.add(R.drawable.function_fyhit_box);
-        list.add(R.drawable.function_bg);
-        list.add(R.drawable.function_bg);
-        list.add(R.drawable.function_bg);
+        list.add(R.drawable.function_bg2);
+        list.add(R.drawable.function_bg2);
+        list.add(R.drawable.function_bg2);
+        list.add(R.drawable.function_bg2);
 
         //设置OffscreenPageLimit
         mViewPager.setOffscreenPageLimit(Math.min(list.size(), 5));

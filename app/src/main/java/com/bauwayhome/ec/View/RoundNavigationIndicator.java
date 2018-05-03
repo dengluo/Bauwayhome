@@ -58,8 +58,8 @@ public class RoundNavigationIndicator extends LinearLayout {
 	public void draw(){
 		for(int i=0;i<sum;i++){
 			ImageView imageview=new ImageView(context);
-			imageview.setLayoutParams(new LayoutParams(40, 40));
-			imageview.setPadding(5, 0, 5, 0);
+			imageview.setLayoutParams(new LayoutParams(60, 60));
+			imageview.setPadding(10, 0, 10, 0);
 			if(i==selected){
 				imageview.setImageDrawable(getResources().getDrawable(R.drawable.page_indicator_focused));
 			}else{

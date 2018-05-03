@@ -29,7 +29,7 @@ import java.util.List;
  * 公司新闻
  * Created by Danny on 2018/3/14 .
  */
-public class NewsFragment1 extends Fragment implements View.OnClickListener{
+public class NewsFragment1 extends Fragment implements View.OnClickListener {
 
     private View view_main;
     private Context context;
@@ -37,7 +37,7 @@ public class NewsFragment1 extends Fragment implements View.OnClickListener{
     private NewsAdapter adapter;
     private Handler handler;
     private ListView lv;
-    private String newsUrl = "http://m.bauway.cn";
+    private String newsUrl = "http://www.bauway.cn";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -66,8 +66,8 @@ public class NewsFragment1 extends Fragment implements View.OnClickListener{
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             News news = newsList.get(position);
                             Intent intent = new Intent(context, NewsDisplayActvivity.class);
-                            Log.e("getNewsUrl","__"+ news.getNewsUrl());
-                            intent.putExtra("news_url", newsUrl+news.getNewsUrl());
+                            Log.e("getNewsUrl", "__" + news.getNewsUrl());
+                            intent.putExtra("news_url", news.getNewsUrl());
                             startActivity(intent);
                         }
                     });
@@ -83,37 +83,28 @@ public class NewsFragment1 extends Fragment implements View.OnClickListener{
             public void run() {
                 try {
                     //获取虎扑新闻20页的数据，网址格式为：https://voice.hupu.com/nba/第几页
-//                    for (int i = 1; i <= 4; i++) {
-                    Document doc = Jsoup.connect("http://m.bauway.cn/news/").get();
-                    Elements titleLinks = doc.getElementsByClass("list_cont").select("li");//解析来获取每条新闻的标题与链接地址
-//                        Elements descLinks = doc.select("p.articlelist-datebtnsolid-summary.mt5");//解析来获取每条新闻的简介
-//                        Elements timeLinksMonth = doc.select("div.articlelist-datebtnsolid-date");   //解析来获取每条新闻的时间月份
-//                        Elements timeLinksDay = doc.select("span.article-column-time-days-data");   //解析来获取每条新闻的时间日期
+                    for (int i = 1; i <= 5; i++) {
+                    Document doc = Jsoup.connect("http://www.bauway.cn/ic47137-p"+ Integer.toString(i)+".html").get();
+                    Elements titleLinks = doc.select("div.colorful_long_title");//解析来获取每条新闻的简介和标题
+                    Elements dataLinks = doc.select("div.colorful_long_left");//解析来获取每条新闻的简介
+                    Elements pictureLinks = doc.select("div.articlelist-picture");//解析来获取每条新闻的图片
                     Log.e("title", Integer.toString(titleLinks.size()));
-//                        Log.e("titleLinks", titleLinks.toString());
-//                        Log.e("descLinks", descLinks.toString());
                     News news;
                     for (int j = 0; j < titleLinks.size(); j++) {
                         String title = titleLinks.get(j).select("a").text();
-                        String title2 = title.substring(0, title.length() - 4);
-                        String uri = titleLinks.get(j).select("a").attr("href");
+//                            String title2 = title.substring(0, title.length() - 4);
+                        String uri = newsUrl + titleLinks.get(j).getElementsByClass("article-column-links articleList-links-singleline").select("a").attr("href");
                         String desc = titleLinks.get(j).select("p").text();
-                        String date = titleLinks.get(j).select("span").text();
-                        String date1 = date.substring(0, date.length() - 2);
-                        String date2 = date.substring(date.length() - 2, date.length());
-                        String img = newsUrl + titleLinks.get(j).select("img").first().attr("src");
-//                        Log.e("img==",""+img);
-//                            String day = timeLinksDay.get(j).select("span").text();
+                        String date = dataLinks.get(j).select("p").text();
+                        String img = "http:" + pictureLinks.get(j).select("img").first().attr("src");
                         if (desc.length() > 50) {
-                            news = new News(title2, uri, "  " + desc.substring(0, 50), date1 + "-" + date2, img);
+                            news = new News(title, uri, "  " + desc.substring(0, 50), date, img);
                         } else {
-                            news = new News(title2, uri, "  " + desc.substring(0, desc.length()), date1 + "-" + date2, img);
+                            news = new News(title, uri, "  " + desc.substring(0, desc.length()), date, img);
                         }
-
-//                            String time = timeLinks.get(j).select("span.other-left").select("a").text();
                         newsList.add(news);
                     }
-//                    }
+                    }
                     Message msg = new Message();
                     msg.what = 1;
                     handler.sendMessage(msg);
@@ -124,6 +115,7 @@ public class NewsFragment1 extends Fragment implements View.OnClickListener{
             }
         }).start();
     }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

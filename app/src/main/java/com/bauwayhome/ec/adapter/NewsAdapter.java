@@ -66,11 +66,7 @@ public class NewsAdapter extends BaseAdapter {
         viewHolder.newsDesc.setText("  "+newsList.get(position).getDesc());
         viewHolder.newsTime.setText("发表日期 : "+newsList.get(position).getNewsTime());
 //        Log.e("getNewsImg",""+newsList.get(position).getNewsImg());
-        if (newsList.get(position).getNewsImg().trim().equals("http://m.bauway.cn")){
-            Glide.with(mContext).load(newsList.get(position).getNewsImg()).placeholder(R.mipmap.ic_launcher).into(viewHolder.newsImg);
-        }else {
-            Glide.with(mContext).load(newsList.get(position).getNewsImg()).priority( Priority.HIGH).into( viewHolder.newsImg);
-        }
+        Glide.with(mContext).load(newsList.get(position).getNewsImg()).priority( Priority.HIGH).into( viewHolder.newsImg);
 
         return view;
     }
