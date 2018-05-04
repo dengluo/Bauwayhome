@@ -373,4 +373,6 @@ d. Users shall not use the "CIGGO" account or the service to make, upload, copy,
     <string name="bauway">Bauway</string>
     <string name="now_login">Log in</string>
     <string name="product">Product</string>
+    <string name="our_products">Our products</string>
+    <string name="ciggo_evaluating">Review</string>
 </resources>

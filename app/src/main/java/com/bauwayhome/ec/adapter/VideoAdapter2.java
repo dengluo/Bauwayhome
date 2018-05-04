@@ -23,21 +23,21 @@ import java.util.List;
  * Created by danny on 2018/4/11.
  */
 
-public class VideoAdapter extends BaseAdapter {
+public class VideoAdapter2 extends BaseAdapter {
 
     private List<Video> videoList;
     private View view;
     private Context mContext;
     private ViewHolder viewHolder;
 
-    public VideoAdapter(Context mContext, List<Video> videoList) {
+    public VideoAdapter2(Context mContext, List<Video> videoList) {
         this.videoList = videoList;
         this.mContext = mContext;
     }
 
     @Override
     public int getCount() {
-        return 3;
+        return 6;
     }
 
     @Override
@@ -53,7 +53,7 @@ public class VideoAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
-            view = LayoutInflater.from(mContext).inflate(R.layout.video_item, parent,
+            view = LayoutInflater.from(mContext).inflate(R.layout.video_item2, parent,
                     false);
             LinearLayout ll_video_item = (LinearLayout) view.findViewById(R.id.ll_video_item);
             DisplayMetrics dm = new DisplayMetrics();//获取当前显示的界面大小
