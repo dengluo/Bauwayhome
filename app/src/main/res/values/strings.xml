@@ -4,182 +4,183 @@
     <string name="menu_stop">Stop</string>
     <string name="menu_connect">Connect</string>
     <string name="menu_disconnect">Disconnect</string>
-    <string name="plz_input_phone">请输入手机号码</string>
-    <string name="plz_input_yzm">请输入验证码</string>
-    <string name="plz_input_email">请输入邮箱</string>
-    <string name="plz_input_pwd">请输入密码</string>
-    <string name="plz_input_oldpwd">请输入旧密码</string>
-    <string name="plz_input_newpwd">请输入新密码</string>
-    <string name="plz_error_oldpwd">旧密码输入错误</string>
-    <string name="login_now">正在登录…</string>
-    <string name="confirm">确认</string>
-    <string name="input_pwd">密码(6-12位数字字母组合)</string>
-    <string name="input_new_pwd">新密码(6-12位字母和数字组合)</string>
-    <string name="confirm_pwd">确认密码</string>
-    <string name="register_success_plz_check_phone">注册成功</string>
-    <string name="phone_already_register">手机已被注册</string>
+    <string name="plz_input_phone">Please Input Phone number</string>
+    <string name="plz_input_yzm">Please input verification code</string>
+    <string name="plz_input_email">Please input email address</string>
+    <string name="plz_input_pwd">Please input password</string>
+    <string name="plz_input_oldpwd">please input old password</string>
+    <string name="plz_input_newpwd">Please input new password</string>
+    <string name="plz_error_oldpwd">Old password input error</string>
+    <string name="login_now">Login in now…</string>
+    <string name="confirm">Confirm</string>
+    <string name="input_pwd">Password(6-12 letters and numbers combination)</string>
+    <string name="input_new_pwd">New password(6-12 letters and numbers combination)</string>
+    <string name="confirm_pwd">Confirm password</string>
+    <string name="register_success_plz_check_phone">Register success</string>
+    <string name="phone_already_register">Phone already registered</string>
     <string name="and" translatable="false"><![CDATA[&]]></string>
-    <string name="pwd_again">确认新密码</string>
-    <string name="pwd_new">新密码</string>
-    <string name="pwd_old">旧密码</string>
-    <string name="username_reset">需要重置密码的账号</string>
-    <string name="pwd_reset">重置密码</string>
-    <string name="receive_code">收到的验证码</string>
-    <string name="reset_password_now">正在重置密码</string>
-    <string name="reset_success_password">密码重置成功</string>
-    <string name="reset_failure">密码重置失败</string>
-    <string name="change_password_now">正在修改密码</string>
-    <string name="change_success_password">密码修改成功</string>
-    <string name="change_failure">密码修改失败</string>
-    <string name="find_bluetooth">发现蓝牙</string>
+    <string name="pwd_again">Confirm new password</string>
+    <string name="pwd_new">New password</string>
+    <string name="pwd_old">Old password</string>
+    <string name="username_reset">The account that need to reset password </string>
+    <string name="pwd_reset">Rest password</string>
+    <string name="receive_code">verification code you received</string>
+    <string name="reset_password_now">password reset</string>
+    <string name="reset_success_password">password reset success</string>
+    <string name="reset_failure">password reset failed </string>
+    <string name="change_password_now">changing password</string>
+    <string name="change_success_password">change password success</string>
+    <string name="change_failure">change password failed </string>
+    <string name="find_bluetooth">find buletooth</string>
     <string name="ble_not_supported">BLE is not supported</string>
-    <string name="pwd">密码</string>
+    <string name="pwd">password</string>
     <string name="error_bluetooth_not_supported">error_bluetooth_not_supported</string>
-    <string name="unknown_device">未知设备</string>
+    <string name="unknown_device">Unknown device</string>
 
-    <string name="code_is_send_error_plz_try">验证码请求失败，请重试</string>
-    <string name="second">秒</string>
-    <string name="code_is_send_plz_check">验证码已发送，请注意查收</string>
+    <string name="code_is_send_error_plz_try">Verification code request failed, please retry</string>
+    <string name="second"> second</string>
+    <string name="code_is_send_plz_check">verification code has been sent, please kindly check，</string>
 
-    <string name="organization_name1">单位名称</string>
-    <string name="legal_representative1">法人代表</string>
-    <string name="personinfo_head1">负责人</string>
-    <string name="registration_mark1">执照号</string>
-    <string name="address1">地址</string>
-    <string name="organization_name">单位名称:</string>
-    <string name="legal_representative">法人代表:</string>
-    <string name="personinfo_head">负责人:</string>
-    <string name="registration_mark">执照号:</string>
-    <string name="address">地址:</string>
-    <string name="plz_input_organization_name">请输入单位名称</string>
-    <string name="plz_input_legal_representative">请输入法人代表</string>
-    <string name="plz_input_personinfo_head">请输入负责人</string>
-    <string name="plz_input_registration_mark">请输入执照号</string>
-    <string name="plz_input_address">请输入地址</string>
-    <string name="change_pwd">更改密码</string>
-    <string name="change">修改</string>
+    <string name="organization_name1">Company name</string>
+    <string name="legal_representative1">Legal representative</string>
+    <string name="personinfo_head1"> Person in charge</string>
+    <string name="registration_mark1">Business license No</string>
+    <string name="address1">Address</string>
+    <string name="organization_name">Company name:</string>
+    <string name="legal_representative">Legal representative :</string>
+    <string name="personinfo_head">Person in Charge:</string>
+    <string name="registration_mark">Business License No:</string>
+    <string name="address">Address:</string>
+    <string name="plz_input_organization_name">Please input Company name</string>
+    <string name="plz_input_legal_representative">Please Input Legal representative</string>
+    <string name="plz_input_personinfo_head">Please input Person in Charge</string>
+    <string name="plz_input_registration_mark">Please input Business license No</string>
+    <string name="plz_input_address">Please input address</string>
+    <string name="change_pwd">Change password</string>
+    <string name="change">Change</string>
 
-    <string name="person_name">姓名</string>
-    <string name="person_sex">性别</string>
-    <string name="person_age">年龄</string>
-    <string name="person_height">身高</string>
-    <string name="person_weight">体重</string>
-    <string name="plz_input_person_name">姓名</string>
-    <string name="plz_input_person_sex">性别</string>
-    <string name="plz_input_person_age">年龄</string>
-    <string name="plz_input_person_height">身高</string>
-    <string name="plz_input_person_weight">体重</string>
-    <!--扫描二维码-->
-    <string name="album">相册</string>
-    <string name="scan_result">扫描结果</string>
-    <string name="copy">复制</string>
-    <string name="text_already_copied">已复制到剪贴板</string>
-    <string name="bar_code">条形码：%1$s</string>
-    <string name="decode_null">未发现二维码/条形码</string>
-    <string name="Alignment_code">对准二维码/条形码</string>
-    <string name="scan_code_open">扫描药品码开启使用</string>
-    <string name="manual_input_code">或者输入药品码</string>
-    <string name="camera_error">相机错误</string>
-    <!--生成二维码-->
-    <string name="scan_code">扫码</string>
-    <string name="generate_code">造码</string>
-    <string name="prompt">提示</string>
-    <string name="generate_qr_code">生成二维码</string>
-    <string name="select_logo">从相册选取Logo</string>
-    <string name="save_qr_code">保存二维码到手机</string>
-    <string name="input_qr_code_content">输入二维码中的信息</string>
+    <string name="person_name">Name</string>
+    <string name="person_sex">Sex</string>
+    <string name="person_age">Age</string>
+    <string name="person_height">Height</string>
+    <string name="person_weight">Weight</string>
+    <string name="plz_input_person_name">Name</string>
+    <string name="plz_input_person_sex">Sex</string>
+    <string name="plz_input_person_age">Age</string>
+    <string name="plz_input_person_height">Height</string>
+    <string name="plz_input_person_weight">Weight</string>
+    <!--Scan QC code-->
+    <string name="album">Album</string>
+    <string name="scan_result">Scan result</string>
+    <string name="copy">Copy</string>
+    <string name="text_already_copied">Already copied to Clipboard</string>
+    <string name="bar_code">Bar code：%1$s</string>
+    <string name="decode_null">QR code/ bar code not found</string>
+    <string name="Alignment_code">Alignment QC code/bar code </string>
+    <string name="scan_code_open">Scan medicine code, start to use </string>
+    <string name="manual_input_code">Or input medicine code</string>
+    <string name="camera_error">Camera error</string>
+    <!--generate QR code-->
+    <string name="scan_code">Scan code</string>
+    <string name="generate_code"> Generate code</string>
+    <string name="prompt">Reminder</string>
+    <string name="generate_qr_code">generate QR code</string>
+    <string name="select_logo">Select from Album Logo</string>
+    <string name="save_qr_code">Save QR code to phone </string>
+    <string name="input_qr_code_content">Input information from QR code </string>
     <string name="logo">Logo</string>
-    <string name="generate_qrcode_please">还没有生成二维码图片呢</string>
-    <string name="picture_already_save_to">图片已保存至%1$s</string>
-    <string name="save_fail_retry">保存失败，请重试</string>
-    <string name="logo_open_status">打开状态下，二维码图片中央区域显示Logo</string>
-    <string name="qrcode_fore_color">二维码前景色</string>
-    <string name="qrcode_back_color">二维码背景色</string>
+    <string name="generate_qrcode_please">Still haven’t generate RQ photo </string>
+    <string name="picture_already_save_to">Picture already had been saved to 1$s</string>
+    <string name="save_fail_retry">Save failed ,please retry</string>
+    <string name="logo_open_status">While opening status,QR code picture showed in the middle area Logo</string>
+    <string name="qrcode_fore_color">QR code front view</string>
+    <string name="qrcode_back_color">QR code background view</string>
 
-    <!--本地相册-->
-    <string name="local_album">本地相册</string>
+    <!--Local Album-->
+    <string name="local_album">Local Album</string>
     <string name="picture_name_number">%1$s(%2$d张)</string>
-    <string name="scanning">正在准备相册…</string>
-    <string name="identifying">正在识别…</string>
-    <string name="no_local_album">没有本地图片</string>
-    <string name="capture">拍照</string>
-    <string name="recent">最近</string>
-    <string name="camera">相机</string>
-    <string name="screen_short">屏幕截图</string>
-    <string name="we_chat">微信</string>
-    <string name="download">下载</string>
-    <string name="picture">图片</string>
-    <string name="no_crop_action">您的设备没有提供裁剪图片功能</string>
-    <string name="no_browser">您的设备没有提供内置浏览器</string>
-    <string name="play_fail">播放失败</string>
+    <string name="scanning">preparing album…</string>
+    <string name="identifying">identifying…</string>
+    <string name="no_local_album">No local album</string>
+    <string name="capture">take photos</string>
+    <string name="recent"> recent</string>
+    <string name="camera">Camera</string>
+    <string name="screen_short">screen capture </string>
+    <string name="we_chat"> We chat</string>
+    <string name="download">Download</string>
+    <string name="picture">picture</string>
+    <string name="no_crop_action"> your device haven’t provided cut pictures function </string>
+    <string name="no_browser">Your device haven’t provided built-in browser </string>
+    <string name="play_fail">play fail </string>
 
     <string name="version">1.1.3</string>
-    <string name="loading">正在加载…</string>
-    <string name="telphone">电话号码</string>
-    <string name="forget_pwd">忘记密码</string>
-    <string name="login">登陆</string>
-    <string name="register">注册</string>
-    <string name="grregister">个人注册</string>
-    <string name="jgregister">单位注册</string>
-    <string name="text_agreement_tips">我已阅读并接受葆威道</string>
-    <string name="text_agreement"> 《服务条款》 </string>
-    <string name="text_user_agreement"> 服务条款 </string>
-    <string name="just_now">刚刚</string>
-    <string name="sec_before">%d秒前</string>
-    <string name="min_before">%d分钟前</string>
-    <string name="today">今天%tR</string>
-    <string name="yesterday">昨天%tR</string>
+    <string name="loading">loading …</string>
+    <string name="telphone">telephone number</string>
+    <string name="forget_pwd">forget password</string>
+    <string name="login">log in</string>
+    <string name="register">register</string>
+    <string name="grregister">personal register</string>
+    <string name="jgregister">company register</string>
+    <string name="text_agreement_tips">I already red and acceptd BAUWAY</string>
+    <string name="text_agreement"> 《Terms of sevice》 </string>
+    <string name="text_user_agreement"> terms of sevice </string>
+    <string name="just_now">just now</string>
+    <string name="sec_before">%d second before</string>
+    <string name="min_before">%d minutes before</string>
+    <string name="today">today%tR</string>
+    <string name="yesterday">yesterday %tR</string>
     <string name="mill" translatable="false">%tc</string>
 
-    <string name="company_news">公司新闻</string>
-    <string name="industry_dynamics">行业动态</string>
+    <string name="company_news">Company news</string>
+    <string name="industry_dynamics">Industry dynamics</string>
 
-    <string name="tab_menu_pro0">低温烟</string>
+    <string name="tab_menu_pro0">Heat not burn</string>
     <string name="tab_menu_pro1">EGO</string>
-    <string name="tab_menu_pro2">烤烟</string>
-    <string name="tab_menu_pro3">盒子</string>
-    <string name="tab_menu_pro4">小烟</string>
-    <string name="tab_menu_pro5">烟油配件</string>
-    <string name="toast_yzm_1">验证码为空,请重新填写验证码</string>
-    <string name="toast_yzm_2">网络连接异常</string>
+    <string name="tab_menu_pro2">dry herb vaporizer</string>
+    <string name="tab_menu_pro3">Box mod</string>
+    <string name="tab_menu_pro4">Mini cigarette</string>
+    <string name="tab_menu_pro5">E liquid and spare parts</string>
+    <string name="toast_yzm_1">Verification code is empty, please refill verification code</string>
+    <string name="toast_yzm_2">Network connection exception </string>
 
-    <string name="view_device_index">查看设备指数</string>
-    <string name="set_device_index">设定设备指数</string>
-    <string name="unbind_device">解绑设备</string>
+    <string name="view_device_index">Check device index</string>
+    <string name="set_device_index">Set device index</string>
+    <string name="unbind_device">Unbind device</string>
 
-    <string name="plz_input_pwd_again">请再次输入密码</string>
-    <string name="pwd_input_diff">两次输入的密码不一致</string>
-    <string name="no_set">未设置</string>
-    <string name="cancel">取消</string>
-    <string name="email_already_register">邮箱已被注册</string>
-    <string name="register_failure">注册失败</string>
-    <string name="register_success_plz_check_email">注册成功，请注意查收验证邮件</string>
-    <string name="register_now">正在注册…</string>
-    <string name="email_pwd_input_err">邮箱／密码错误</string>
-    <string name="email_need_check">邮箱未验证，请验证邮箱后登录</string>
-    <string name="reset_password">重置密码</string>
-    <string name="send_reset_pwd_info">正在发送重置请求…</string>
-    <string name="already_send_reset_email">已发送验证邮件到您的邮箱，根据邮箱提示操作即可</string>
-    <string name="email_address_err">邮箱信息校验出错</string>
-    <string name="search">搜寻</string>
-    <string name="concern_us">关注我们</string>
-    <string name="count_number">口数</string>
-    <string name="notes">备注</string>
-    <string name="notification">提醒</string>
-    <string name="evaluate">评价</string>
-    <string name="set">设定</string>
-    <string name="common_set">通用指数</string>
-    <string name="product_select">产品选择</string>
-    <string name="product_show">产品展示</string>
-    <string name="news">新闻</string>
-    <string name="news_detail">新闻详情</string>
-    <string name="video_play">视频播放</string>
-    <string name="product_list">产品列表</string>
-    <string name="bbs">论坛</string>
-    <string name="function">功能</string>
-    <string name="Scan">扫一扫</string>
-    <string name="video">视频</string>
-    <string name="video_manager">视频管理</string>
+    <string name="plz_input_pwd_again">Input password again</string>
+    <string name="pwd_input_diff">The two passwords you typed do not match</string>
+    <string name="no_set">no set</string>
+    <string name="cancel">Cancel</string>
+    <string name="email_already_register">Email already had been registered</string>
+    <string name="register_failure">Register failed</string>
+    <string name="register_success_plz_check_email">register successful, please check email</string>
+    <string name="register_now">registering …</string>
+    <string name="email_pwd_input_err">email／password error</string>
+    <string name="email_need_check"> email unverified, please validate email address to log in. </string>
+    <string name="reset_password">reset password</string>
+    <string name="send_reset_pwd_info">sending reset request …</string>
+    <string name="already_send_reset_email">already sent validate email to your email address, operate according email reminder</string>
+    <string name="email_address_err">validate email information error</string>
+    <string name="search">search</string>
+    <string name="concern_us">Follow us </string>
+    <string name="count_number">Puffs</string>
+    <string name="notes">Notes</string>
+
+    <string name="notification">Remind</string>
+    <string name="evaluate">Evaluate</string>
+    <string name="set">set</string>
+    <string name="common_set">general index</string>
+    <string name="product_select">Product select</string>
+    <string name="product_show">Product display</string>
+    <string name="news">News</string>
+    <string name="news_detail">News details</string>
+    <string name="video_play">Video play</string>
+    <string name="product_list">Product list</string>
+    <string name="bbs">BBS</string>
+    <string name="function">Function</string>
+    <string name="Scan">Scan</string>
+    <string name="video">Video</string>
+    <string name="video_manager">Video manage</string>
     <string name="v" translatable="false">V</string>
     <string name="t" translatable="false">T</string>
     <string name="h" translatable="false">H</string>
@@ -187,199 +188,181 @@
     <string name="p" translatable="false">P</string>
     <string name="off">OFF</string>
     <string name="on">ON</string>
-    <string name="shake">震动</string>
-    <string name="user_use_number">口数</string>
-    <string name="temp">温度</string>
-    <string name="power_time">充电时间</string>
-    <string name="power_count">充电次数</string>
-    <string name="dcv">电压</string>
-    <string name="ota">固件升级</string>
-    <string name="app_user_info">账户信息</string>
-    <string name="plz_input_new_pwd_again">请再次输入新密码</string>
-    <string name="plz_input_new_pwd">请输入新密码</string>
-    <string name="plz_input_old_pwd">请输入旧密码</string>
-    <string name="change_pwd_success">密码修改成功</string>
-    <string name="change_pwd_failure">密码修改失败</string>
-    <string name="change_pwd_now">正在修改密码…</string>
-    <string name="vibration">震动</string>
-    <string name="work_time_set">单循环工作时间</string>
-    <string name="temp_set">温度设定</string>
-    <string name="parameter_not_null">参数不能为空</string>
-    <string name="every_day_use_num_plan">每日口数计划</string>
-    <string name="loop_use_num_plan">每循环口数计划</string>
-    <string name="use_num_plan_suggest">，建议值在</string>
-    <string name="between">之间</string>
-    <string name="plz_set_price">请设置价格</string>
-    <string name="loop_time">单循环时间</string>
+    <string name="shake">Vibration</string>
+    <string name="user_use_number">Puffs</string>
+    <string name="temp">Temperature</string>
+    <string name="power_time">Charge time</string>
+    <string name="power_count">Charge times</string>
+    <string name="dcv">Voltage</string>
+    <string name="ota">Update</string>
+    <string name="app_user_info">Account information</string>
+    <string name="plz_input_new_pwd_again">Please input new password again</string>
+    <string name="plz_input_new_pwd">Please input new password</string>
+    <string name="plz_input_old_pwd">Please input old password </string>
+    <string name="change_pwd_success">Change password success</string>
+    <string name="change_pwd_failure">Change password failed</string>
+    <string name="change_pwd_now">Changing password…</string>
+    <string name="vibration">Vibration</string>
+    <string name="work_time_set">Single cycle working time</string>
+    <string name="temp_set">Temperature setting</string>
+    <string name="parameter_not_null">parameter can’t be empty</string>
+    <string name="every_day_use_num_plan">Puffs plan per day</string>
+    <string name="loop_use_num_plan">Cycle puff plan per time</string>
+    <string name="use_num_plan_suggest">，Suggest at </string>
+    <string name="between">Between</string>
+    <string name="plz_set_price">Please set price</string>
+    <string name="loop_time">Single cycle time</string>
     <string name="m" translatable="false">M</string>
     <string name="s" translatable="false">S</string>
-    <string name="smoke_price">一包烟的价格</string>
-    <string name="money_type">币种</string>
+    <string name="smoke_price">one pack price</string>
+    <string name="money_type">currency</string>
     <string name="www_ciggo_com" translatable="false">www.ciggo.com</string>
-    <string name="send">发送</string>
-    <string name="plz_input_user_feedback">请输入您的反馈</string>
-    <string name="plz_input_feedback">请输入反馈内容</string>
-    <string name="send_feedback_msg_success">感谢您的反馈，我们会悉心听取您的意见。</string>
-    <string name="send_feedback_msg_failure">反馈提交失败，请重试</string>
-    <string name="notes_info">
-        \n
-        1:使用该APP前,你必须先用私人邮箱注册，且该邮箱将为密码恢复邮箱。
-        \n
-        \n
-        2:你必须选择正确的产品名
-        \n
-        \n
-        3:每循环口数计划是对每次通电时口数限制的计划。
-        \n
-        \n
-        4:温度选择其实是轻度抽烟者和重度抽烟者的选择，重度抽烟者用高温，轻度抽烟者用低温。
-        \n
-        \n
-        5:如果你不需要振动功能，可以关掉。
-        \n
-        \n
-        6:提醒页面有充电提醒，口数限制和设备维护这些信息。
-        \n
-        \n
-        7:充电维护是30天未充电的提醒。</string>
-    <string name="company_name" translatable="false">葆威道科技有限公司</string>
-    <string name="all_sum_num">总计节省费用</string>
-    <string name="save">省钱</string>
-    <string name="every_month">每月</string>
-    <string name="every_week">每周</string>
-    <string name="every_day">每天</string>
-    <string name="use_num_plan_warning">口数计划警告</string>
-    <string name="surplus_num">剩余口数</string>
-    <string name="charge_maintenance">充电维护</string>
-    <string name="clean">清洁</string>
-    <string name="have_clean">已经清洁？</string>
-    <string name="have_charge">已经充电？</string>
-    <string name="need_charge">需要充电</string>
-    <string name="low_power_waining">低压警告</string>
+    <string name="send">send</string>
+    <string name="plz_input_user_feedback">Please input user feedback </string>
+    <string name="plz_input_feedback">Please input feedback content</string>
+    <string name="send_feedback_msg_success">Thank you for your feedback, we will listen to you carefully. </string>
+    <string name="send_feedback_msg_failure">Feedback submit failed, please retry</string>
+
+    <string name="company_name" translatable="false">Shenzhen Bauway Technology Limized </string>
+    <string name="all_sum_num">Total save cost</string>
+    <string name="save">save</string>
+    <string name="every_month">every month</string>
+    <string name="every_week">Every week</string>
+    <string name="every_day">Every day</string>
+    <string name="use_num_plan_warning">Puff plan warning</string>
+    <string name="surplus_num">remaining puffs</string>
+    <string name="charge_maintenance">Charge maintenance</string>
+    <string name="clean">Clean</string>
+    <string name="have_clean">have been cleaned?</string>
+    <string name="have_charge">have been charged？</string>
+    <string name="need_charge">need charge</string>
+    <string name="low_power_waining">Low voltage warning</string>
     <string name="vapor_meet">vapor meet</string>
     <string name="vape_world">vape world</string>
-    <string name="use_product_name">使用产品名称</string>
-    <string name="log_out">注销登录</string>
-    <string name="confirm_log_out_app">确定退出当前登录账号？</string>
-    <string name="usd">美元</string>
-    <string name="rmb">人民币</string>
-    <string name="hk">港币</string>
-    <string name="sure">确定</string>
-    <string name="roger">知道了</string>
-    <string name="fragme_personinfo">个人信息</string>
-    <string name="home">index</string>
-    <string name="switch_language">切换语言</string>
-    <string name="select_product">产品选择</string>
-    <string name="home_product_iqos">IQOS系列</string>
-    <string name="home_product_kaoyan">烤烟系列</string>
-    <string name="home_product_box">盒子系列</string>
-    <string name="home_product_small">小烟系列</string>
-    <string name="fragme_exit">退出登陆</string>
-    <string name="plz_phone_format">请输入有效的手机号码</string>
-    <string name="code_error">验证码错误</string>
-    <string name="text_agreement_myz_tips">我要开启30天免验证</string>
-    <string name="account_validate">账号验证</string>
-    <string name="person_name1">姓名</string>
-    <string name="person_sex1">性别</string>
-    <string name="person_age1">年龄</string>
-    <string name="person_height1">身高</string>
-    <string name="person_weight1">体重</string>
-    <string name="edit">编辑</string>
-    <string name="confirm_validate">30日免验证期限已到,请立即前往验证</string>
-    <string name="tip_validate">账号信息需要验证,通过以后方可使用该功能</string>
-    <string name="validate">验证</string>
+    <string name="use_product_name">use product name</string>
+    <string name="log_out">log out</string>
+    <string name="confirm_log_out_app">confirm log out？</string>
+    <string name="usd">USD</string>
+    <string name="rmb">RMB</string>
+    <string name="hk">HK DOLLAR</string>
+    <string name="sure">Confirm </string>
+    <string name="roger">roger</string>
+    <string name="fragme_personinfo">personal information</string>
+    <string name="home">Home</string>
+    <string name="switch_language">change language</string>
+    <string name="select_product">select product</string>
+    <string name="home_product_iqos">IQOS series</string>
+    <string name="home_product_kaoyan">dry herb vaporizer</string>
+    <string name="home_product_box">box mod series</string>
+    <string name="home_product_small">mini cigarette series</string>
+    <string name="fragme_exit">log out</string>
+    <string name="plz_phone_format">please input valid phone number</string>
+    <string name="code_error">verification code error</string>
+    <string name="text_agreement_myz_tips">I’m going to open 30 days without verification </string>
+    <string name="account_validate">account verification</string>
+    <string name="person_name1">Name </string>
+    <string name="person_sex1">Sex</string>
+    <string name="person_age1">Age</string>
+    <string name="person_height1">Height</string>
+    <string name="person_weight1">Weight</string>
+    <string name="edit">Edit</string>
+    <string name="confirm_validate">30 days without verification expired, please go to verification  </string>
+    <string name="tip_validate">Account information need to be validated, you can use this function after passed</string>
+    <string name="validate">Validate</string>
 
-    <string name="help_docs">help docs</string>
-    <string name="version_num">version</string>
-    <string name="about_us">about us</string>
-    <string name="product_detail">产品详情</string>
+    <string name="help_docs">Help documents</string>
+    <string name="version_num">Version</string>
+    <string name="about_us">About us</string>
+    <string name="product_detail">Product detail</string>
     <string name="me">Me</string>
-    <string name="account_info">账号信息</string>
-    <string name="fragme_data">数据</string>
-    <string name="fragme_about">关于</string>
-    <string name="selected_device">选择设备</string>
-    <string name="device_save_success">保存成功</string>
-    <string name="device_save_fail">保存失败</string>
-    <string name="device_add_fail">设备添加失败</string>
-    <string name="please_enable_the_bluetooth">请打开蓝牙</string>
-    <string name="device_not_connected">请先连接设备</string>
-    <string name="unopened">论坛暂未开通</string>
-    <string name="code_not_scan">请扫描产品码</string>
-    <string name="product_code">产品码:</string>
-    <string name="already_bind">已经绑定了设备</string>
-    <string name="searching">正在搜索…</string>
-    <string name="search_again">重试</string>
-    <string name="confirm_unbind_device">确认解绑当前设备？</string>
-    <string name="connect_device">连接设备</string>
-    <string name="scan">扫描</string>
-    <string name="change_now">正在修改…</string>
-    <string name="product_model">型号：</string>
-    <string name="product_size">尺寸：</string>
-    <string name="product_flavor">口味：</string>
-    <string name="product_capacity">容量：</string>
-    <string name="product_batter">电池容量：</string>
+    <string name="account_info">Account information</string>
+    <string name="fragme_data">Data</string>
+    <string name="fragme_about">About</string>
+    <string name="selected_device">Select device</string>
+    <string name="device_save_success">Save success</string>
+    <string name="device_save_fail">Save failed </string>
+    <string name="device_add_fail">Add device failed</string>
+    <string name="please_enable_the_bluetooth">Please turn on Bluetooth </string>
+    <string name="device_not_connected">Please connect device first</string>
+    <string name="unopened">BBS haven’t open yet</string>
+    <string name="code_not_scan">Please scan product code </string>
+    <string name="product_code">Product code:</string>
+    <string name="already_bind">Already bind the device </string>
+    <string name="searching">Searching…</string>
+    <string name="search_again">Research</string>
+    <string name="confirm_unbind_device">Confirm unbind current device？</string>
+    <string name="connect_device">Connect device</string>
+    <string name="scan">Scan</string>
+    <string name="change_now">Changing…</string>
+    <string name="product_model">Model：</string>
+    <string name="product_size">Size：</string>
+    <string name="product_flavor">Flavor：</string>
+    <string name="product_capacity">Capacity：</string>
+    <string name="product_batter">Battery capacity：</string>
 
     <string name="company_web">www.bauway.com</string>
     <string name="company_phone">0755–29089555</string>
-    <string name="company_address">深圳市沙井街道南浦路蚝三林坡第一工业区B5栋</string>
+    <string name="company_address">Black B5, Haosan Linpokeng No.1 Industry Park, Nanpu Rd, Shajing Town, Bao’an District, Shenzhen, China</string>
+
 
     <string name="tips_help_docs">
-        电子烟与传统香烟的最大不同是什么？\n
-1.　不含焦油和其它有害化学物；\n
-2.　不需要点燃烧，没有烟灰；\n
-3.　不会产生二手烟，不会污染环境；\n
-4.　随时随地使用。\n
+        What are the differences between normal cigarettes and Electronic Cigarettes?
 \n
-电子烟的电池能使用多久?\n
-电子烟电池的使用时间与吸烟的方式相关，我们通常用口数来衡量时间，正常吸烟情况下，新电池一般能够持续吸300-350口，相当于抽一包香烟。\n
+1. Does not contain tar and other harmful chemicals; \n
+2. No need to burn, no cigarette ash; \n
+3. NO secondhand smoke and NO environment pollution; \n
+4. Use it anytime, anywhere. \n
 \n
-怎么存放电子烟弹?\n
-很明显，电子烟弹应存放在凉爽、干燥的地方，甚至可以放在冰箱里，放冰箱的时候需要装入袋子或者有密封的原包装里，这样能防止冰箱里的水分。很有必要提醒您，应该在再次使用电子烟弹之前让它保持在室温下。\n
+What’s the battery of e cigarette lifespan? \n
+The battery of e cigarette lifespan is depends on the way of smoking. We usually use the puffs to measure the lifespan. Under normal smoking conditions, new battery lasts about 300-350 puffs, which is equivalent to one pack of cigarettes. \n
 \n
-我可以在禁烟区吸电子烟吗?\n
-在禁烟区吸烟要视不同国家、不同地区的法律而定，大部分国家和地区的禁烟区是允许吸电子烟的，但也有一些地方的禁烟区是明确禁止使用电子烟的，在这些法律上禁止吸电子烟的地区，就不要使用电子烟了。\n
+How to store your e-cigarettes? \n
+Please store your e cigarette in a cool \&amp; dry place, or in the refrigerator. When store in the refrigerator, please put your it into a bag or a sealed original package to keep moisture. Warm remind that please keep your e cigarette at room temperature before using it again. \n
 \n
-电子烟需要点火吗?\n
-不，吸电子烟不需要点火，电子烟是一种电子产品。\n
+Can I smoke e cigarettes in no-smoking zones?\n
+Smoking in no-smoking zones depends on the laws of different countries and regions. Most countries and regions NO-smoking zones allow to smoke e cigarette. However, there are some areas where e cigarette is explicitly prohibited, so please do not smoke e cigarettes there.. \n
 \n
-电子烟能戒烟吗?\n
-电子烟相对传统香烟来说，是一种安全吸烟的替代品，很多电子烟的用户说，使用电子烟并没有让他们失去吸烟的乐趣，电子烟是健康的吸烟方式，对于为了健康去戒烟的烟民来说是一种很多的选择。\n
+Does e cigarette need fire? \n
+No, there is no need to ignite electronic smoke. Electronic cigarette is an electronic product.
 \n
-哪些人会使用电子烟？\n
-电子烟含有尼古丁，它不是用于医学意义上的戒烟产品。电子烟使用者应该年满18周岁，有健康问题的烟民要在医生的指导下才能使用电子烟，而且电子烟不要放在小孩和宠物轻易拿到的地方。\n
+Can electronic cigarettes quit smoking? \n
+E-cigarette is a substitute for safe smoking compared to traditional cigarettes. Many users of electronic cigarettes said that using e-cigarettes does not make them lose the pleasure of smoking. E-cigarettes is a healthy way of smoking. And for health reasons, it’s a good choice for smokers who want to quit smoking. \n
 \n
-电子烟是怎样工作的？\n
-电子烟是通过加热含有尼古丁烟油而生成雾的电子设备，吸烟者通过烟体里面的传送系统抽吸雾，从而达到吸烟的效果，这种吸烟是无烟、无焦油、不会产生一氧化碳和臭味的。\n
+Who will smoke electronic cigarettes? \n
+Electronic cigarettes contain nicotine, which is not a medical quit smoking product. E-cigarette users should above 18 years old. Smokers with health problems use electronic cigarettes should be under the guidance of doctors. Electronic cigarettes should not be placed in places easily accessible to children and pets. \n
 \n
-什么是电子烟？\n
-电子烟是传统香烟的替代产品，电子烟提供一种无烟、无烟灰、无香烟难闻气味的真实吸烟体验。电子烟的关键是消除了燃烧及带来的烟，因为电子烟不需要点燃就可以抽吸。电子烟的烟油通过烟雾化器产生与烟效果一样的雾，它是无烟、无焦油、不会产生一氧化碳和臭味的传统香烟替代产品。\n
-    </string>
+How does electronic cigarette work? \n
+E-cigarettes are electronic devices that generate smoke by heating nicotine-containing E liquid. Smoker smokes through the transport system inside the cigarette to achieve the effect of smoking. This kind of smoking is smoke-free, tar-free, and does not produce carbon monoxide. Stinky.
+\n
+What is electronic cigarette? \n
+E cigarettes is an alternative to traditional cigarettes. Electronic cigarettes provide a smoke-free, soot-free, smoking-free, real-life smoking experience. The key to e-cigarettes is the elimination of burning and fumes, because e-cigarettes can be smoked without ignition. E liquid heating by atomizer and produce smoke which same as cigarette. It is smoke-free, tar-free, and does not produce carbon monoxide and odor as a substitute for traditional cigarettes. \n
 
+</string>
     <string name="tips_yonghuxieyi">
-  一、特别提示  \n
-在此特别提醒您（用户）在注册成为幸孕儿-上门服务技师端用户之前，请认真阅读本《用户服务协议》（以下简称“协议”），确保您充分理解本协议中各条款。请您审慎阅读并选择接受或不接受本协议。除非您接受本协议所有条款，否则您无权注册、登录或使用本协议所涉服务。您的注册、登录、使用等行为将视为对本协议的接受，并同意接受本协议各项条款的约束。  本协议约定幸孕儿-上门服务技师端平台与用户之间关于“幸孕儿-上门服务技师端”服务（以下简称“服务”）的权利义务。“用户”是指注册、登录、使用本服务的个人。本协议可由幸孕儿-上门服务技师端随时更新，更新后的协议条款一旦公布即代替原来的协议条款，恕不再另行通知，用户可在本APP中查阅最新版协议条款。在修改协议条款后，如果用户不接受修改后的条款，请立即停止使用幸孕儿上门服务提供的服务，用户继续使用平台提供的服务将被视为接受修改后的协议。  \n
-二、账号注册\n
-1、用户在使用本服务前需要注册一个“幸孕儿-上门服务技师端”账号。“幸孕儿-上门服务技师端”账号应当使用手机号码绑定注册，请用户使用尚未与“幸孕儿-上门服务技师端”账号绑定的手机号码，以及未被幸孕儿上门服务技师端平台封禁的手机号码注册“幸孕儿-上门服务技师端”账号。幸孕儿-上门服务技师端可以根据用户需求或产品需要对账号注册和绑定的方式进行变更，而无须事先通知用户。  \n
-2、如果注册申请者有被幸孕儿-上门服务技师端封禁的先例或涉嫌虚假注册及滥用他人名义注册，及其他不能得到许可的理由， 幸孕儿-上门服务技师端将拒绝其注册申请。  \n
-3、鉴于“幸孕儿-上门服务技师端”账号的绑定注册方式，您同意幸孕儿-上门服务技师端在注册时将允许您的手机号码及手机设备识别码等信息用于注册。  \n
-4、在用户注册及使用本服务时，幸孕儿-上门服务技师端需要搜集能识别用户身份的个人信息以便幸孕儿-上门服务技师端可以在必要时联系用户，或为用户提供更好的使用体验。幸孕儿-上门服务技师端搜集的信息包括但不限于用户的姓名、地址；幸孕儿-上门服务技师端同意对这些信息的使用将受限于第三条用户个人隐私信息保护的约束。  \n
-三、账户安全  \n
-1、用户一旦注册成功，成为幸孕儿-上门服务技师端的用户，将得到一个用户名和密码，并有权利使用自己的用户名及密码随时登陆幸孕儿-上门服务技师端。 \n
-2、用户对用户名和密码的安全负全部责任，同时对以其用户名进行的所有活动和事件负全责。  \n
-3、用户不得以任何形式擅自转让或授权他人使用自己的幸孕儿-上门服务技师端的用户名。  \n
-4、如果用户泄漏了密码，有可能导致不利的法律后果，因此不管任何原因导致用户的密码安全受到威胁，应该立即和幸孕儿客服人员取得联系，否则后果自负。  \n
-四、用户声明与保证  \n
-1、用户承诺其为具有完全民事行为能力的民事主体，且具有达成交易履行其义务的能力。  \n
-2、用户有义务在注册时提供自己的真实资料，并保证诸如手机号码、姓名、所在地区等内容的有效性及安全性，保证幸孕儿工作人员可以通过上述联系方式与用户取得联系。同时，用户也有义务在相关资料实际变更时及时更新有关注册资料。  \n
-3、用户通过使用幸孕儿-上门服务技师端的过程中所制作、上载、复制、发布、传播的任何内容，包括但不限于账号头像、名称、用户说明等注册信息及认证资料，或文字、语音、图片、视频、图文等发送、回复和相关链接页面，以及其他使用账号或本服务所产生的内容，不得违反国家相关法律制度，包含但不限于如下原则：  （1）反对宪法所确定的基本原则的；  （2）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的； （3）损害国家荣誉和利益的；  （4）煽动民族仇恨、民族歧视，破坏民族团结的； （5）破坏国家宗教政策，宣扬邪教和封建迷信的； （6）散布谣言，扰乱社会秩序，破坏社会稳定的；  （7）散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的； （8）侮辱或者诽谤他人，侵害他人合法权益的； （9）含有法律、行政法规禁止的其他内容的。  \n
-4、用户不得利用“幸孕儿-上门服务技师端”账号或本服务制作、上载、复制、发布、传播下干扰“幸孕儿-上门服务技师端”正常运营，以及侵犯其他用户或第三方合法权益的内容：  （1）含有任何性或性暗示的； （2）含有辱骂、恐吓、威胁内容的；  （3）含有骚扰、垃圾广告、恶意信息、诱骗信息的。\n</string>
+一. Special prompt
+For your protection, please read this “User Service Agreement”(hereinafter referred to as "this Agreement") carefully before you register to our services and make sure that you fully understand the terms before registration. Please carefully read and decide to accept all the terms in this agreement or to not. You are not entitled to register, log in or use the services covered by this agreement unless you accept all the terms of this agreement. Such behaviors as registration, login and use will be deemed as an agreement to be bound by the terms. This Agreement defines the rights and obligations between CIGGO and the users regarding the services provided by "CIGGO"  (hereinafter referred to as "services")."User" means the person who registers, logs in and uses the service. This agreement may be updated by CIGGO at any time. And the updated terms of the agreement will supersede the original terms of the agreement without further notice. Users can access the latest version of the agreement in this APP. If the user does not accept the revised terms after terms’ modification of the agreement, please stop using the services provided by CIGGO. If the user continues to use the services provided by the platform, it will be deemed to accept the revised agreement. \n
+二.Registration\n
+a. Before using the services, users need to register for a "CIGGO" account, which should be bounded with mobile number. Please use the phone number that has not been tied to the account and has not blocked by CIGGO platform. CIGGO can change the account registration and binding according to user requirements or products without prior notice to users.
+b.If the registered applicant has been banned by CIGGO or is suspected of false registration and misuse of other people\'s name, and other reasons that cannot be obtained, CIGGO will refuse The application for registration.
+c. In view of the binding registration method of "CIGGO" account, the user agrees that your mobile phone number and mobile device identification code will be used when registering.
+d. When users register and use this service, CIGGO needs to collect personal information that can identify users so that CIGGO can contact users when necessary or provide better user experience. The information collected includes but is not limited to the user\'s name and address. CIGGO agrees that the use of this information will be restricted by the protection of the third user\'s privacy information. \n
+三.Account security \n
+a. Once the user is registered successfully, he will become a user of CIGGO together with a user name and password, and have the right to use his own username and password to login to CIGGO at any time. \n
+b. The user is fully responsible for the security of the user\'s name and password, while taking full responsibility for all activities and affairs that its users name carry on. \n
+c. Users shall not, in any form, assign or authorize others to use their own CIGGO user names. \n
+d. If the user leaks the password, it can lead to adverse legal consequences. Therefore, if the password security of users is threatened for any reason, the user should immediately contact the customer service staff of CIGGO, otherwise the consequences will be overconfident. \n
+四.User statements and warranties
+a. The user promises that it is a civil subject with full civil capacity and has the ability to conclude a transaction to fulfill its obligations.
+b. Users have a duty to provide their real information at the time of registration, and ensure the  validity and safety of the content such as mobile phone number, name and region, which ensure that the CIGGO staff can get in touch with the user through the above contact information. At the same time, the user also has the obligation to update the relevant registration information timely when the relevant information is actually changed.
+c. Any content produced, uploaded, copied, published or transmitted by the users through the process of using CIGGO (including but not limited to: account picture, name, the user instructions for registration information and certification information, or Send, reply and related link pages for text, voice, picture, video and graphic) shall not violate the relevant national laws and regulations , including but not limited to the following principles: (1) Opposing the basic principles of the Constitution; (2) Endanger national security, divulge state secrets, subvert state power and destroy national unity; (3) Harming national honor and interests; (4) inciting ethnic hatred, ethnic discrimination and undermining national unity; (5) to undermine the state\'s religious policies and promote cults and feudal superstitions; (6) spreading rumors, disturbing social order and undermining social stability; (7) disseminating obscenity, pornography, gambling, violence, murder, terror or abetting a crime; (8) insulting or slandering another person or infringing upon the lawful rights and interests of others; (9) other contents prohibited by laws and administrative regulations.
+d. Users shall not use the "CIGGO" account or the service to make, upload, copy, publish or disseminate the contents that interfere with the normal operation of "CIGGO" and infringe upon the legitimate rights and interests of other users or third parties: (1) Containing any sexual or sexual innuendo; (2) contents containing abuse, intimidation or threat; (3) contain harassment, spam, malicious information, and decoy information. \n</string>
 
-    <string name="weixin">官方微信</string>
-    <string name="cn_web">中文网站</string>
-    <string name="en_web">英文网站</string>
+    <string name="weixin">WeChat</string>
+    <string name="cn_web">Website</string>
+    <string name="en_web">Website</string>
     <string name="phone">dianh</string>
-    <string name="fax">传真</string>
-    <string name="email">邮箱</string>
+    <string name="fax">Fax</string>
+    <string name="email">Email</string>
 
     <string name="weixin_value">BAU_WAY</string>
     <string name="cn_web_value">www.bauway.cn</string>
@@ -388,5 +371,6 @@
     <string name="fax_value">0755-33115078</string>
     <string name="email_value">tmall@bauway.com</string>
     <string name="bauway">Bauway</string>
-    <string name="now_login">立即登录</string>
+    <string name="now_login">Log in</string>
+    <string name="product">Product</string>
 </resources>

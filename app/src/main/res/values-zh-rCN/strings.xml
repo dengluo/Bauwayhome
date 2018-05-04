@@ -356,7 +356,7 @@
     <string name="weixin">官方微信</string>
     <string name="cn_web">中文网站</string>
     <string name="en_web">英文网站</string>
-    <string name="phone">dianh</string>
+    <string name="phone">电话</string>
     <string name="fax">传真</string>
     <string name="email">邮箱</string>
 
@@ -368,4 +368,5 @@
     <string name="email_value">tmall@bauway.com</string>
     <string name="bauway">Bauway</string>
     <string name="now_login">立即登录</string>
+    <string name="product">产品</string>
 </resources>

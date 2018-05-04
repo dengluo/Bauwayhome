@@ -17,6 +17,7 @@ import com.bauwayhome.ec.R;
 import com.bauwayhome.ec.activity.NewsDisplayActvivity;
 import com.bauwayhome.ec.adapter.NewsAdapter;
 import com.bauwayhome.ec.bean.News;
+import com.bauwayhome.ec.util.LanguageUtils;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -38,6 +39,7 @@ public class NewsFragment1 extends Fragment implements View.OnClickListener {
     private Handler handler;
     private ListView lv;
     private String newsUrl = "http://www.bauway.cn";
+    private String newsUrl2 = "http://www.bauway.com";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,7 +56,14 @@ public class NewsFragment1 extends Fragment implements View.OnClickListener {
 
         newsList = new ArrayList<>();
         lv = (ListView) view_main.findViewById(R.id.lv_news1);
-        getNews();
+        if(LanguageUtils.getLanguageMode(context) == 0){
+            getNews();
+        }else if(LanguageUtils.getLanguageMode(context) == 1) {
+            getNews2();
+        }else {
+            getNews();
+        }
+
         handler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
@@ -105,6 +114,48 @@ public class NewsFragment1 extends Fragment implements View.OnClickListener {
                         newsList.add(news);
                     }
                     }
+                    Message msg = new Message();
+                    msg.what = 1;
+                    handler.sendMessage(msg);
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    private void getNews2() {
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    //获取虎扑新闻20页的数据，网址格式为：https://voice.hupu.com/nba/第几页
+//                    for (int i = 1; i <= 5; i++) {
+                        //英文时网页抓取
+                        Document doc2 = Jsoup.connect("http://www.bauway.com/Corporation-news.html").get();
+//                        Elements elements = doc2.select("div.sitewidget-bd");
+
+                        Elements descLinks2 = doc2.select("div.article-column-titleinner");
+                        Elements titleLinks2 = doc2.select("div.article-title-ellipsis.article-padding.article-no-padding-left.articlelist-title-3");//解析来获取每条新闻的简介和标题
+                        Elements dataLinks2 = doc2.select("span.article-column-time");//解析来获取每条新闻的日期
+                        Elements pictureLinks2 = doc2.select("div.articlelist-picture.mobile-width-auto");//解析来获取每条新闻的图片
+                        News news;
+                        for (int j = 0; j < titleLinks2.size(); j++) {
+                            String title = titleLinks2.get(j).select("a").text();
+                            String uri = newsUrl2 + titleLinks2.get(j).getElementsByClass("article-column-links articleList-links-singleline").select("a").attr("href");
+                            String desc = descLinks2.get(j).select("p").text();
+                            String date = dataLinks2.get(j).select("span").text();
+                            String img = "http:" + pictureLinks2.get(j).select("img").first().attr("src");
+                            if (desc.length() > 50) {
+                                news = new News(title, uri, "  " + desc.substring(0, 50), date, img);
+                            } else {
+                                news = new News(title, uri, "  " + desc.substring(0, desc.length()), date, img);
+                            }
+                            newsList.add(news);
+                        }
+//                    }
                     Message msg = new Message();
                     msg.what = 1;
                     handler.sendMessage(msg);
