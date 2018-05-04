@@ -15,6 +15,8 @@ import com.bauwayhome.ec.adapter.VideoAdapter;
 import com.bauwayhome.ec.adapter.VideoAdapter2;
 import com.bauwayhome.ec.base.BaseActivity;
 import com.bauwayhome.ec.bean.Video;
+import com.bauwayhome.ec.util.NetworkUtil;
+import com.bauwayhome.ec.util.ToastUtil;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -37,11 +39,15 @@ public class VideoManagerActivity2 extends BaseActivity implements View.OnClickL
     GridView gv_video2;
     @BindView(R.id.iv_return)
     ImageView iv_return;
+    @BindView(R.id.iv_more_video1)
+    ImageView iv_more_video1;
+    @BindView(R.id.iv_more_video2)
+    ImageView iv_more_video2;
 
     private VideoAdapter adapter;
     private VideoAdapter2 adapter2;
-    private List<Video> videoList,videoList2;
-    private Handler handler,handler2;
+    private List<Video> videoList, videoList2;
+    private Handler handler, handler2;
     private Context context;
 
     @Override
@@ -81,7 +87,7 @@ public class VideoManagerActivity2 extends BaseActivity implements View.OnClickL
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             Video video = videoList.get(position);
                             Intent intent = new Intent(context, VideoDisplayActvivity.class);
-                            intent.putExtra("v_url", "http:"+video.getVideoUrl());
+                            intent.putExtra("v_url", "http:" + video.getVideoUrl());
 //                            Log.e("111", "2222==" + video.getVideoUrl());
                             startActivity(intent);
                         }
@@ -93,7 +99,7 @@ public class VideoManagerActivity2 extends BaseActivity implements View.OnClickL
         handler2 = new Handler() {
             @Override
             public void handleMessage(Message msg) {
-                if(msg.what == 2){
+                if (msg.what == 2) {
                     adapter2 = new VideoAdapter2(context, videoList2);
                     gv_video2.setAdapter(adapter2);
                     gv_video2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -101,7 +107,7 @@ public class VideoManagerActivity2 extends BaseActivity implements View.OnClickL
                         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                             Video video = videoList2.get(position);
                             Intent intent = new Intent(context, VideoDisplayActvivity.class);
-                            intent.putExtra("v_url", "http:"+video.getVideoUrl());
+                            intent.putExtra("v_url", "http:" + video.getVideoUrl());
 //                            Log.e("111", "2222==" + video.getVideoUrl());
                             startActivity(intent);
                         }
@@ -114,6 +120,17 @@ public class VideoManagerActivity2 extends BaseActivity implements View.OnClickL
     @Override
     protected void init(Bundle savedInstanceState) {
         context = this;
+        if (!NetworkUtil.isNetworkAvailable(context)){
+            ToastUtil.showShortToast(context, "网络连接异常!");
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (!NetworkUtil.isNetworkAvailable(context)){
+            ToastUtil.showShortToast(context, "网络连接异常!");
+        }
     }
 
     private void getVideos() {
@@ -135,9 +152,7 @@ public class VideoManagerActivity2 extends BaseActivity implements View.OnClickL
                         String title = titleLinks.get(j).select("a").text();
                         String username = usernameLinks.get(j).select("a").text();
                         String playcount = playcountLinks.get(j).select("span").text();
-                        String playcount2 = playcount.substring(playcount.indexOf("葆威电子烟视频 ")+8,playcount.length());
-//                        Log.e("playcount2", playcount2);
-//                        String data = dataLinks.get(j).select("span").text();
+                        String playcount2 = playcount.substring(playcount.indexOf("葆威电子烟视频 ") + 8, playcount.length());
                         String img = imgLinks.get(j).select("img").first().attr("src");
                         String uri = urlLinks.get(j).select("a").attr("href");
 //                        Log.e("data", img);
@@ -148,7 +163,6 @@ public class VideoManagerActivity2 extends BaseActivity implements View.OnClickL
                     Message msg = new Message();
                     msg.what = 1;
                     handler.sendMessage(msg);
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -175,9 +189,7 @@ public class VideoManagerActivity2 extends BaseActivity implements View.OnClickL
                         String title = titleLinks.get(j).select("a").text();
                         String username = usernameLinks.get(j).select("a").text();
                         String playcount = playcountLinks.get(j).select("span").text();
-                        String playcount2 = playcount.substring(playcount.indexOf("葆威电子烟视频 ")+8,playcount.length());
-//                        Log.e("playcount2", playcount2);
-//                        String data = dataLinks.get(j).select("span").text();
+                        String playcount2 = playcount.substring(playcount.indexOf("葆威电子烟视频 ") + 8, playcount.length());
                         String img = imgLinks.get(j).select("img").first().attr("src");
                         String uri = urlLinks.get(j).select("a").attr("href");
 //                        Log.e("img==", img);
@@ -188,7 +200,6 @@ public class VideoManagerActivity2 extends BaseActivity implements View.OnClickL
                     Message msg = new Message();
                     msg.what = 2;
                     handler2.sendMessage(msg);
-
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -196,11 +207,17 @@ public class VideoManagerActivity2 extends BaseActivity implements View.OnClickL
         }).start();
     }
 
-    @OnClick({R.id.iv_return})
+    @OnClick({R.id.iv_return,R.id.iv_more_video1,R.id.iv_more_video2})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_return:
                 finish();
+                break;
+            case R.id.iv_more_video1:
+                startActivity(new Intent(context, MoreVideoActivity1.class));
+                break;
+            case R.id.iv_more_video2:
+                startActivity(new Intent(context, MoreVideoActivity2.class));
                 break;
         }
     }
