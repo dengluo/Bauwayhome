@@ -131,7 +131,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
                         .setOnMenuItemClickListener(new TopRightMenu.OnMenuItemClickListener() {
                             @Override
                             public void onMenuItemClick(int position) {
-                                Toast.makeText(context, "点击菜单:" + position, Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(context, "点击菜单:" + position, Toast.LENGTH_SHORT).show();
                                 switch (position) {
                                     case 0:
                                         LanguageUtils.switchLanguage(context, 0);

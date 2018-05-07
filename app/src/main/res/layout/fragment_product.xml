@@ -26,12 +26,14 @@
     <com.bauwayhome.ec.View.PicsView
         android:id="@+id/picsviewpager"
         android:layout_width="match_parent"
-        android:layout_height="200dp" >
-    </com.bauwayhome.ec.View.PicsView>
+        android:layout_height="200dp"></com.bauwayhome.ec.View.PicsView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -39,47 +41,91 @@
             android:layout_marginLeft="@dimen/dp5"
             android:layout_marginRight="@dimen/dp5"
             android:layout_marginTop="@dimen/dp5"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <RadioGroup
-                android:id="@+id/rg_tab_bar"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_alignParentTop="true"
-                android:background="@drawable/shape_circle_huise"
-                android:orientation="horizontal">
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:scrollbars="none">
 
-                <RadioButton
-                    android:id="@+id/rb_pro0"
-                    style="@style/tab_menu_item1"
-                    android:text="@string/tab_menu_pro0" />
+                <RadioGroup
+                    android:id="@+id/rg_tab_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_circle_huise"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/rb_pro1"
-                    style="@style/tab_menu_item2"
-                    android:text="@string/tab_menu_pro2" />
+                    <RadioButton
+                        android:id="@+id/rb_pro0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/tab_menu_bg1"
+                        android:button="@null"
+                        android:padding="12dp"
+                        android:text="@string/tab_menu_pro0"
+                        android:textColor="@drawable/tab_menu_text"
+                        android:textSize="14sp" />
 
-                <RadioButton
-                    android:id="@+id/rb_pro2"
-                    style="@style/tab_menu_item2"
-                    android:text="@string/tab_menu_pro3" />
+                    <RadioButton
+                        android:id="@+id/rb_pro1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/tab_menu_bg2"
+                        android:button="@null"
+                        android:padding="12dp"
+                        android:text="@string/tab_menu_pro2"
+                        android:textColor="@drawable/tab_menu_text"
+                        android:textSize="14sp" />
 
-                <RadioButton
-                    android:id="@+id/rb_pro3"
-                    style="@style/tab_menu_item2"
-                    android:text="@string/tab_menu_pro4" />
+                    <RadioButton
+                        android:id="@+id/rb_pro2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/tab_menu_bg2"
+                        android:button="@null"
+                        android:padding="12dp"
+                        android:text="@string/tab_menu_pro3"
+                        android:textColor="@drawable/tab_menu_text"
+                        android:textSize="14sp" />
 
-                <RadioButton
-                    android:id="@+id/rb_pro4"
-                    style="@style/tab_menu_item2"
-                    android:text="@string/tab_menu_pro1" />
+                    <RadioButton
+                        android:id="@+id/rb_pro3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/tab_menu_bg2"
+                        android:button="@null"
+                        android:padding="12dp"
+                        android:text="@string/tab_menu_pro4"
+                        android:textColor="@drawable/tab_menu_text"
+                        android:textSize="14sp" />
 
-                <RadioButton
-                    android:id="@+id/rb_pro5"
-                    style="@style/tab_menu_item3"
-                    android:text="@string/tab_menu_pro5" />
+                    <RadioButton
+                        android:id="@+id/rb_pro4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/tab_menu_bg2"
+                        android:button="@null"
+                        android:padding="12dp"
+                        android:text="@string/tab_menu_pro1"
+                        android:textColor="@drawable/tab_menu_text"
+                        android:textSize="14sp" />
 
-            </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/rb_pro5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/tab_menu_bg3"
+                        android:button="@null"
+                        android:padding="12dp"
+                        android:text="@string/tab_menu_pro5"
+                        android:textColor="@drawable/tab_menu_text"
+                        android:textSize="14sp" />
+
+                </RadioGroup>
+            </HorizontalScrollView>
 
             <!--<View-->
             <!--android:id="@+id/div_tab_bar"-->
@@ -97,6 +143,7 @@
                 android:layout_marginTop="5dp"
                 android:background="@color/white" />
         </LinearLayout>
+
 
     </LinearLayout>
 
