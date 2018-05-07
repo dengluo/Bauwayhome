@@ -16,8 +16,8 @@ import android.widget.TextView;
 
 import com.bauwayhome.ec.Fragment.FragmentHome;
 import com.bauwayhome.ec.Fragment.FragmentMe;
-import com.bauwayhome.ec.Fragment.FragmentNews;
 import com.bauwayhome.ec.Fragment.FragmentProductShow;
+import com.bauwayhome.ec.Fragment.FragmentSales;
 import com.bauwayhome.ec.adapter.FragmentTabAdapter;
 import com.bauwayhome.ec.base.BaseActivity;
 import com.bestmafen.easeblelib.util.EaseUtils;
@@ -191,7 +191,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         });
         list_fm.add(fg_home);// 首页电子烟
         list_fm.add(new FragmentProductShow());// 产品
-        list_fm.add(new FragmentNews());//新闻
+        list_fm.add(new FragmentSales());//促销
+//        list_fm.add(new FragmentNews());//新闻
         list_fm.add(new FragmentMe());// 我
         return list_fm;
     }

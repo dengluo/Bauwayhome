@@ -20,6 +20,7 @@ import com.bauwayhome.ec.MainActivity;
 import com.bauwayhome.ec.R;
 import com.bauwayhome.ec.activity.AboutUsActivity;
 import com.bauwayhome.ec.activity.FunctionActivity;
+import com.bauwayhome.ec.activity.NewsActivity;
 import com.bauwayhome.ec.activity.VideoManagerActivity2;
 import com.bauwayhome.ec.util.LanguageUtils;
 import com.bauwayhome.ec.zxing.activity.CaptureActivity;
@@ -164,7 +165,8 @@ public class FragmentHome extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(context, AboutUsActivity.class));
                 break;
             case R.id.ll_home_news:
-                doGoNews.doGoNews();
+//                doGoNews.doGoNews();
+                startActivity(new Intent(context, NewsActivity.class));
                 break;
             case R.id.ll_home_bbs:
                 ToastUtils.showShortSafe(R.string.unopened);

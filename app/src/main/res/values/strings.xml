@@ -173,6 +173,8 @@
     <string name="product_select">Product select</string>
     <string name="product_show">Product display</string>
     <string name="news">News</string>
+    <string name="sales">Sales</string>
+    <string name="news_list">News list</string>
     <string name="news_detail">News details</string>
     <string name="video_play">Video play</string>
     <string name="product_list">Product list</string>

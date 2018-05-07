@@ -88,7 +88,7 @@
             android:button="@null"
             android:drawableTop="@drawable/selector_radio_news"
             android:gravity="center"
-            android:text="@string/news"
+            android:text="@string/sales"
             android:textColor="@drawable/selector_radio_txt_nearby"
             android:textSize="10sp" />
 

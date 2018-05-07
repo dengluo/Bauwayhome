@@ -18,7 +18,6 @@
     <string name="confirm_pwd">确认密码</string>
     <string name="register_success_plz_check_phone">注册成功</string>
     <string name="phone_already_register">手机已被注册</string>
-    <string name="and" translatable="false"><![CDATA[&]]></string>
     <string name="pwd_again">确认新密码</string>
     <string name="pwd_new">新密码</string>
     <string name="pwd_old">旧密码</string>
@@ -129,7 +128,6 @@
     <string name="min_before">%d分钟前</string>
     <string name="today">今天%tR</string>
     <string name="yesterday">昨天%tR</string>
-    <string name="mill" translatable="false">%tc</string>
 
     <string name="company_news">公司新闻</string>
     <string name="industry_dynamics">行业动态</string>
@@ -172,6 +170,8 @@
     <string name="product_select">产品选择</string>
     <string name="product_show">产品展示</string>
     <string name="news">新闻</string>
+    <string name="sales">促销</string>
+    <string name="news_list">新闻列表</string>
     <string name="news_detail">新闻详情</string>
     <string name="video_play">视频播放</string>
     <string name="product_list">产品列表</string>
@@ -180,11 +180,6 @@
     <string name="Scan">扫一扫</string>
     <string name="video">视频</string>
     <string name="video_manager">视频管理</string>
-    <string name="v" translatable="false">V</string>
-    <string name="t" translatable="false">T</string>
-    <string name="h" translatable="false">H</string>
-    <string name="temp_unit" translatable="false">℃</string>
-    <string name="p" translatable="false">P</string>
     <string name="off">OFF</string>
     <string name="on">ON</string>
     <string name="shake">震动</string>
@@ -211,17 +206,13 @@
     <string name="between">之间</string>
     <string name="plz_set_price">请设置价格</string>
     <string name="loop_time">单循环时间</string>
-    <string name="m" translatable="false">M</string>
-    <string name="s" translatable="false">S</string>
     <string name="smoke_price">一包烟的价格</string>
     <string name="money_type">币种</string>
-    <string name="www_ciggo_com" translatable="false">www.ciggo.com</string>
     <string name="send">发送</string>
     <string name="plz_input_user_feedback">请输入您的反馈</string>
     <string name="plz_input_feedback">请输入反馈内容</string>
     <string name="send_feedback_msg_success">感谢您的反馈，我们会悉心听取您的意见。</string>
     <string name="send_feedback_msg_failure">反馈提交失败，请重试</string>
-    <string name="company_name" translatable="false">葆威道科技有限公司</string>
     <string name="all_sum_num">总计节省费用</string>
     <string name="save">省钱</string>
     <string name="every_month">每月</string>
