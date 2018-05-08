@@ -3,18 +3,22 @@ package com.bauwayhome.ec.activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bauwayhome.ec.R;
 import com.bauwayhome.ec.base.BaseActivity;
+import com.bauwayhome.ec.util.MyUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
 public class AboutUsActivity extends BaseActivity {
 
-    private static final String TAG = "HelpDocsActivity";
+    private static final String TAG = "AboutUsActivity";
     @BindView(R.id.iv_return)
     ImageView mIvReturn;
+    @BindView(R.id.tv_aboutus_version)
+    TextView tv_aboutus_version;
 
     @Override
     protected int getLayoutRes() {
@@ -28,7 +32,8 @@ public class AboutUsActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
+        String vsersion = MyUtil.getVersion(this);
+        tv_aboutus_version.setText("V"+vsersion);
     }
 
     @Override
