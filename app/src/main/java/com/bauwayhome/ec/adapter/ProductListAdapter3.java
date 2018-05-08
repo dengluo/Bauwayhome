@@ -66,7 +66,7 @@ public class ProductListAdapter3 extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup arg2) {
+    public View getView(final int position, View convertView, ViewGroup arg2) {
         product = products.get(position);
         if (convertView == null) {
             viewHolder = new ViewHolder();
@@ -95,7 +95,7 @@ public class ProductListAdapter3 extends BaseAdapter {
         viewHolder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int position = (int)view.getTag();
+//                int position = (int)view.getTag();
                 Uri uri = Uri.parse(products.get(position).getIqos_url());
                 Intent intent = new Intent(mContext,ProductDetailsActivity.class);
                 intent.putExtra("uri",uri+"");

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Bauwayhome</string>
+    <string name="app_name">葆威</string>
     <string name="menu_scan">Scan</string>
     <string name="menu_stop">Stop</string>
     <string name="menu_connect">Connect</string>
@@ -264,6 +264,7 @@
     <string name="about_us">关于我们</string>
     <string name="product_detail">产品详情</string>
     <string name="me">我</string>
+    <string name="sales_suit">促销套装</string>
     <string name="account_info">账号信息</string>
     <string name="fragme_data">数据</string>
     <string name="fragme_about">关于</string>
@@ -354,7 +355,7 @@
     <string name="weixin_value">BAU_WAY</string>
     <string name="cn_web_value">www.bauway.cn</string>
     <string name="en_web_value">www.bauway.com</string>
-    <string name="phone_value">0755-39089555</string>
+    <string name="phone_value">0755-29089555</string>
     <string name="fax_value">0755-33115078</string>
     <string name="email_value">tmall@bauway.com</string>
     <string name="bauway">Bauway</string>

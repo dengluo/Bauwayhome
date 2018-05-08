@@ -44,7 +44,7 @@ public class MyFragment3 extends Fragment {
     }
 
     private void loadData() {
-        String bql ="select * from Product_Box";//查询所有
+        String bql ="select * from Product_Box ORDER BY updateAt DESC";//查询所有
         new BmobQuery<Product_Routine>().doSQLQuery(bql,new SQLQueryListener<Product_Routine>(){
 
             @Override

@@ -69,6 +69,7 @@
         <activity android:name=".activity.FunctionActivity" />
         <activity android:name=".activity.MoreVideoActivity1" />
         <activity android:name=".activity.MoreVideoActivity2" />
+        <activity android:name=".activity.SalesDetailsActivity" />
         <activity android:name=".activity.NewsActivity" />
         <activity android:name=".activity.VideoManagerActivity2"
             android:configChanges="orientation|screenSize|keyboardHidden"

@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.bauwayhome.ec.R;
 import com.bauwayhome.ec.activity.ProductDetailsActivity;
-import com.bauwayhome.ec.bean.Product_Routine;
+import com.bauwayhome.ec.bean.Product_Small;
 import com.bauwayhome.ec.util.ImageLoaderUtil;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -29,20 +29,20 @@ import java.util.List;
 public class ProductListAdapter4 extends BaseAdapter {
 
     private Context mContext;
-    private List<Product_Routine> products;
+    private List<Product_Small> products;
     ViewHolder viewHolder;
-    Product_Routine product;
+    Product_Small product;
 
     /**
      * 构造函数
      */
-    public ProductListAdapter4(Context mContext, List<Product_Routine> products) {
+    public ProductListAdapter4(Context mContext, List<Product_Small> products) {
         super();
         this.mContext = mContext;
         this.products = products;
     }
 
-    public void setData(List<Product_Routine> list) {
+    public void setData(List<Product_Small> list) {
         notifyDataSetChanged();
     }
 
@@ -66,7 +66,7 @@ public class ProductListAdapter4 extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup arg2) {
+    public View getView(final int position, View convertView, ViewGroup arg2) {
         product = products.get(position);
         if (convertView == null) {
             viewHolder = new ViewHolder();
@@ -95,7 +95,7 @@ public class ProductListAdapter4 extends BaseAdapter {
         viewHolder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int position = (int) view.getTag();
+//                int position = (int) view.getTag();
                 Uri uri = Uri.parse(products.get(position).getIqos_url());
                 Intent intent = new Intent(mContext, ProductDetailsActivity.class);
                 intent.putExtra("uri", uri + "");

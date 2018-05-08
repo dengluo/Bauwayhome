@@ -4,23 +4,49 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/gray_divider_line"
-    android:orientation="vertical"
-    android:padding="@dimen/dp10">
+    android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="206dp"
-        android:src="@drawable/sales_product" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/blue_ice"
+        android:padding="10dp">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="127dp"
-        android:src="@drawable/sales_yhq1" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/sales_suit"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="127dp"
-        android:src="@drawable/sales_yhq2" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/dp10">
+
+        <ImageView
+            android:id="@+id/iv_sales_products"
+            android:layout_width="wrap_content"
+            android:layout_height="206dp"
+            android:src="@drawable/sales_product" />
+
+        <ImageView
+            android:id="@+id/iv_sales_get1"
+            android:layout_width="wrap_content"
+            android:layout_height="127dp"
+            android:src="@drawable/sales_yhq1" />
+
+        <ImageView
+            android:id="@+id/iv_sales_get2"
+            android:layout_width="wrap_content"
+            android:layout_height="127dp"
+            android:src="@drawable/sales_yhq2" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

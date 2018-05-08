@@ -11,7 +11,7 @@ import android.widget.ListView;
 
 import com.bauwayhome.ec.R;
 import com.bauwayhome.ec.adapter.ProductListAdapter4;
-import com.bauwayhome.ec.bean.Product_Routine;
+import com.bauwayhome.ec.bean.Product_Small;
 
 import java.util.List;
 
@@ -29,8 +29,8 @@ public class MyFragment4 extends Fragment {
     private Context context;
     private ListView lv_product;// 产品列表视图
     private ProductListAdapter4 productListAdapter;// 产品列表适配器对象
-    public List<Product_Routine> productList;
-    Product_Routine product;
+    public List<Product_Small> productList;
+    Product_Small product;
     public MyFragment4() {
     }
 
@@ -44,13 +44,13 @@ public class MyFragment4 extends Fragment {
     }
 
     private void loadData() {
-        String bql ="select * from Product_Small";//查询所有
-        new BmobQuery<Product_Routine>().doSQLQuery(bql,new SQLQueryListener<Product_Routine>(){
+        String bql ="select * from Product_Small Order By updatedAt DESC";//查询所有
+        new BmobQuery<Product_Small>().doSQLQuery(bql,new SQLQueryListener<Product_Small>(){
 
             @Override
-            public void done(BmobQueryResult<Product_Routine> result, BmobException e) {
+            public void done(BmobQueryResult<Product_Small> result, BmobException e) {
                 if(e ==null){
-                    List<Product_Routine> list = (List<Product_Routine>) result.getResults();
+                    List<Product_Small> list = (List<Product_Small>) result.getResults();
                     if(list!=null && list.size()>0){
                         productListAdapter = new ProductListAdapter4(context,list);// ProductListAdapter
                         lv_product.setAdapter(productListAdapter);// 为ListView绑定Adapter

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CIGGO</string>
+    <string name="app_name">Bauway</string>
     <string name="menu_scan">Scan</string>
     <string name="menu_stop">Stop</string>
     <string name="menu_connect">Connect</string>
@@ -178,7 +178,7 @@
     <string name="news_detail">News details</string>
     <string name="video_play">Video play</string>
     <string name="product_list">Product list</string>
-    <string name="bbs">BBS</string>
+    <string name="bbs">Forum</string>
     <string name="function">Function</string>
     <string name="Scan">Scan</string>
     <string name="video">Video</string>
@@ -277,6 +277,7 @@
     <string name="about_us">About us</string>
     <string name="product_detail">Product detail</string>
     <string name="me">Me</string>
+    <string name="sales_suit">Sales suit</string>
     <string name="account_info">Account information</string>
     <string name="fragme_data">Data</string>
     <string name="fragme_about">About</string>
@@ -362,14 +363,14 @@ d. Users shall not use the "CIGGO" account or the service to make, upload, copy,
     <string name="weixin">WeChat</string>
     <string name="cn_web">Website</string>
     <string name="en_web">Website</string>
-    <string name="phone">dianh</string>
+    <string name="phone">Phone</string>
     <string name="fax">Fax</string>
     <string name="email">Email</string>
 
     <string name="weixin_value">BAU_WAY</string>
     <string name="cn_web_value">www.bauway.cn</string>
     <string name="en_web_value">www.bauway.com</string>
-    <string name="phone_value">0755-39089555</string>
+    <string name="phone_value">0755-29089555</string>
     <string name="fax_value">0755-33115078</string>
     <string name="email_value">tmall@bauway.com</string>
     <string name="bauway">Bauway</string>
