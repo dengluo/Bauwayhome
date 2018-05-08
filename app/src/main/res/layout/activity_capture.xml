@@ -91,7 +91,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="@dimen/dp10"
                         android:text="@string/Alignment_code"
-                        android:textColor="@color/black_2"
+                        android:textColor="@color/text_color_2"
                         android:textSize="14sp" />
 
                     <com.bauwayhome.ec.View.ClearEditText

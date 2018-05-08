@@ -73,7 +73,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/view_device_index"
-                        android:textColor="@color/text_color_1"
+                        android:textColor="@color/text_color_2"
                         android:textSize="14dp" />
                 </LinearLayout>
 
@@ -450,7 +450,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/set_device_index"
-                        android:textColor="@color/text_color_1"
+                        android:textColor="@color/text_color_2"
                         android:textSize="14dp" />
                 </LinearLayout>
 
@@ -695,7 +695,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/unbind_device"
-                        android:textColor="@color/text_color_1"
+                        android:textColor="@color/text_color_2"
                         android:textSize="14dp" />
                 </LinearLayout>
 

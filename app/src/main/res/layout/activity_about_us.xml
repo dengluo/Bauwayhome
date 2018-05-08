@@ -99,7 +99,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerInParent="true"
                     android:text="@string/weixin"
-                    android:textColor="@color/text_color_1"
+                    android:textColor="@color/text_color_2"
                     android:textSize="16dp" />
 
                 <TextView
@@ -109,8 +109,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:text="@string/weixin_value"
-                    android:textColor="@color/text_color_2"
-                    android:textSize="16dp" />
+                    android:textColor="@color/text_color_3"
+                    android:textSize="14dp" />
             </RelativeLayout>
 
             <View
@@ -132,7 +132,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerInParent="true"
                     android:text="@string/cn_web"
-                    android:textColor="@color/text_color_1"
+                    android:textColor="@color/text_color_2"
                     android:textSize="16dp" />
 
                 <TextView
@@ -143,8 +143,8 @@
                     android:layout_margin="5dp"
                     android:autoLink="web"
                     android:text="@string/cn_web_value"
-                    android:textColor="@color/text_color_2"
-                    android:textSize="16dp" />
+                    android:textColor="@color/text_color_3"
+                    android:textSize="14dp" />
             </RelativeLayout>
 
             <View
@@ -166,7 +166,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerInParent="true"
                     android:text="@string/en_web"
-                    android:textColor="@color/text_color_1"
+                    android:textColor="@color/text_color_2"
                     android:textSize="16dp" />
 
                 <TextView
@@ -178,7 +178,7 @@
                     android:autoLink="web"
                     android:text="@string/en_web_value"
                     android:textColor="@color/text_color_2"
-                    android:textSize="16dp" />
+                    android:textSize="14dp" />
             </RelativeLayout>
 
             <View
@@ -200,7 +200,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerInParent="true"
                     android:text="@string/phone"
-                    android:textColor="@color/text_color_1"
+                    android:textColor="@color/text_color_2"
                     android:textSize="16dp" />
 
                 <TextView
@@ -211,8 +211,8 @@
                     android:autoLink="phone"
                     android:layout_margin="5dp"
                     android:text="@string/phone_value"
-                    android:textColor="@color/text_color_2"
-                    android:textSize="16dp" />
+                    android:textColor="@color/text_color_3"
+                    android:textSize="14dp" />
             </RelativeLayout>
 
             <View
@@ -234,7 +234,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerInParent="true"
                     android:text="@string/fax"
-                    android:textColor="@color/text_color_1"
+                    android:textColor="@color/text_color_2"
                     android:textSize="16dp" />
 
                 <TextView
@@ -244,8 +244,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:text="@string/fax_value"
-                    android:textColor="@color/text_color_2"
-                    android:textSize="16dp" />
+                    android:textColor="@color/text_color_3"
+                    android:textSize="14dp" />
             </RelativeLayout>
 
             <View
@@ -267,7 +267,7 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerInParent="true"
                     android:text="@string/email"
-                    android:textColor="@color/text_color_1"
+                    android:textColor="@color/text_color_2"
                     android:textSize="16dp" />
 
                 <TextView
@@ -277,8 +277,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:text="@string/email_value"
-                    android:textColor="@color/text_color_2"
-                    android:textSize="16dp" />
+                    android:textColor="@color/text_color_3"
+                    android:textSize="14dp" />
             </RelativeLayout>
 
             <View
@@ -306,7 +306,7 @@
                     android:layout_marginTop="10dp"
                     android:autoLink="all"
                     android:text="@string/company_address"
-                    android:textColor="@color/black_2"
+                    android:textColor="@color/text_color_2"
                     android:textSize="14sp" />
 
             </LinearLayout>
