@@ -11,6 +11,9 @@
         android:id="@+id/action_bar2"
         android:layout_width="match_parent"
         android:layout_height="52dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_gravity="center_vertical"
         android:background="@color/blue_ice"
         android:padding="10dp">
@@ -29,14 +32,15 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:text="@string/about_us"
+            android:text="@string/local_album"
             android:textColor="@color/white"
             android:textSize="18sp" />
+
         <TextView
             android:id="@+id/action_capture"
             style="@style/action_tv"
             android:layout_alignParentRight="true"
-            android:text="@string/capture"/>
+            android:text="@string/capture" />
     </RelativeLayout>
 
     <FrameLayout

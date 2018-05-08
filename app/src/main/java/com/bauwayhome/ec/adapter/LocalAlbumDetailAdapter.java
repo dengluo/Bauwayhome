@@ -30,6 +30,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+
 /**
  * 本地相册详细图片适配器
  *

@@ -43,7 +43,6 @@ import java.io.File;
 import java.util.List;
 
 import butterknife.BindView;
-
 /**
  * 本地相册详细图片Activity
  *
